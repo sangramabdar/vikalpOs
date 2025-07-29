@@ -1,0 +1,20 @@
+---
+import SectionContainer from "../components/common/section/SectionContainer.astro";
+import SectionHeader from "../components/common/section/SectionHeader.astro";
+import Wrapper from "../layouts/Wrapper.astro";
+
+export interface Props {
+  headers?: Array<string>;
+  description?: string;
+  className?: string;
+}
+
+const { headers = [], description = "", className = "" } = Astro.props;
+---
+
+<SectionContainer className={`mt-20 ${className}`}>
+  <Wrapper className="flex flex-col justify-center items-center">
+    <SectionHeader headers={headers} description={description} />
+    <slot />
+  </Wrapper>
+</SectionContainer>

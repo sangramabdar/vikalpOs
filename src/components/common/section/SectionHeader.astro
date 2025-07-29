@@ -1,0 +1,25 @@
+---
+export interface Props {
+  headers: Array<string>;
+  description: string;
+}
+
+const { headers, description } = Astro.props;
+---
+
+<div class="flex flex-col justify-center items-center">
+  <h1
+    class="text-xl md:text-3xl xl:text-3xl text-center max-w-2xl font-bold text-primary-70"
+  >
+    {
+      headers.map((header, index) => (
+        <span class={index == 0 ? "text-typography-80" : "text-primary-70"}>
+          {header}
+        </span>
+      ))
+    }
+  </h1>
+  <p class="text-typography-80 text-xl text-center max-w-xl mt-5">
+    {description}
+  </p>
+</div>

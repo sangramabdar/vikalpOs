@@ -1,22 +1,83 @@
+---
+import "../styles/global.css";
+import Footer from "../components/common/Footer.astro";
+import Navbar from "../components/common/Navbar.astro";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <!-- <Navbar/> -->
+    <slot />
+    <!-- <Footer/> -->
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
+
+<!-- <script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        //   entry.target.classList.add("show");
+        entry.target.classList.add("show");
+      } else {
+        //   entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const slideRightElements = document.getElementsByClassName("slideInRight");
+  const slideRightSubElements =
+    document.getElementsByClassName("slideInRightSub");
+  const slideLeftElements = document.getElementsByClassName("slideInLeft");
+  const slideLeftSubElements =
+    document.getElementsByClassName("slideInLeftSub");
+  const imagePops = document.getElementsByClassName("imgPop");
+  const textScales = document.getElementsByClassName("textScale");
+  const slideUpElements = document.getElementsByClassName("slideInUp");
+  const slideUpSubElements = document.getElementsByClassName("slideInUpSub");
+  const moveLeftElements = document.getElementsByClassName("moveInLeft");
+
+  for (let i = 0, all = slideRightElements.length; i < all; i++) {
+    observer.observe(slideRightElements[i]);
+  }
+  for (let i = 0, all = slideLeftElements.length; i < all; i++) {
+    observer.observe(slideLeftElements[i]);
+  }
+  for (let i = 0, all = imagePops.length; i < all; i++) {
+    observer.observe(imagePops[i]);
+  }
+  for (let i = 0, all = slideUpElements.length; i < all; i++) {
+    observer.observe(slideUpElements[i]);
+  }
+  for (let i = 0, all = slideUpSubElements.length; i < all; i++) {
+    observer.observe(slideUpSubElements[i]);
+  }
+  for (let i = 0, all = slideRightSubElements.length; i < all; i++) {
+    observer.observe(slideRightSubElements[i]);
+  }
+  for (let i = 0, all = slideLeftSubElements.length; i < all; i++) {
+    observer.observe(slideLeftSubElements[i]);
+  }
+  for (let i = 0, all = textScales.length; i < all; i++) {
+    observer.observe(textScales[i]);
+  }
+  for (let i = 0, all = moveLeftElements.length; i < all; i++) {
+    observer.observe(moveLeftElements[i]);
+  }
+</script> -->

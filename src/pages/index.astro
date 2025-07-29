@@ -1,11 +1,332 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Wrapper from "../layouts/Wrapper.astro";
+import Button from "../components/common/Button.astro";
+import SectionHeader from "../components/common/section/SectionHeader.astro";
+import { date } from "astro:schema";
+import Container from "../layouts/Container.astro";
+import SectionContainer from "../components/common/section/SectionContainer.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const data = [
+  {
+    headers: ["Digitize the Way You Work", " Without Replacing What Works"],
+    description:
+      "From forms and approvals to reports and mobile apps configure everything you need, without code or vendor dependency",
+    cards: [
+      {
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+        title: "Visual Builder",
+        head: `Design and launch forms, workflows, and
+dashboards without coding`,
+        content: "Drag-and-drop builder",
+      },
+      {
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+        title: "Visual Builder",
+        head: `Design and launch forms, workflows, and
+dashboards without coding`,
+        content: "Drag-and-drop builder",
+      },
+      {
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+        title: "Visual Builder",
+        head: `Design and launch forms, workflows, and
+dashboards without coding`,
+        content: "Drag-and-drop builder",
+      },
+      {
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+        title: "Visual Builder",
+        head: `Design and launch forms, workflows, and
+dashboards without coding`,
+        content: "Drag-and-drop builder",
+      },
+      {
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+        title: "Visual Builder",
+        head: `Design and launch forms, workflows, and
+dashboards without coding`,
+        content: "Drag-and-drop builder",
+      },
+      {
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+        title: "Visual Builder",
+        head: `Design and launch forms, workflows, and
+dashboards without coding`,
+        content: "Drag-and-drop builder",
+      },
+    ],
+  },
+];
+
+const applicationSection = {
+  headers: ["Purpose-Built Solutions for", " Policing & Law Enforcement"],
+  description:
+    "From forms and approvals to reports and mobile apps configure everything you need, without code or vendor dependency",
+  content: [
+    {
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg",
+      header: "AI-Driven Information & Verification",
+      content: [
+        "Effortlessly capture and match faces for instant identity verification",
+        "Utilize AI to detect and confirm objects, locations, or infrastructure in real time",
+        "Enable automated, secure authentication and field validation",
+      ],
+    },
+    {
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg",
+      header: "Dynamic Task & Resource Coordination",
+      content: [
+        "Auto-assign tasks based on priority or user roles",
+        "Manage staff roles, schedules, and communications",
+        "Optimize resource utilization and scheduling",
+      ],
+    },
+    {
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg",
+      header: `Command-Level 
+Oversight `,
+      content: [
+        "Real-time dashboards tailored for senior officials",
+        "Monitor progress by team, department, or location",
+        "Identify trends and gaps for informed decisions",
+      ],
+    },
+
+    {
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg",
+      header: `Administration & 
+Collaboration`,
+      content: [
+        "Manage staff roles, schedules, and communications",
+        "Centralize documentation and record-keeping",
+        "Streamline approvals and cross-department workflows",
+      ],
+    },
+  ],
+};
 ---
 
 <Layout>
-	<Welcome />
+  <section class="bg-background-tertiary pt-20">
+    <Wrapper>
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 mt-20 gap-10 place-center justify-items-center"
+      >
+        <div class="flex flex-col space-y-3 h-fit">
+          <h1 class="font-bold text-typography-100 text-2xl md:text-4xl">
+            Build Digital Systems Fast <span class="text-primary-70"
+              >Free from Lock-In.</span
+            >
+          </h1>
+          <p
+            class="text-typography-80 text-left w-full md:text-lg self-center md:self-start"
+          >
+            VikalpOS is a modular low-code platform to create apps, forms,
+            workflows, dashboards, and mobile tools without writing code or
+            depending on a vendor
+          </p>
+
+          <div class="pt-4 md:pt-6">
+            <Button />
+          </div>
+        </div>
+
+        <div class="h-fit">
+          <img
+            src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
+            alt="#"
+            class="w-fit"
+          />
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+
+  {
+    data.map(element => (
+      <Container headers={element.headers} description={element.description}>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]">
+          {element.cards.map(card => (
+            <div class="bg-white w-full p-4 md:p-6 flex flex-col rounded-lg md:rounded-xl shadow-lg md:shadow-xl lg:shadow-2xl items-start slideInRight gap-3">
+              <img
+                src={card.img}
+                alt="card_img"
+                class="relative md:w-11 md:h-11 p-1 rounded-l-md bg-primary-10 slideInLeft"
+              />
+              <h3 class="text-typography-80 font-bold text-left text-xl">
+                {card.title}
+              </h3>
+              <p class="text-typography-40 font-medium text-left self-start">
+                {card.head}
+              </p>
+              <ul class="space-y-2 text-left self-start md:text-xl">
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">
+                    {card.content}
+                  </span>
+                </li>
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">
+                    {card.content}
+                  </span>
+                </li>
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">
+                    {card.content}
+                  </span>
+                </li>
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">
+                    {card.content}
+                  </span>
+                </li>
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Container>
+    ))
+  }
+
+  <SectionContainer className="md:gap-20">
+    <Wrapper>
+      <SectionHeader
+        headers={applicationSection.headers}
+        description={applicationSection.description}
+      />
+    </Wrapper>
+    {
+      applicationSection.content.map((element, index) => (
+        <section
+          class={`${index % 2 === 0 ? "bg-background-tertiary" : "bg-background-primary"}`}
+        >
+          <Wrapper>
+            <div class={`grid grid-cols-1 lg:grid-cols-2 mt-20 gap-10`}>
+              <img
+                src={element.img}
+                alt="enterprise_img"
+                class={`relative w-full h-full object-contain slideInLeft ${index % 2 == 0 ? "order-1" : ""}`}
+              />
+              <div class="flex flex-col items-start slideInRight gap-3 md:gap-4">
+                <img
+                  src={element.icon}
+                  alt="enterprise_img"
+                  class="w-[48px] h-[48px] relative"
+                />
+                <h3 class="text-typography-80 font-bold text-left text-xl md:text-3xl">
+                  {element.header}
+                </h3>
+                <ul class="space-y-2 text-left self-start md:text-xl">
+                  {element.content.map(value => (
+                    <li class="flex gap-2">
+                      <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                      <span class="text-typography-80 text-base">{value}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Wrapper>
+        </section>
+      ))
+    }
+  </SectionContainer>
+
+  {
+    data.map(element => (
+      <Container headers={element.headers} description={element.description}>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]">
+          {element.cards.map(card => (
+            <div class="bg-white w-full p-4 md:p-6 flex flex-col rounded-lg md:rounded-xl shadow-lg md:shadow-xl lg:shadow-2xl items-start slideInRight gap-3">
+              <img
+                src={card.img}
+                alt="card_img"
+                class="relative md:w-11 md:h-11 p-1 rounded-l-md bg-primary-10 slideInLeft"
+              />
+              <h3 class="text-typography-80 font-bold text-left text-xl">
+                {card.title}
+              </h3>
+              <p class="text-typography-40 font-medium text-left self-start">
+                {card.head}
+              </p>
+              <ul class="space-y-2 text-left self-start md:text-xl">
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">
+                    {card.content}
+                  </span>
+                </li>
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">
+                    {card.content}
+                  </span>
+                </li>
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">
+                    {card.content}
+                  </span>
+                </li>
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">
+                    {card.content}
+                  </span>
+                </li>
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Container>
+    ))
+  }
+
+  <section class="bg-background-tertiary lg:h-[400px] mt-30">
+    <Wrapper>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="md:flex flex-col items-start slideInRight gap-3 md:gap-4">
+          <h3
+            class="text-typography-80 font-bold text-left text-xl md:text-2xl"
+          >
+            Government-Grade Security Management
+          </h3>
+          <p
+            class="text-[#707070] font-medium xl:text-xl text-left self-start w-full leading-4 md:leading-7"
+          >
+            One unified platform for secure, compliant governance
+          </p>
+          <p class="text-blue-grey-50 text-left self-start md:text-xl">
+            Strengthen your department’s digital infrastructure with a trusted
+            security framework. Enable proactive threat detection, access
+            control, data protection, and regulatory compliance
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-12 items-start lg:translate-y-[-50px]">
+          {
+            [0, 1, 2, 3, 4, 6].map(element => (
+              <div class="flex flex-col gap-6 bg-primary-10 rounded-md px-4 py-4">
+                <img
+                  src="https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg"
+                  class="h-10 w-10"
+                />
+                <span class="font-bold text-primary-70">
+                  Intelligent Access Control
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </Wrapper>
+  </section>
 </Layout>
