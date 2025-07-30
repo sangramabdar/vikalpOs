@@ -1,0 +1,132 @@
+---
+import Button from "../components/common/Button.astro";
+import Card from "../components/common/Card.astro";
+import OverFlowSection from "../components/OverFlowSection.astro";
+import StartAConversionSection from "../components/StartAConversionSection.astro";
+import Container from "../layouts/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import Wrapper from "../layouts/Wrapper.astro";
+
+const unMatechedSecuritySectionData = {
+  headers: [
+    "Unmatched Security, Speed, and Control",
+    "Built for Modern Governance",
+  ],
+  description:
+    "Deploy government solutions 10x faster with VikalpOS intuitive, low-code tools engineered from the ground up for public sector operational needs",
+  cards: [
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Secure Government Deployments",
+      desciption:
+        "Host your applications safely on government-approved private cloud or on-premise environments, ensuring data sovereignty, compliance, and full administrative control",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Department-Branded Solutions",
+      desciption:
+        "Roll out web and mobile apps customized with your agency’s emblem, colors, and terminology reinforcing public trust and identity with every interaction",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Priority Government Support",
+      desciption:
+        "Access dedicated public sector support channels for rapid troubleshooting, onboarding, and ongoing guidance ensuring seamless operations at all times",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Flexible Government Integrations",
+      desciption:
+        "Seamlessly connect with ministry systems, legacy databases, national ID platforms, and other e-governance tools adapting quickly to evolving mandates and policy requirements",
+    },
+  ],
+};
+
+const comprehensiveGovernanceSectionData = {
+  headers: ["Comprehensive", "Governance Application Suite"],
+  description:
+    "Empower your department with a single, all-in-one solution that delivers end-to-end control, real-time insight, and seamless citizen engagement without complexity of multiple vendors or custom integrations",
+  cards: [
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Compliance Monitoring",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Resource Allocation",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Audit & Risk Assessment",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Policy Management",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Query & Complaint Management",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Citizen Feedback Portal",
+    },
+  ],
+};
+---
+
+<Layout>
+  <section class="bg-background-tertiary pt-20">
+    <Wrapper>
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-10 place-center justify-items-center"
+      >
+        <div class="flex flex-col space-y-3 h-fit">
+          <h1 class="font-bold text-typography-100 text-2xl md:text-4xl">
+            Build Digital Systems Fast <span class="text-primary-70"
+              >Free from Lock-In.</span
+            >
+          </h1>
+          <p
+            class="text-typography-80 text-left w-full md:text-lg self-center md:self-start"
+          >
+            VikalpOS is a modular low-code platform to create apps, forms,
+            workflows, dashboards, and mobile tools without writing code or
+            depending on a vendor
+          </p>tertiary
+
+          <div class="pt-4 md:pt-6">
+            <Button link="/" />
+          </div>
+        </div>
+
+        <div class="h-fit">
+          <img
+            src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
+            alt="#"
+            class="w-fit"
+          />
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+
+  <Container
+    headers={unMatechedSecuritySectionData.headers}
+    description={unMatechedSecuritySectionData.description}
+  >
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]"
+    >
+      {
+        unMatechedSecuritySectionData.cards.map(card => (
+          <Card iconAndHeaderSameLine card={card} />
+        ))
+      }
+    </div>
+  </Container>
+
+  <OverFlowSection sectionData={comprehensiveGovernanceSectionData} />
+
+  <StartAConversionSection className="lg:mt-60" />
+</Layout>

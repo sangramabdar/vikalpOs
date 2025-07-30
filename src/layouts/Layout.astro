@@ -13,9 +13,13 @@ import Navbar from "../components/common/Navbar.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <body>
-    <!-- <Navbar/> -->
-    <slot />
+  <body class="bg-background-primary">
+    <!-- <Navbar /> -->
+
+    <main>
+      <slot />
+    </main>
+
     <!-- <Footer/> -->
   </body>
 </html>

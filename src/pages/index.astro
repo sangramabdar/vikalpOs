@@ -3,11 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Wrapper from "../layouts/Wrapper.astro";
 import Button from "../components/common/Button.astro";
 import SectionHeader from "../components/common/section/SectionHeader.astro";
-import { date } from "astro:schema";
 import Container from "../layouts/Container.astro";
 import SectionContainer from "../components/common/section/SectionContainer.astro";
+import StartAConversionSection from "../components/StartAConversionSection.astro";
+import Card from "../components/common/Card.astro";
+import OverFlowSection from "../components/OverFlowSection.astro";
 
-const data = [
+const DigitizeTheWaySectionData = [
   {
     headers: ["Digitize the Way You Work", " Without Replacing What Works"],
     description:
@@ -16,50 +18,74 @@ const data = [
       {
         img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
         title: "Visual Builder",
-        head: `Design and launch forms, workflows, and
+        desciption: `Design and launch forms, workflows, and
 dashboards without coding`,
-        content: "Drag-and-drop builder",
+        content: [
+          "Drag-and-drop builder",
+          "Conditional logic and routing",
+          "Real-time dashboards",
+        ],
       },
       {
         img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
         title: "Visual Builder",
-        head: `Design and launch forms, workflows, and
+        desciption: `Design and launch forms, workflows, and
 dashboards without coding`,
-        content: "Drag-and-drop builder",
+        content: [
+          "Secure offline data collection",
+          "Automatic sync when reconnected",
+          "Optimized for remote and rural areas",
+        ],
       },
       {
         img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
         title: "Visual Builder",
-        head: `Design and launch forms, workflows, and
+        desciption: `Design and launch forms, workflows, and
 dashboards without coding`,
-        content: "Drag-and-drop builder",
+        content: [
+          "Built-in validations and versioning",
+          "End-to-end audit trails",
+          "Compatible with AI-powered reporting",
+        ],
       },
       {
         img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
         title: "Visual Builder",
-        head: `Design and launch forms, workflows, and
+        desciption: `Design and launch forms, workflows, and
 dashboards without coding`,
-        content: "Drag-and-drop builder",
+        content: [
+          "Define custom roles and permissions",
+          "Support multi-level approvals",
+          "Enable real-time task tracking",
+        ],
       },
       {
         img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
         title: "Visual Builder",
-        head: `Design and launch forms, workflows, and
+        desciption: `Design and launch forms, workflows, and
 dashboards without coding`,
-        content: "Drag-and-drop builder",
+        content: [
+          "Localized forms and apps",
+          "Easy adoption by ground staff",
+          "Admin and field-friendly UI",
+        ],
       },
       {
         img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
         title: "Visual Builder",
-        head: `Design and launch forms, workflows, and
+        desciption: `Design and launch forms, workflows, and
 dashboards without coding`,
-        content: "Drag-and-drop builder",
+        content: [
+          "Secure and scalable APIs",
+          "Integration with national databases",
+          "Support for legacy system extensions",
+        ],
       },
     ],
   },
 ];
 
-const applicationSection = {
+const applicationSectionData = {
   headers: ["Purpose-Built Solutions for", " Policing & Law Enforcement"],
   description:
     "From forms and approvals to reports and mobile apps configure everything you need, without code or vendor dependency",
@@ -109,13 +135,83 @@ Collaboration`,
     },
   ],
 };
+
+const AiEnabledSectionData = {
+  headers: ["AI-Enabled Governance", "Powering Smarter Public Systems"],
+  description:
+    "Leverage the full potential of AI to drive intelligent automation, policy execution, and data-driven governance. Our integrated AI solutions embed intelligence into departmental workflows enhancing transparency, efficiency, and public service delivery at scale",
+  cards: [
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "AI Data Fabric & Management",
+      desciption: `Unify public data ecosystems with intelligent control`,
+      content:
+        "Break down data silos and enable consistent, secure, and real-time data exchange across departments. Ensure accuracy, traceability, and compliance through AI-powered data governance frameworks",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Integrated AI for Legacy Systems",
+      desciption: `Modernize admin systems with predictive intelligence`,
+      content:
+        "Infuse AI capabilities into existing platforms such as MIS, ERP, and citizen service portals. Achieve proactive decision-making, automated operations, and measurable performance improvement",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Predictive Governance & Insights",
+      desciption: `Transform data into foresight for better policy outcomes`,
+      content:
+        "Harness AI analytics for early-warning systems, demand forecasting, and service optimization. Make informed, timely decisions with deep, actionable insights powered by advanced algorithms",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      title: "Cognitive Automation of Workflows",
+      desciption: `Streamline processes, reduce bottlenecks, deliver faster`,
+      content:
+        "Automate high-volume, rule-based administrative tasks using AI and machine learning. Improve staff productivity, reduce processing time, and enhance citizen satisfaction through intelligent workflow orchestration",
+    },
+  ],
+};
+
+const govermentGradeSectionData = {
+  headers: ["Government-Grade", "Security Management"],
+  title: `One unified platform for secure, compliant governance`,
+  description: `Strengthen your department’s digital infrastructure with a trusted
+          security framework. Enable proactive threat detection, access control,
+          data protection, and regulatory compliance`,
+  cards: [
+    {
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      title: "Intelligent Access Control",
+    },
+    {
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      title: "Real-Time Threat Detection",
+    },
+    {
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      title: "Secure Data Encryption",
+    },
+    {
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      title: "Automated Incident Response",
+    },
+    {
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      title: "Regulatory Compliance",
+    },
+    {
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      title: "Network Endpoint Protection",
+    },
+  ],
+};
 ---
 
 <Layout>
   <section class="bg-background-tertiary pt-20">
     <Wrapper>
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 mt-20 gap-10 place-center justify-items-center"
+        class="grid grid-cols-1 md:grid-cols-2 gap-10 place-start justify-items-start"
       >
         <div class="flex flex-col space-y-3 h-fit">
           <h1 class="font-bold text-typography-100 text-2xl md:text-4xl">
@@ -129,10 +225,10 @@ Collaboration`,
             VikalpOS is a modular low-code platform to create apps, forms,
             workflows, dashboards, and mobile tools without writing code or
             depending on a vendor
-          </p>
+          </p>tertiary
 
           <div class="pt-4 md:pt-6">
-            <Button />
+            <Button link="/platform" />
           </div>
         </div>
 
@@ -148,49 +244,11 @@ Collaboration`,
   </section>
 
   {
-    data.map(element => (
+    DigitizeTheWaySectionData.map(element => (
       <Container headers={element.headers} description={element.description}>
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]">
           {element.cards.map(card => (
-            <div class="bg-white w-full p-4 md:p-6 flex flex-col rounded-lg md:rounded-xl shadow-lg md:shadow-xl lg:shadow-2xl items-start slideInRight gap-3">
-              <img
-                src={card.img}
-                alt="card_img"
-                class="relative md:w-11 md:h-11 p-1 rounded-l-md bg-primary-10 slideInLeft"
-              />
-              <h3 class="text-typography-80 font-bold text-left text-xl">
-                {card.title}
-              </h3>
-              <p class="text-typography-40 font-medium text-left self-start">
-                {card.head}
-              </p>
-              <ul class="space-y-2 text-left self-start md:text-xl">
-                <li class="flex gap-2">
-                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
-                  <span class="text-typography-80 text-base">
-                    {card.content}
-                  </span>
-                </li>
-                <li class="flex gap-2">
-                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
-                  <span class="text-typography-80 text-base">
-                    {card.content}
-                  </span>
-                </li>
-                <li class="flex gap-2">
-                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
-                  <span class="text-typography-80 text-base">
-                    {card.content}
-                  </span>
-                </li>
-                <li class="flex gap-2">
-                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
-                  <span class="text-typography-80 text-base">
-                    {card.content}
-                  </span>
-                </li>
-              </ul>
-            </div>
+            <Card card={card} />
           ))}
         </div>
       </Container>
@@ -200,12 +258,12 @@ Collaboration`,
   <SectionContainer className="md:gap-20">
     <Wrapper>
       <SectionHeader
-        headers={applicationSection.headers}
-        description={applicationSection.description}
+        headers={applicationSectionData.headers}
+        description={applicationSectionData.description}
       />
     </Wrapper>
     {
-      applicationSection.content.map((element, index) => (
+      applicationSectionData.content.map((element, index) => (
         <section
           class={`${index % 2 === 0 ? "bg-background-tertiary" : "bg-background-primary"}`}
         >
@@ -241,92 +299,23 @@ Collaboration`,
     }
   </SectionContainer>
 
-  {
-    data.map(element => (
-      <Container headers={element.headers} description={element.description}>
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]">
-          {element.cards.map(card => (
-            <div class="bg-white w-full p-4 md:p-6 flex flex-col rounded-lg md:rounded-xl shadow-lg md:shadow-xl lg:shadow-2xl items-start slideInRight gap-3">
-              <img
-                src={card.img}
-                alt="card_img"
-                class="relative md:w-11 md:h-11 p-1 rounded-l-md bg-primary-10 slideInLeft"
-              />
-              <h3 class="text-typography-80 font-bold text-left text-xl">
-                {card.title}
-              </h3>
-              <p class="text-typography-40 font-medium text-left self-start">
-                {card.head}
-              </p>
-              <ul class="space-y-2 text-left self-start md:text-xl">
-                <li class="flex gap-2">
-                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
-                  <span class="text-typography-80 text-base">
-                    {card.content}
-                  </span>
-                </li>
-                <li class="flex gap-2">
-                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
-                  <span class="text-typography-80 text-base">
-                    {card.content}
-                  </span>
-                </li>
-                <li class="flex gap-2">
-                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
-                  <span class="text-typography-80 text-base">
-                    {card.content}
-                  </span>
-                </li>
-                <li class="flex gap-2">
-                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
-                  <span class="text-typography-80 text-base">
-                    {card.content}
-                  </span>
-                </li>
-              </ul>
-            </div>
-          ))}
-        </div>
-      </Container>
-    ))
-  }
+  <OverFlowSection sectionData={govermentGradeSectionData} />
 
-  <section class="bg-background-tertiary lg:h-[400px] mt-30">
-    <Wrapper>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div class="md:flex flex-col items-start slideInRight gap-3 md:gap-4">
-          <h3
-            class="text-typography-80 font-bold text-left text-xl md:text-2xl"
-          >
-            Government-Grade Security Management
-          </h3>
-          <p
-            class="text-[#707070] font-medium xl:text-xl text-left self-start w-full leading-4 md:leading-7"
-          >
-            One unified platform for secure, compliant governance
-          </p>
-          <p class="text-blue-grey-50 text-left self-start md:text-xl">
-            Strengthen your department’s digital infrastructure with a trusted
-            security framework. Enable proactive threat detection, access
-            control, data protection, and regulatory compliance
-          </p>
-        </div>
-        <div class="grid grid-cols-2 gap-12 items-start lg:translate-y-[-50px]">
-          {
-            [0, 1, 2, 3, 4, 6].map(element => (
-              <div class="flex flex-col gap-6 bg-primary-10 rounded-md px-4 py-4">
-                <img
-                  src="https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg"
-                  class="h-10 w-10"
-                />
-                <span class="font-bold text-primary-70">
-                  Intelligent Access Control
-                </span>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </Wrapper>
-  </section>
+  <Container
+    headers={AiEnabledSectionData.headers}
+    description={AiEnabledSectionData.description}
+    className="lg:mt-40"
+  >
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]"
+    >
+      {
+        AiEnabledSectionData.cards.map(card => (
+          <Card iconAndHeaderSameLine card={card} />
+        ))
+      }
+    </div>
+  </Container>
+
+  <StartAConversionSection />
 </Layout>

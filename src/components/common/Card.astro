@@ -1,0 +1,50 @@
+---
+export interface Props {
+  card?: any;
+  iconAndHeaderSameLine?: boolean;
+}
+
+const { card = {}, iconAndHeaderSameLine = false } = Astro.props as Props;
+
+const extraClasses = iconAndHeaderSameLine
+  ? "flex-row justify-start items-center gap-4"
+  : "";
+---
+
+<div
+  class="bg-white w-full p-4 md:p-6 flex flex-col rounded-lg md:rounded-xl shadow-lg md:shadow-xl lg:shadow-2xl items-start slideInRight gap-3"
+>
+  <div class={`w-full flex flex-col items-start gap-3 ${extraClasses}`}>
+    <img
+      src={card.img}
+      alt="card_img"
+      class="relative md:w-11 md:h-11 p-1 rounded-l-md bg-primary-10 slideInLeft"
+    />
+    <h3 class="text-typography-80 font-bold text-left text-xl">
+      {card.title}
+    </h3>
+  </div>
+
+  <p class="text-typography-40 font-medium text-left self-start">
+    {card.desciption}
+  </p>
+
+  {
+    Array.isArray(card.content) ? (
+      <ul class="space-y-2 text-left self-start md:text-xl">
+        {card.content.map(element => (
+          <li class="flex gap-2">
+            <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+            <span class="text-typography-80 text-base">{element}</span>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      card.content && (
+        <p class="text-typography-80 font-medium text-left self-start">
+          {card.content}
+        </p>
+      )
+    )
+  }
+</div>

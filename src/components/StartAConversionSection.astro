@@ -1,0 +1,26 @@
+---
+import Wrapper from "../layouts/Wrapper.astro";
+import Button from "./common/Button.astro";
+import SectionContainer from "./common/section/SectionContainer.astro";
+import SectionHeader from "./common/section/SectionHeader.astro";
+
+export interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<SectionContainer className={`pb-10 ${className}`}>
+  <Wrapper>
+    <SectionHeader
+      headers={["Let’s connect to", " start a conversation"]}
+      description={`We’re here to understand your needs and show how our platform can help. Reach out to discuss, 
+see a demo, or get answers`}
+    />
+
+    <div class="flex justify-center mt-20">
+      <Button link="/platform" text="Connect with Us" />
+    </div>
+  </Wrapper>
+</SectionContainer>

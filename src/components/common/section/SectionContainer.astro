@@ -1,4 +1,6 @@
 ---
+import { cn } from "../../../utils/cn";
+
 export interface Props {
   className?: string;
 }
@@ -7,7 +9,10 @@ const { className = "" } = Astro.props;
 ---
 
 <section
-  class={`bg-background-primary flex flex-col justify-center mt-20 ${className}`}
+  class={cn(
+    "bg-background-primary flex flex-col justify-center mt-20",
+    className
+  )}
 >
   <slot />
 </section>
