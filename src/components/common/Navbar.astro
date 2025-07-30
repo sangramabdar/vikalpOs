@@ -4,11 +4,11 @@ import Button from "./Button.astro";
 ---
 
 <nav
-  class="z-50 fixed top-0 left-0 w-[100vw] flex justify-center bg-purple-400"
+  class="z-50 fixed top-0 left-0 w-[100vw] flex justify-center bg-background-primary"
 >
-  <Wrapper className="w-full">
+  <Wrapper className="w-full hidden lg:block">
     <!-- Desktop Nav -->
-    <div class="hidden h-16 2xl:h-[100px] lg:flex lg:items-center">
+    <div class="hidden h-16 lg:flex lg:items-center">
       <div class="lg:flex justify-between items-center w-full h-full p-4">
         <!-- Left -->
 
@@ -18,70 +18,28 @@ import Button from "./Button.astro";
           <!-- Logo -->
           <a class="flex items-center w-[96px] h-[32px]" href="/">
             <img
-              src="https://res.cloudinary.com/senpiper/image/upload/v1740681698/senpiper_assets/new_website_assets/Senpiper_Logo_Dark_BG_1_iolzu9.svg"
+              src="https://res.cloudinary.com/senpiper/image/upload/v1753867004/senpiper_assets/VikalpOS/icons/Logo_Type_w_Text_aah0p0.svg"
               alt="Senpiper"
               class="w-[96px] h-[32px]"
             />
           </a>
-          <!--  <a class="flex items-center w-36" href="/">
-            <img
-              src="https://res.cloudinary.com/senpiper/image/upload/v1669277812/senpiper_assets/new_website_assets/One_Resourse_Icon_-_Full_non-optimized_uuhyfd.png"
-              alt="OneResource"
-              class="w-full"
-            />
-          </a> -->
           <!-- Menu -->
           <div
             class="flex justify-around lg:w-3/4 xl:w-3/4 2xl:w-2/3 lg:h-full lg:items-center"
           >
             <!-- Platform -->
-            <div
-              class="relative flex min-w-fit justify-center gap-1 xl:gap-3 h-full items-center group"
-            >
-              <a
-                class="relative flex min-w-fit justify-center h-full items-center group"
-                href="/platform/"
-              >
-                <p
-                  class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-2 group-hover:border-b-2"
-                >
-                  Platform
-                </p>
-              </a>
 
-              <!-- <ul
-                class="invisible absolute top-14 -left-16 2xl:top-20 bg-white text-violet space-y-6 group-hover:visible w-96 p-6 rounded-lg drop-shadow-[0_20px_40px_rgba(82,82,82,0.2)]"
+            <a
+              class="relative flex min-w-fit justify-center h-full items-center group"
+              href="/platform/"
+            >
+              <p
+                class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-2 group-hover:border-b-2"
               >
-                <li class="flex justify-between cursor-pointer">
-                  <a href="/plans/">
-                    <div class="flex gap-6 items-center">
-                      <div class="w-8 flex items-center">
-                        <img
-                          src="https://res.cloudinary.com/senpiper/image/upload/v1666804586/senpiper_assets/new_website_assets/plans_p7a0lo.svg"
-                          alt=""
-                          class="w-8"
-                        />
-                      </div>
-                      <p class="font-semibold text-mbd1 2xl:text-tbd1 hover:text-yellow">Check Pricing Plans</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="flex justify-between cursor-pointer">
-                  <a href="/calculator/">
-                    <div class="flex gap-6 items-center">
-                      <div class="w-8 flex items-center">
-                        <img
-                          src="https://res.cloudinary.com/senpiper/image/upload/v1666804566/senpiper_assets/new_website_assets/calculator_fnxdcw.svg"
-                          alt=""
-                          class="w-8"
-                        />
-                      </div>
-                      <p class="font-semibold text-mbd1 2xl:text-tbd1 hover:text-yellow">Saving Calculator</p>
-                    </div>
-                  </a>
-                </li>
-              </ul> -->
-            </div>
+                Platform
+              </p>
+            </a>
+
             <!-- Services -->
             <a
               class="relative flex min-w-fit justify-center h-full items-center group"
@@ -103,7 +61,7 @@ import Button from "./Button.astro";
                 Products
               </p>
               <div
-                class="invisible absolute top-14 2xl:top-20 -left-16 bg-white text-violet space-y-6 group-hover:visible w-96 2xl:w-[26rem] p-6 rounded-lg drop-shadow-[0_20px_40px_rgba(82,82,82,0.2)]"
+                class="transition-all invisible opacity-0 absolute top-14 2xl:top-20 -left-16 bg-white text-violet space-y-6 group-hover:opacity-100 group-hover:visible w-96 2xl:w-[26rem] p-6 rounded-lg drop-shadow-[0_20px_40px_rgba(82,82,82,0.2)]"
               >
                 <ul class="space-y-6 pr-24">
                   <li class="flex justify-between">
@@ -421,59 +379,6 @@ import Button from "./Button.astro";
               </div>
             </div>
 
-            <!-- Pricing -->
-            <!--
-            <div
-              class="relative flex min-w-fit justify-center gap-1 xl:gap-3 h-full items-center group"
-            >
-              <p
-                class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-2 group-hover:border-b-2"
-              >
-                Pricing
-              </p>
-
-              <ul
-                class="invisible absolute top-14 -left-16 2xl:top-20 bg-white text-violet space-y-6 group-hover:visible w-96 p-6 rounded-lg drop-shadow-[0_20px_40px_rgba(82,82,82,0.2)]"
-              >
-                <li class="flex justify-between cursor-pointer">
-                  <a href="/plans/">
-                    <div class="flex gap-6 items-center">
-                      <div class="w-8 flex items-center">
-                        <img
-                          src="https://res.cloudinary.com/senpiper/image/upload/v1666804586/senpiper_assets/new_website_assets/plans_p7a0lo.svg"
-                          alt=""
-                          class="w-8"
-                        />
-                      </div>
-                      <p
-                        class="font-semibold text-mbd1 2xl:text-tbd1 hover:text-yellow"
-                      >
-                        Check Pricing Plans
-                      </p>
-                    </div>
-                  </a>
-                </li>
-                <li class="flex justify-between cursor-pointer">
-                  <a href="/calculator/">
-                    <div class="flex gap-6 items-center">
-                      <div class="w-8 flex items-center">
-                        <img
-                          src="https://res.cloudinary.com/senpiper/image/upload/v1666804566/senpiper_assets/new_website_assets/calculator_fnxdcw.svg"
-                          alt=""
-                          class="w-8"
-                        />
-                      </div>
-                      <p
-                        class="font-semibold text-mbd1 2xl:text-tbd1 hover:text-yellow"
-                      >
-                        Saving Calculator
-                      </p>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            -->
             <!-- Partner program -->
             <a
               class="relative flex min-w-fit justify-center h-full items-center group"
@@ -485,82 +390,65 @@ import Button from "./Button.astro";
                 Partner Program
               </p>
             </a>
-
-            <!-- Resources -->
-            <!--
-            <a
-              class="relative flex min-w-fit justify-center h-full items-center group"
-              href="https://docs.senpiper.com/"
-            >
-              <p
-                class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-2 group-hover:border-b-2"
-              >
-                Resources
-              </p>
-            </a>
-            -->
           </div>
         </div>
         <!-- Right -->
         <Button />
       </div>
     </div>
-
-    <!-- Mobile Nav -->
-    <div class="lg:hidden relative bg-violet w-full navBar">
-      <div class="h-12 flex justify-between pl-6 pr-3">
-        <!-- Logo -->
-        <a class="flex items-center" href="/">
-          <img
-            class="w-[75px] h-[32px]"
-            src="https://res.cloudinary.com/senpiper/image/upload/v1740681698/senpiper_assets/new_website_assets/Senpiper_Logo_Dark_BG_1_iolzu9.svg"
-            alt="Senpiper"
-            id="logo"
-          />
-        </a>
+  </Wrapper>
+  <!-- Mobile Nav -->
+  <div class="lg:hidden relative bg-violet w-full navBar">
+    <div class="h-12 flex justify-between pl-6 pr-3">
+      <!-- Logo -->
+      <a class="flex items-center" href="/">
+        <img
+          class="w-[75px] h-[32px]"
+          src="https://res.cloudinary.com/senpiper/image/upload/v1753867004/senpiper_assets/VikalpOS/icons/Logo_Type_w_Text_aah0p0.svg"
+          alt="Senpiper"
+          id="logo"
+        />
+      </a>
+      <div
+        class="relative flex justify-center items-center w-14 h-full cursor-pointer menu-btn"
+      >
         <div
-          class="relative flex justify-center items-center w-14 h-full cursor-pointer menu-btn"
+          class="w-8 h-1 bg-white rounded-sm after:w-8 after:h-1 after:bg-white after:rounded-sm after:absolute before:w-8 before:h-1 before:bg-white before:rounded-sm before:absolute menu-btn_burger"
         >
-          <div
-            class="w-8 h-1 bg-white rounded-sm after:w-8 after:h-1 after:bg-white after:rounded-sm after:absolute before:w-8 before:h-1 before:bg-white before:rounded-sm before:absolute menu-btn_burger"
-          >
-          </div>
         </div>
       </div>
-      <div
-        class="bg-white text-blue-grey text-mbd1 font-semibold h-[100vh] w-full absolute top-12 hidden"
-        id="mainMenu"
-      >
-        <!-- Home -->
-        <div class="menu px-6 space-y-24" id="homeMenu">
-          <!-- Main menu -->
-          <ul class="mt-8 space-y-6">
-            <li>
-              <a href="/platform/">Platfrom</a>
-            </li>
+    </div>
+    <div
+      class="bg-white text-blue-grey text-mbd1 font-semibold h-[100vh] w-full absolute top-12 hidden"
+      id="mainMenu"
+    >
+      <!-- Home -->
+      <div class="menu px-6 space-y-24" id="homeMenu">
+        <!-- Main menu -->
+        <ul class="mt-8 space-y-6">
+          <li>
+            <a href="/platform/">Platfrom</a>
+          </li>
 
-            <li>
-              <a href="/Services/">Services</a>
-            </li>
+          <li>
+            <a href="/Services/">Services</a>
+          </li>
 
-            <li class="menuItem flex justify-between pr-3" id="productMenuItem">
-              <p>Products</p>
-              <img
-                src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_tnylrp.svg"
-                alt=""
-              />
-            </li>
-            <li
-              class="menuItem flex justify-between pr-3"
-              id="featuresMenuItem"
-            >
-              <p>Features</p>
-              <img
-                src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_tnylrp.svg"
-                alt=""
-              />
-            </li>
-            <!--<li class="menuItem flex justify-between pr-3" id="pricingMenuItem">
+          <li class="menuItem flex justify-between pr-3" id="productMenuItem">
+            <p>Products</p>
+            <img
+              src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_tnylrp.svg"
+              alt=""
+            />
+          </li>
+          <li class="menuItem flex justify-between pr-3" id="featuresMenuItem">
+            <p>Features</p>
+            <img
+              src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_tnylrp.svg"
+              alt=""
+            />
+          </li>
+          <!--<li class="menuItem flex justify-between pr-3" id="pricingMenuItem">
               <p>Pricing</p>
               <img
                 src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_tnylrp.svg"
@@ -568,147 +456,146 @@ import Button from "./Button.astro";
               />
             </li> -->
 
-            <li>
-              <a href="/partner/">Partner Program</a>
-            </li>
-            <!--<li>
+          <li>
+            <a href="/partner/">Partner Program</a>
+          </li>
+          <!--<li>
               <a href="https://docs.senpiper.com/">Resources</a>
             </li> -->
+        </ul>
+        <div>
+          <a
+            href="/contact/"
+            class="bg-violet text-white font-semibold rounded w-fit text-sub px-6 py-2"
+            >Contact us</a
+          >
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="menu hidden px-6 mt-6 space-y-24" id="productMenu">
+        <div class="space-y-4">
+          <div class="flex gap-4">
+            <img
+              src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_1_znmsqk.svg"
+              alt="back"
+              class="backHome"
+            />
+            <p>Products</p>
+          </div>
+          <ul class="mt-8 space-y-8">
+            <!-- By Industry -->
+            <li class="space-y-1">
+              <div class="flex gap-4">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1680243303/senpiper_assets/new_website_assets/Enterprise_wlqr2f.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>By Industry</p>
+              </div>
+              <ul
+                class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
+              >
+                <li>
+                  <a href="/products/by-industry/manufacturing/" class=""
+                    >Manufacturing</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/products/by-industry/warehouse-and-logistics/"
+                    class="">Warehouse and logistics</a
+                  >
+                </li>
+                <li>
+                  <a href="/products/by-industry/facility-management/" class=""
+                    >Facility Management</a
+                  >
+                </li>
+                <li>
+                  <a href="/products/by-industry/eGovernance/" class=""
+                    >e-Governance</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/products/by-industry/information-technology/"
+                    class="">Information technology</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- By Role -->
+            <li class="space-y-1">
+              <div class="flex gap-4">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1680243329/senpiper_assets/new_website_assets/Support_icon_dc5czp.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>By Role</p>
+              </div>
+              <ul
+                class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
+              >
+                <li>
+                  <a href="/products/by-role/it-head/" class="">IT Head</a>
+                </li>
+                <li>
+                  <a href="/products/by-role/business-manager/" class=""
+                    >Business Manager</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Low Code -->
+            <li class="space-y-1">
+              <div class="flex gap-4">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1680631485/senpiper_assets/new_website_assets/Flexible_Integration_icon_h9v77v.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>Low Code</p>
+              </div>
+              <ul
+                class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
+              >
+                <li>
+                  <a href="/products/low-code/low-code/" class=""
+                    >What is low code?</a
+                  >
+                </li>
+                <li>
+                  <a href="/products/low-code/comparison/" class=""
+                    >Low code comparision</a
+                  >
+                </li>
+              </ul>
+            </li>
           </ul>
-          <div>
-            <a
-              href="/contact/"
-              class="bg-violet text-white font-semibold rounded w-fit text-sub px-6 py-2"
-              >Contact us</a
-            >
-          </div>
         </div>
 
-        <!-- Products -->
-        <div class="menu hidden px-6 mt-6 space-y-24" id="productMenu">
-          <div class="space-y-4">
-            <div class="flex gap-4">
-              <img
-                src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_1_znmsqk.svg"
-                alt="back"
-                class="backHome"
-              />
-              <p>Products</p>
-            </div>
-            <ul class="mt-8 space-y-8">
-              <!-- By Industry -->
-              <li class="space-y-1">
-                <div class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1680243303/senpiper_assets/new_website_assets/Enterprise_wlqr2f.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>By Industry</p>
-                </div>
-                <ul
-                  class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
-                >
-                  <li>
-                    <a href="/products/by-industry/manufacturing/" class=""
-                      >Manufacturing</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="/products/by-industry/warehouse-and-logistics/"
-                      class="">Warehouse and logistics</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="/products/by-industry/facility-management/"
-                      class="">Facility Management</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/products/by-industry/eGovernance/" class=""
-                      >e-Governance</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="/products/by-industry/information-technology/"
-                      class="">Information technology</a
-                    >
-                  </li>
-                </ul>
-              </li>
-
-              <!-- By Role -->
-              <li class="space-y-1">
-                <div class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1680243329/senpiper_assets/new_website_assets/Support_icon_dc5czp.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>By Role</p>
-                </div>
-                <ul
-                  class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
-                >
-                  <li>
-                    <a href="/products/by-role/it-head/" class="">IT Head</a>
-                  </li>
-                  <li>
-                    <a href="/products/by-role/business-manager/" class=""
-                      >Business Manager</a
-                    >
-                  </li>
-                </ul>
-              </li>
-
-              <!-- Low Code -->
-              <li class="space-y-1">
-                <div class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1680631485/senpiper_assets/new_website_assets/Flexible_Integration_icon_h9v77v.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Low Code</p>
-                </div>
-                <ul
-                  class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
-                >
-                  <li>
-                    <a href="/products/low-code/low-code/" class=""
-                      >What is low code?</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/products/low-code/comparison/" class=""
-                      >Low code comparision</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <a
-              href="/contact/"
-              class="bg-violet text-white font-semibold rounded w-fit text-sub px-6 py-2"
-              >Contact us</a
-            >
-          </div>
+        <div>
+          <a
+            href="/contact/"
+            class="bg-violet text-white font-semibold rounded w-fit text-sub px-6 py-2"
+            >Contact us</a
+          >
         </div>
+      </div>
 
-        <!-- Pricing -->
-        <!-- <div class="menu hidden px-6 mt-6 space-y-96" id="pricingMenu">
+      <!-- Pricing -->
+      <!-- <div class="menu hidden px-6 mt-6 space-y-96" id="pricingMenu">
           <div class="space-y-8">
             <div class="flex gap-4">
               <img
@@ -755,198 +642,193 @@ import Button from "./Button.astro";
           </div>
         </div> -->
 
-        <!-- Features -->
-        <div class="menu hidden px-6 mt-6 space-y-24" id="featuresMenu">
-          <div class="space-y-4">
-            <div class="flex gap-4">
-              <img
-                src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_1_znmsqk.svg"
-                alt="back"
-                class="backHome"
-              />
-              <p>Features</p>
-            </div>
-            <ul class="mt-8 space-y-8">
-              <!-- Data capture -->
-              <li class="space-y-1">
-                <div class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804563/senpiper_assets/new_website_assets/data_capture_uz7hxc.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Data capture</p>
-                </div>
-                <ul
-                  class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
-                >
-                  <li>
-                    <a href="/features/data-capture/data-collection/" class=""
-                      >Data collection</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/features/data-capture/form-field/" class=""
-                      >Form Fields</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="/features/data-capture/schema-relationship/"
-                      class="">Schema Relation</a
-                    >
-                  </li>
-                </ul>
-              </li>
-
-              <!-- Automation -->
-              <li class="space-y-1">
-                <div class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/Automation_w3lto6.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Automation</p>
-                </div>
-                <ul
-                  class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
-                >
-                  <li>
-                    <a href="/features/automation/workflow/" class=""
-                      >Workflow</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/features/automation/scheduler/" class=""
-                      >Scheduler</a
-                    >
-                  </li>
-                </ul>
-              </li>
-
-              <!-- Communication -->
-              <li>
-                <a class="flex gap-4" href="/features/communication/">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/Chat_lflyjy.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Communication</p>
-                </a>
-              </li>
-
-              <!-- Security -->
-              <li>
-                <a class="flex gap-4" href="/features/security/">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/security_gakizz.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Security</p>
-                </a>
-              </li>
-
-              <!-- Analytics -->
-              <li>
-                <a class="flex gap-4" href="/features/analytics/">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/analytis_irmqhy.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Analytics</p>
-                </a>
-              </li>
-
-              <!-- Personalization -->
-              <li class="space-y-1">
-                <div class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/personalize_optuxv.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Personalization</p>
-                </div>
-                <ul
-                  class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
-                >
-                  <li>
-                    <a href="/features/personalization/design/" class=""
-                      >Design</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/features/personalization/language/" class=""
-                      >Language</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="/features/personalization/white-labelled-apps/"
-                      class="">White Labelled App</a
-                    >
-                  </li>
-                </ul>
-              </li>
-
-              <!-- User management -->
-              <li class="space-y-1">
-                <div class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/Operations_team_Icon_1_dkmxg3.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>User management</p>
-                </div>
-                <ul
-                  class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
-                >
-                  <li>
-                    <a
-                      href="/features/user-management/profile-management/"
-                      class="">Profile Management</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/features/user-management/rbac/" class=""
-                      >Role Based Access Control</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
+      <!-- Features -->
+      <div class="menu hidden px-6 mt-6 space-y-24" id="featuresMenu">
+        <div class="space-y-4">
+          <div class="flex gap-4">
+            <img
+              src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_1_znmsqk.svg"
+              alt="back"
+              class="backHome"
+            />
+            <p>Features</p>
           </div>
+          <ul class="mt-8 space-y-8">
+            <!-- Data capture -->
+            <li class="space-y-1">
+              <div class="flex gap-4">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1666804563/senpiper_assets/new_website_assets/data_capture_uz7hxc.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>Data capture</p>
+              </div>
+              <ul
+                class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
+              >
+                <li>
+                  <a href="/features/data-capture/data-collection/" class=""
+                    >Data collection</a
+                  >
+                </li>
+                <li>
+                  <a href="/features/data-capture/form-field/" class=""
+                    >Form Fields</a
+                  >
+                </li>
+                <li>
+                  <a href="/features/data-capture/schema-relationship/" class=""
+                    >Schema Relation</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-          <div>
-            <a
-              href="/contact/"
-              class="bg-violet text-white font-semibold rounded w-fit text-sub px-6 py-2"
-              >Contact us</a
-            >
-          </div>
+            <!-- Automation -->
+            <li class="space-y-1">
+              <div class="flex gap-4">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/Automation_w3lto6.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>Automation</p>
+              </div>
+              <ul
+                class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
+              >
+                <li>
+                  <a href="/features/automation/workflow/" class="">Workflow</a>
+                </li>
+                <li>
+                  <a href="/features/automation/scheduler/" class=""
+                    >Scheduler</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Communication -->
+            <li>
+              <a class="flex gap-4" href="/features/communication/">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/Chat_lflyjy.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>Communication</p>
+              </a>
+            </li>
+
+            <!-- Security -->
+            <li>
+              <a class="flex gap-4" href="/features/security/">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/security_gakizz.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>Security</p>
+              </a>
+            </li>
+
+            <!-- Analytics -->
+            <li>
+              <a class="flex gap-4" href="/features/analytics/">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/analytis_irmqhy.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>Analytics</p>
+              </a>
+            </li>
+
+            <!-- Personalization -->
+            <li class="space-y-1">
+              <div class="flex gap-4">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/personalize_optuxv.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>Personalization</p>
+              </div>
+              <ul
+                class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
+              >
+                <li>
+                  <a href="/features/personalization/design/" class="">Design</a
+                  >
+                </li>
+                <li>
+                  <a href="/features/personalization/language/" class=""
+                    >Language</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/features/personalization/white-labelled-apps/"
+                    class="">White Labelled App</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- User management -->
+            <li class="space-y-1">
+              <div class="flex gap-4">
+                <div class="w-6 flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/senpiper/image/upload/v1666804605/senpiper_assets/new_website_assets/Operations_team_Icon_1_dkmxg3.svg"
+                    alt=""
+                    class="w-8"
+                  />
+                </div>
+                <p>User management</p>
+              </div>
+              <ul
+                class="space-y-1 font-normal text-blue-grey-70 text-mbtn ml-10"
+              >
+                <li>
+                  <a
+                    href="/features/user-management/profile-management/"
+                    class="">Profile Management</a
+                  >
+                </li>
+                <li>
+                  <a href="/features/user-management/rbac/" class=""
+                    >Role Based Access Control</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <a
+            href="/contact/"
+            class="bg-violet text-white font-semibold rounded w-fit text-sub px-6 py-2"
+            >Contact us</a
+          >
         </div>
       </div>
     </div>
-  </Wrapper>
+  </div>
 </nav>
 
 <style>

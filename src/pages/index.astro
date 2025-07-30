@@ -8,6 +8,7 @@ import SectionContainer from "../components/common/section/SectionContainer.astr
 import StartAConversionSection from "../components/StartAConversionSection.astro";
 import Card from "../components/common/Card.astro";
 import OverFlowSection from "../components/OverFlowSection.astro";
+import AnimateOnView from "../components/animation/AnimateOnView";
 
 const DigitizeTheWaySectionData = [
   {
@@ -172,6 +173,29 @@ const AiEnabledSectionData = {
   ],
 };
 
+const onGroundOutComesSectionData = {
+  headers: ["On-Ground", " Outcomes"],
+  description:
+    "See how our platform has driven measurable change across organisations",
+  cards: [
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      description:
+        "We deployed a unified smart suite with geo-enabled duty tracking, digital FIRs, & real-time criminal intelligence, boosting coordination and citizen trust",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      description:
+        "We deployed a unified smart suite with geo-enabled duty tracking, digital FIRs, & real-time criminal intelligence, boosting coordination and citizen trust",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      description:
+        "We deployed a unified smart suite with geo-enabled duty tracking, digital FIRs, & real-time criminal intelligence, boosting coordination and citizen trust",
+    },
+  ],
+};
+
 const govermentGradeSectionData = {
   headers: ["Government-Grade", "Security Management"],
   title: `One unified platform for secure, compliant governance`,
@@ -213,32 +237,36 @@ const govermentGradeSectionData = {
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-10 place-start justify-items-start"
       >
-        <div class="flex flex-col space-y-3 h-fit">
-          <h1 class="font-bold text-typography-100 text-2xl md:text-4xl">
-            Build Digital Systems Fast <span class="text-primary-70"
-              >Free from Lock-In.</span
+        <AnimateOnView animationTouse="slideTop" client:load>
+          <div class="flex flex-col space-y-3 h-fit">
+            <h1 class="font-bold text-typography-100 text-2xl md:text-4xl">
+              Build Digital Systems Fast <span class="text-primary-70"
+                >Free from Lock-In.</span
+              >
+            </h1>
+            <p
+              class="text-typography-80 text-left w-full md:text-lg self-center md:self-start"
             >
-          </h1>
-          <p
-            class="text-typography-80 text-left w-full md:text-lg self-center md:self-start"
-          >
-            VikalpOS is a modular low-code platform to create apps, forms,
-            workflows, dashboards, and mobile tools without writing code or
-            depending on a vendor
-          </p>tertiary
+              VikalpOS is a modular low-code platform to create apps, forms,
+              workflows, dashboards, and mobile tools without writing code or
+              depending on a vendor
+            </p>tertiary
 
-          <div class="pt-4 md:pt-6">
-            <Button link="/platform" />
+            <div class="pt-4 md:pt-6">
+              <Button link="/platform" />
+            </div>
           </div>
-        </div>
+        </AnimateOnView>
 
-        <div class="h-fit">
-          <img
-            src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
-            alt="#"
-            class="w-fit"
-          />
-        </div>
+        <AnimateOnView animationTouse="slideToRight" client:load
+          ><div class="h-fit">
+            <img
+              src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
+              alt="#"
+              class="w-fit"
+            />
+          </div>
+        </AnimateOnView>
       </div>
     </Wrapper>
   </section>
@@ -248,7 +276,9 @@ const govermentGradeSectionData = {
       <Container headers={element.headers} description={element.description}>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]">
           {element.cards.map(card => (
-            <Card card={card} />
+            <AnimateOnView client:load animationTouse="slideBottom">
+              <Card card={card} />
+            </AnimateOnView>
           ))}
         </div>
       </Container>
@@ -312,6 +342,27 @@ const govermentGradeSectionData = {
       {
         AiEnabledSectionData.cards.map(card => (
           <Card iconAndHeaderSameLine card={card} />
+        ))
+      }
+    </div>
+  </Container>
+
+  <Container
+    headers={onGroundOutComesSectionData.headers}
+    description={onGroundOutComesSectionData.description}
+  >
+    <div class="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-12">
+      {
+        onGroundOutComesSectionData.cards.map(card => (
+          <div class="bg-background-tertiary p-4 space-y-8">
+            <div class="bg-background-primary w-full h-25 flex justify-center items-center">
+              <img src={card.img} class="w-20" />
+            </div>
+            <p class="text-center">{card.description}</p>
+            <div class="flex justify-center">
+              <Button variant="secondary" text="View Case Study" link="/" />
+            </div>
+          </div>
         ))
       }
     </div>

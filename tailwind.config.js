@@ -4,7 +4,7 @@ export default {
     content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
   theme: {
       extend: {
-        colors: {
+      colors: {
           primary: {
             100: '#102E7A',
             90: '#1A4393',
@@ -16,6 +16,7 @@ export default {
             20: '#BAE5FF',
             10: '#DCF3FF',
           },
+          
           typography: {
             100: '#222833',
             90: '#262A37',
