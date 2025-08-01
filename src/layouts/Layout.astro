@@ -13,8 +13,8 @@ import Navbar from "../components/common/Navbar.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <body class="bg-background-primary">
-    <!-- <Navbar /> -->
+  <body class="bg-background-primary p-0 m-0 overflow-x-hidden">
+    <Navbar />
 
     <main>
       <slot />
@@ -33,14 +33,15 @@ import Navbar from "../components/common/Navbar.astro";
   }
 </style>
 
-<!-- <script>
+<script>
+  import { animate, inView } from "framer-motion";
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        //   entry.target.classList.add("show");
         entry.target.classList.add("show");
       } else {
-        //   entry.target.classList.remove("show");
+        entry.target.classList.remove("show");
       }
     });
   });
@@ -51,37 +52,91 @@ import Navbar from "../components/common/Navbar.astro";
   const slideLeftElements = document.getElementsByClassName("slideInLeft");
   const slideLeftSubElements =
     document.getElementsByClassName("slideInLeftSub");
-  const imagePops = document.getElementsByClassName("imgPop");
-  const textScales = document.getElementsByClassName("textScale");
   const slideUpElements = document.getElementsByClassName("slideInUp");
   const slideUpSubElements = document.getElementsByClassName("slideInUpSub");
+  const imagePops = document.getElementsByClassName("imgPop");
+  const textScales = document.getElementsByClassName("textScale");
   const moveLeftElements = document.getElementsByClassName("moveInLeft");
 
-  for (let i = 0, all = slideRightElements.length; i < all; i++) {
-    observer.observe(slideRightElements[i]);
-  }
-  for (let i = 0, all = slideLeftElements.length; i < all; i++) {
-    observer.observe(slideLeftElements[i]);
-  }
-  for (let i = 0, all = imagePops.length; i < all; i++) {
-    observer.observe(imagePops[i]);
-  }
-  for (let i = 0, all = slideUpElements.length; i < all; i++) {
-    observer.observe(slideUpElements[i]);
-  }
-  for (let i = 0, all = slideUpSubElements.length; i < all; i++) {
-    observer.observe(slideUpSubElements[i]);
-  }
-  for (let i = 0, all = slideRightSubElements.length; i < all; i++) {
-    observer.observe(slideRightSubElements[i]);
-  }
-  for (let i = 0, all = slideLeftSubElements.length; i < all; i++) {
-    observer.observe(slideLeftSubElements[i]);
-  }
-  for (let i = 0, all = textScales.length; i < all; i++) {
-    observer.observe(textScales[i]);
-  }
-  for (let i = 0, all = moveLeftElements.length; i < all; i++) {
-    observer.observe(moveLeftElements[i]);
-  }
-</script> -->
+  const elementsToObserve = [
+    slideRightElements,
+    slideLeftElements,
+    imagePops,
+    slideUpElements,
+    slideUpSubElements,
+    slideRightSubElements,
+    slideLeftSubElements,
+    textScales,
+    moveLeftElements,
+  ];
+
+  // const slideAnimations = {
+  //   slideInRight: {
+  //     opacity: 0,
+  //     x: -50,
+  //   },
+  //   slideInRightSub: {
+  //     opacity: 0,
+  //     x: -50,
+  //   },
+  //   slideInLeft: {
+  //     opacity: 0,
+  //     x: 50,
+  //   },
+  //   slideInLeftSub: {
+  //     opacity: 0,
+  //     x: 50,
+  //   },
+  //   slideInUp: {
+  //     opacity: 0,
+  //     y: 50,
+  //   },
+  //   slideInUpSub: {
+  //     opacity: 0,
+  //     y: 50,
+  //   },
+  //   slideInDown: {
+  //     opacity: 0,
+  //     y: -50,
+  //   },
+  //   slideInDownSub: {
+  //     opacity: 0,
+  //     y: -50,
+  //   },
+  // };
+
+  // elementsToObserve.forEach(elements => {
+  //   for (let i = 0; i < elements.length; i++) {
+  //     inView(elements[i], element => {
+  //       console.log("sangram", "called");
+
+  //       const className = [...element.classList.values()].filter(value =>
+  //         value.includes("slide")
+  //       )[0];
+
+  //       const animation = slideAnimations[className];
+
+  //       console.log(animation);
+  //       animate(
+  //         element,
+  //         {
+  //           x: 0,
+  //           opacity: 1,
+  //         },
+  //         {
+  //           duration: 0.5,
+  //           delay: 0.1,
+  //         }
+  //       );
+
+  //       return () => animate(element, { ...animation });
+  //     });
+  //   }
+  // });
+
+  elementsToObserve.forEach(elements => {
+    for (let i = 0; i < elements.length; i++) {
+      observer.observe(elements[i]);
+    }
+  });
+</script>

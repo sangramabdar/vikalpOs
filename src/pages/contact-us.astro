@@ -1,0 +1,25 @@
+---
+import HeroSection from "../components/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
+
+const heroSectionData = {
+  headers: ["Get in Touch", "With Our Team Experts"],
+  description: `Have questions, need a demo, or wish to discuss how VikalpOS can transform your department? 
+Our team is here to help you accelerate digital governance and deliver better outcomes`,
+};
+---
+
+<Layout>
+  <HeroSection
+    headers={heroSectionData.headers}
+    description={heroSectionData.description}
+  >
+    <div class="h-fit slideInLeft">
+      <img
+        src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
+        alt="#"
+        class="w-fit"
+      />
+    </div>
+  </HeroSection>
+</Layout>

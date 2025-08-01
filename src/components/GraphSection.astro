@@ -1,0 +1,115 @@
+---
+import Container from "../layouts/Container.astro";
+import Wrapper from "../layouts/Wrapper.astro";
+
+const withVikalpOsSectionData = {
+  headers: [
+    `Save up to 10× cost and time savings with VikalpOS versus traditional deployments`,
+  ],
+  description: `Traditional systems lock in high costs and slow rollouts. Our low-code platform cuts expenses and deployment time to 10%, freeing resources for mission-critical priorities`,
+};
+---
+
+<!-- Graph section -->
+<Container
+  headers={withVikalpOsSectionData.headers}
+  description={withVikalpOsSectionData.description}
+>
+  <div
+    class="mt-20 flex flex-col space-y-8 text-center md:space-y-12 xl:space-y-[42px] 2xl:space-y-12"
+  >
+    <div class="flex justify-center h-fit">
+      <div
+        class="bg-background-tertiary flex max-w-100 rounded-full justify-between relative items-center p-1"
+      >
+        <span
+          id="with"
+          class="z-2 flex-1 bg-transparent text-background-primary font-semibold md:text-lg transition-all duration-300"
+        >
+          With VikalpOS
+        </span>
+        <span
+          id="withOut"
+          class="z-2 flex-1 bg-transparent text-typography-80 font-semibold md:text-lg transition-all duration-300"
+        >
+          Without VikalpOS
+        </span>
+        <div
+          id="slide"
+          class="absolute z-[1] transition-all duration-300 bg-primary-70 rounded-full w-[50%] left-0 top-0 right-0 bottom-0"
+        >
+        </div>
+      </div>
+    </div>
+    <!-- Without -->
+    <div id="withoutGraph" class="hidden graph w-80 mx-auto">
+      <img
+        src="https://res.cloudinary.com/senpiper/image/upload/v1669292436/senpiper_assets/new_website_assets/new1_without_senpiper_ueznv2.gif"
+        alt=""
+        class="w-full"
+      />
+    </div>
+    <!-- With -->
+    <div id="withGraph" class="graph w-80 mx-auto">
+      <img
+        src="https://res.cloudinary.com/senpiper/image/upload/v1669292434/senpiper_assets/new_website_assets/new1_with_senpiper_nipfnb.gif"
+        alt=""
+        class="w-full"
+      />
+    </div>
+  </div>
+</Container>
+
+<style>
+  /* Total cost line graph */
+  .line {
+    border: solid 5px;
+    border-color: transparent transparent yellow transparent;
+    border-radius: 0 0 240px 50%/60px;
+    z-index: 10;
+  }
+</style>
+
+<script>
+  const withElement = document.getElementById("with") as HTMLInputElement;
+
+  const withoutElement = document.getElementById("withOut") as HTMLInputElement;
+
+  const slideElement = document.getElementById("slide") as HTMLInputElement;
+
+  const handleWithClick = () => {
+    const withoutGraph = document.getElementById("withoutGraph");
+    const withGraph = document.getElementById("withGraph");
+
+    withGraph?.classList.remove("hidden");
+    withoutGraph?.classList.add("hidden");
+
+    withElement.classList.add("text-background-primary");
+    withElement.classList.remove("text-typography-80");
+
+    withoutElement.classList.remove("text-background-primary");
+    withoutElement.classList.add("text-typography-80");
+
+    slideElement.classList.remove("translate-x-[100%]");
+    slideElement.classList.add("translate-x-[0%]");
+  };
+
+  const handleWithOutClick = () => {
+    const withGraph = document.getElementById("withGraph");
+    const withoutGraph = document.getElementById("withoutGraph");
+
+    withoutGraph?.classList.remove("hidden");
+    withGraph?.classList.add("hidden");
+
+    withoutElement.classList.add("text-background-primary");
+    withoutElement.classList.remove("text-typography-80");
+
+    withElement.classList.remove("bg-background-primary");
+    withElement.classList.add("text-typography-80");
+
+    slideElement.classList.add("translate-x-[100%]");
+  };
+
+  withElement.addEventListener("click", handleWithClick);
+  withoutElement.addEventListener("click", handleWithOutClick);
+</script>

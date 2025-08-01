@@ -1,43 +1,77 @@
 ---
 import Button from "../components/common/Button.astro";
 import Card from "../components/common/Card.astro";
+import GraphSection from "../components/GraphSection.astro";
 import OverFlowSection from "../components/OverFlowSection.astro";
 import StartAConversionSection from "../components/StartAConversionSection.astro";
 import Container from "../layouts/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import Wrapper from "../layouts/Wrapper.astro";
 
-const unMatechedSecuritySectionData = {
+import Carousel from "../components/common/Carousel.astro";
+import HeroSection from "../components/HeroSection.astro";
+
+const images = [
+  {
+    src: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
+    alt: "First slide",
+  },
+  {
+    src: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
+    alt: "Second slide",
+  },
+  {
+    src: "https://res.cloudinary.com/senpiper/image/upload/v1753955821/senpiper_assets/VikalpOS/icons/Type_ROI_q8iljn.svg",
+    alt: "Third slide",
+  },
+];
+
+const empoverGovernmentSectionData = {
   headers: [
-    "Unmatched Security, Speed, and Control",
-    "Built for Modern Governance",
+    "Empower",
+    `Government 
+Innovation`,
+    "at Scale",
   ],
   description:
-    "Deploy government solutions 10x faster with VikalpOS intuitive, low-code tools engineered from the ground up for public sector operational needs",
+    "Unlock the full potential of your teams with VikalpOS’s low-code governance platform streamlining processes, cutting costs, and delivering citizen-centric services.",
+
   cards: [
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-      title: "Secure Government Deployments",
-      desciption:
-        "Host your applications safely on government-approved private cloud or on-premise environments, ensuring data sovereignty, compliance, and full administrative control",
+      title: "Unlock Exceptional ROI",
+      description:
+        "By removing costly vendor lock-in and soaring license fees, VikalpOS transforms each deployment into a strategic investment delivering measurable returns that empower departments to reinvest in innovation.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955821/senpiper_assets/VikalpOS/icons/Type_ROI_q8iljn.svg",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-      title: "Department-Branded Solutions",
-      desciption:
-        "Roll out web and mobile apps customized with your agency’s emblem, colors, and terminology reinforcing public trust and identity with every interaction",
+      title: "Reduced Implementation Cost",
+      description:
+        "Low-code development slashes procurement timelines and reduces reliance on specialized IT resources, cutting both capital outlay and ongoing maintenance costs for government projects.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955850/senpiper_assets/VikalpOS/icons/Type_Cost_bhthro.svg",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-      title: "Priority Government Support",
-      desciption:
-        "Access dedicated public sector support channels for rapid troubleshooting, onboarding, and ongoing guidance ensuring seamless operations at all times",
+      title: "Accelerate Policy Adaptation",
+      description:
+        "Visual workflow editing and instant rule updates let agencies respond to new regulations in real time, minimizing service disruptions and ensuring uninterrupted citizen support.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955829/senpiper_assets/VikalpOS/icons/Type_Policy_wl8whn.svg",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-      title: "Flexible Government Integrations",
-      desciption:
-        "Seamlessly connect with ministry systems, legacy databases, national ID platforms, and other e-governance tools adapting quickly to evolving mandates and policy requirements",
+      title: "Government-Grade Security",
+      description:
+        "Built-in encryption, granular access controls, and compliance with government standards protect sensitive data at every layer, giving administrators confidence in platform resilience.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955820/senpiper_assets/VikalpOS/icons/Type_Secure_Data_Encryption_itrtci.svg",
+    },
+    {
+      title: "Always Compliant & Updated",
+      description:
+        "Continuous feature releases and automated updates align with evolving policies and regulatory requirements, keeping your governance tools audit-ready without manual intervention.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955851/senpiper_assets/VikalpOS/icons/Type_Compliance_ehnjxs.svg",
+    },
+    {
+      title: "Citizen-Centric Experience",
+      description:
+        "Streamlined, action-oriented interfaces simplify interactions for staff and citizens alike, boosting productivity and ensuring every public service touchpoint is intuitive and efficient.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955855/senpiper_assets/VikalpOS/icons/Type_Citizens_w0jqhp.svg",
     },
   ],
 };
@@ -48,72 +82,109 @@ const comprehensiveGovernanceSectionData = {
     "Empower your department with a single, all-in-one solution that delivers end-to-end control, real-time insight, and seamless citizen engagement without complexity of multiple vendors or custom integrations",
   cards: [
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955851/senpiper_assets/VikalpOS/icons/Type_Compliance_ehnjxs.svg",
       title: "Compliance Monitoring",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955824/senpiper_assets/VikalpOS/icons/Type_resource_tqkm4a.svg",
       title: "Resource Allocation",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955627/senpiper_assets/VikalpOS/icons/Type_Audit_bjoqjo.svg",
       title: "Audit & Risk Assessment",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955829/senpiper_assets/VikalpOS/icons/Type_Policy_wl8whn.svg",
       title: "Policy Management",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955627/senpiper_assets/VikalpOS/icons/Type_case_and_incident_fdlynn.svg",
       title: "Query & Complaint Management",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955856/senpiper_assets/VikalpOS/icons/Type_Citizen_portal_flshbj.svg",
       title: "Citizen Feedback Portal",
     },
   ],
 };
+
+const unMatechedSecuritySectionData = {
+  headers: [
+    "Unmatched Security, Speed, and Control",
+    "Built for Modern Governance",
+  ],
+  description:
+    "Deploy government solutions 10x faster with VikalpOS’s intuitive, low-code tools engineered from the ground up for public sector operational needs.",
+  cards: [
+    {
+      title: "Secure Government Deployments",
+      description:
+        "Host your applications within secure government-approved private cloud or air-gapped environments. Control the environment, compliance, and privacy of your critical workloads.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955820/senpiper_assets/VikalpOS/icons/Type_Secure_Data_Encryption_itrtci.svg",
+    },
+    {
+      title: "Department-Branded Solutions",
+      description:
+        "Roll out tools and services that look and feel like your own department. Launch platforms with complete visual identity control and high user adoption.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955828/senpiper_assets/VikalpOS/icons/Type_Predictive_Governance_Insights_ykrfjc.svg",
+    },
+    {
+      title: "Priority Government Support",
+      description:
+        "Access dedicated public sector support teams with rapid SLA-based onboarding, on-call engineering, and governance-compliant operations for time-critical projects.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955845/senpiper_assets/VikalpOS/icons/Type_Integrated_AI_for_Legacy_Systems_wemmqj.svg",
+    },
+    {
+      title: "Flexible Government Integrations",
+      description:
+        "Seamlessly connect with national registries, identity databases, and sectoral IT stacks. Build secure, scalable APIs and standards-based bridges to maximize interoperability and platform extensibility.",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
+    },
+  ],
+};
+
+const heroSectionData = {
+  headers: ["Accelerate", "Public Service Innovation", "with Low-Code"],
+  description: `Deploy modular, open-source workflows and citizen-centric  government processes automated for faster and 
+cost-effective service delivery`,
+};
 ---
 
 <Layout>
-  <section class="bg-background-tertiary pt-20">
-    <Wrapper>
-      <div
-        class="grid grid-cols-1 lg:grid-cols-2 gap-10 place-center justify-items-center"
-      >
-        <div class="flex flex-col space-y-3 h-fit">
-          <h1 class="font-bold text-typography-100 text-2xl md:text-4xl">
-            Build Digital Systems Fast <span class="text-primary-70"
-              >Free from Lock-In.</span
-            >
-          </h1>
-          <p
-            class="text-typography-80 text-left w-full md:text-lg self-center md:self-start"
-          >
-            VikalpOS is a modular low-code platform to create apps, forms,
-            workflows, dashboards, and mobile tools without writing code or
-            depending on a vendor
-          </p>tertiary
+  <HeroSection
+    headers={heroSectionData.headers}
+    description={heroSectionData.description}
+  >
+    <div class="h-fit slideInLeft">
+      <img
+        src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
+        alt="#"
+        class="w-fit"
+      />
+    </div>
+  </HeroSection>
 
-          <div class="pt-4 md:pt-6">
-            <Button link="/" />
-          </div>
-        </div>
+  <!-- <Carousel images={images} /> -->
 
-        <div class="h-fit">
-          <img
-            src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
-            alt="#"
-            class="w-fit"
-          />
-        </div>
-      </div>
-    </Wrapper>
-  </section>
+  <Container
+    headers={empoverGovernmentSectionData.headers}
+    description={empoverGovernmentSectionData.description}
+  >
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]"
+    >
+      {empoverGovernmentSectionData.cards.map(card => <Card card={card} />)}
+    </div>
+  </Container>
+
+  <GraphSection />
+
+  <OverFlowSection sectionData={comprehensiveGovernanceSectionData} />
 
   <Container
     headers={unMatechedSecuritySectionData.headers}
     description={unMatechedSecuritySectionData.description}
+    className="lg:mt-40"
   >
     <div
       class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]"
@@ -125,8 +196,6 @@ const comprehensiveGovernanceSectionData = {
       }
     </div>
   </Container>
-
-  <OverFlowSection sectionData={comprehensiveGovernanceSectionData} />
 
   <StartAConversionSection className="lg:mt-60" />
 </Layout>

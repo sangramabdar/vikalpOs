@@ -1,4 +1,3 @@
-// src/components/MotionFadeIn.tsx
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -30,7 +29,7 @@ export default function AnimateOnView({
   children,
   animationTouse = "slideBottom",
   delay = 0,
-  duration = 0.4,
+  duration = 0.3,
 }: MotionFadeInProps) {
   const animtionProps = animations[animationTouse];
 
@@ -39,7 +38,7 @@ export default function AnimateOnView({
       initial={{ opacity: 0, ...animtionProps }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       transition={{ duration, delay }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.4 }}
     >
       {children}
     </motion.div>

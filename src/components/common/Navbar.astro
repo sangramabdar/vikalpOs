@@ -25,7 +25,7 @@ import Button from "./Button.astro";
           </a>
           <!-- Menu -->
           <div
-            class="flex justify-around lg:w-3/4 xl:w-3/4 2xl:w-2/3 lg:h-full lg:items-center"
+            class="flex gap-8 lg:w-3/4 xl:w-3/4 2xl:w-2/3 lg:h-full lg:items-center"
           >
             <!-- Platform -->
 
@@ -41,7 +41,7 @@ import Button from "./Button.astro";
             </a>
 
             <!-- Services -->
-            <a
+            <!-- <a
               class="relative flex min-w-fit justify-center h-full items-center group"
               href="/Services/"
             >
@@ -50,10 +50,10 @@ import Button from "./Button.astro";
               >
                 Services
               </p>
-            </a>
+            </a> -->
             <!-- Products -->
             <div
-              class="relative flex min-w-fit justify-center gap-1 xl:gap-3 h-full items-center group"
+              class="hidden relative flex min-w-fit justify-center gap-1 xl:gap-3 h-full items-center group"
             >
               <p
                 class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-2 group-hover:border-b-2"
@@ -175,7 +175,7 @@ import Button from "./Button.astro";
 
             <!-- Features -->
             <div
-              class="relative flex min-w-fit justify-center gap-1 xl:gap-3 h-full items-center group"
+              class="hidden relative flex min-w-fit justify-center gap-1 xl:gap-3 h-full items-center group"
             >
               <p
                 class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-2 group-hover:border-b-2"
@@ -381,7 +381,7 @@ import Button from "./Button.astro";
 
             <!-- Partner program -->
             <a
-              class="relative flex min-w-fit justify-center h-full items-center group"
+              class="relative hidden flex min-w-fit justify-center h-full items-center group"
               href="/partner/"
             >
               <p
@@ -393,7 +393,7 @@ import Button from "./Button.astro";
           </div>
         </div>
         <!-- Right -->
-        <Button />
+        <Button link="/contact-us" variant="secondary" text="Contact Us" />
       </div>
     </div>
   </Wrapper>
@@ -413,7 +413,7 @@ import Button from "./Button.astro";
         class="relative flex justify-center items-center w-14 h-full cursor-pointer menu-btn"
       >
         <div
-          class="w-8 h-1 bg-white rounded-sm after:w-8 after:h-1 after:bg-white after:rounded-sm after:absolute before:w-8 before:h-1 before:bg-white before:rounded-sm before:absolute menu-btn_burger"
+          class="w-8 h-1 bg-primary-70 rounded-sm after:w-8 after:h-1 after:bg-primary-70 after:rounded-sm after:absolute before:w-8 before:h-1 before:bg-primary-70 before:rounded-sm before:absolute menu-btn_burger"
         >
         </div>
       </div>
@@ -430,17 +430,18 @@ import Button from "./Button.astro";
             <a href="/platform/">Platfrom</a>
           </li>
 
-          <li>
+          <!-- <li>
             <a href="/Services/">Services</a>
-          </li>
+          </li> -->
 
-          <li class="menuItem flex justify-between pr-3" id="productMenuItem">
+          <!-- <li class="menuItem flex justify-between pr-3" id="productMenuItem">
             <p>Products</p>
             <img
               src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_tnylrp.svg"
               alt=""
             />
           </li>
+
           <li class="menuItem flex justify-between pr-3" id="featuresMenuItem">
             <p>Features</p>
             <img
@@ -448,20 +449,10 @@ import Button from "./Button.astro";
               alt=""
             />
           </li>
-          <!--<li class="menuItem flex justify-between pr-3" id="pricingMenuItem">
-              <p>Pricing</p>
-              <img
-                src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_tnylrp.svg"
-                alt=""
-              />
-            </li> -->
 
           <li>
             <a href="/partner/">Partner Program</a>
-          </li>
-          <!--<li>
-              <a href="https://docs.senpiper.com/">Resources</a>
-            </li> -->
+          </li> -->
         </ul>
         <div>
           <a
@@ -593,54 +584,6 @@ import Button from "./Button.astro";
           >
         </div>
       </div>
-
-      <!-- Pricing -->
-      <!-- <div class="menu hidden px-6 mt-6 space-y-96" id="pricingMenu">
-          <div class="space-y-8">
-            <div class="flex gap-4">
-              <img
-                src="https://res.cloudinary.com/senpiper/image/upload/v1670503510/senpiper_assets/new_website_assets/Drop_Icon_1_znmsqk.svg"
-                alt="back"
-                class="backHome"
-              />
-              <p>Pricing</p>
-            </div>
-            <ul class="mt-8 space-y-6">
-              <li>
-                <a href="/plans/" class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804586/senpiper_assets/new_website_assets/plans_p7a0lo.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Check Pricing Plans</p>
-                </a>
-              </li>
-              <li>
-                <a href="/calculator/" class="flex gap-4">
-                  <div class="w-6 flex items-center">
-                    <img
-                      src="https://res.cloudinary.com/senpiper/image/upload/v1666804566/senpiper_assets/new_website_assets/calculator_fnxdcw.svg"
-                      alt=""
-                      class="w-8"
-                    />
-                  </div>
-                  <p>Saving Calculator</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <a
-              href="/contact.html"
-              class="bg-violet text-white font-semibold rounded w-fit text-sub px-6 py-2"
-              >Contact us</a
-            >
-          </div>
-        </div> -->
 
       <!-- Features -->
       <div class="menu hidden px-6 mt-6 space-y-24" id="featuresMenu">
@@ -864,69 +807,53 @@ import Button from "./Button.astro";
 
   .menu-btn.open .menu-btn_burger::before {
     transform: rotate(45deg) translate(35px, -35px);
-    background-color: #1c0732;
+    background-color: #3981db;
   }
 
   .menu-btn.open .menu-btn_burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
-    background-color: #1c0732;
+    background-color: #3981db;
   }
 </style>
 
 <script>
   const allMenus = document.getElementsByClassName("menu");
   const allMenuItems = document.getElementsByClassName("menuItem");
-  const allMenuIds = ["productMenu", "featuresMenu", "pricingMenu"];
+  const allMenuIds = ["productMenu", "featuresMenu"];
   const backHomes = document.getElementsByClassName("backHome");
   const mainMenu = document.getElementById("mainMenu");
-  const menuBtn = document.querySelector(".menu-btn");
+  const menuButton = document.querySelector(".menu-btn");
+
   let mainMenuOpen = false;
 
-  const navBar = document.querySelector(".navBar");
-  const logo = document.getElementById("logo") as HTMLImageElement;
-
-  const darkLogo =
-    "https://res.cloudinary.com/senpiper/image/upload/v1741795719/senpiper_assets/new_website_assets/Senpiper_Logo_Light_BG_New_qoxfoh.svg";
-  const lightLogo =
-    "https://res.cloudinary.com/senpiper/image/upload/v1740681698/senpiper_assets/new_website_assets/Senpiper_Logo_Dark_BG_1_iolzu9.svg";
-
-  const darkBg = "bg-violet";
-  const lightBg = "bg-white";
-
-  const mainMenuClick = required => {
-    for (let i = 0, all = allMenus.length; i < all; i++) {
+  const handleOnClick = (id = "") => {
+    for (let i = 0; i < allMenus.length; i++) {
       allMenus[i].classList.add("hidden");
     }
-    const requiredMenu = document.getElementById(required);
-    requiredMenu.classList.remove("hidden");
+    const requiredMenu = document.getElementById(id);
+    requiredMenu?.classList.remove("hidden");
   };
 
   const toggleMenu = () => {
     if (mainMenuOpen) {
-      mainMenu.classList.add("hidden");
-      menuBtn.classList.remove("open");
-      navBar.classList.remove(lightBg);
-      navBar.classList.add(darkBg);
-      logo.src = lightLogo;
+      mainMenu?.classList.add("hidden");
+      menuButton?.classList.remove("open");
     } else {
-      mainMenu.classList.remove("hidden");
-      menuBtn.classList.add("open");
-      navBar.classList.remove(darkBg);
-      navBar.classList.add(lightBg);
-      logo.src = darkLogo;
+      mainMenu?.classList.remove("hidden");
+      menuButton?.classList.add("open");
     }
     mainMenuOpen = !mainMenuOpen;
   };
 
-  menuBtn.addEventListener("click", toggleMenu);
+  menuButton?.addEventListener("click", toggleMenu);
 
-  for (let i = 0, all = allMenuItems.length; i < all; i++) {
+  for (let i = 0; i < allMenuItems.length; i++) {
     allMenuItems[i].addEventListener("click", () =>
-      mainMenuClick(allMenuIds[i])
+      handleOnClick(allMenuIds[i])
     );
   }
 
-  for (let i = 0, all = backHomes.length; i < all; i++) {
-    backHomes[i].addEventListener("click", () => mainMenuClick("homeMenu"));
+  for (let i = 0; i < backHomes.length; i++) {
+    backHomes[i].addEventListener("click", () => handleOnClick("homeMenu"));
   }
 </script>

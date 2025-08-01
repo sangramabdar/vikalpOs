@@ -8,7 +8,7 @@ import SectionContainer from "../components/common/section/SectionContainer.astr
 import StartAConversionSection from "../components/StartAConversionSection.astro";
 import Card from "../components/common/Card.astro";
 import OverFlowSection from "../components/OverFlowSection.astro";
-import AnimateOnView from "../components/animation/AnimateOnView";
+import HeroSection from "../components/HeroSection.astro";
 
 const DigitizeTheWaySectionData = [
   {
@@ -17,9 +17,9 @@ const DigitizeTheWaySectionData = [
       "From forms and approvals to reports and mobile apps configure everything you need, without code or vendor dependency",
     cards: [
       {
-        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753955816/senpiper_assets/VikalpOS/icons/Type_Visual_Builder_rp3ib4.svg",
         title: "Visual Builder",
-        desciption: `Design and launch forms, workflows, and
+        description: `Design and launch forms, workflows, and
 dashboards without coding`,
         content: [
           "Drag-and-drop builder",
@@ -29,9 +29,9 @@ dashboards without coding`,
       },
       {
         img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-        title: "Visual Builder",
-        desciption: `Design and launch forms, workflows, and
-dashboards without coding`,
+        title: "Offline-First Mobile Apps",
+        description: `Enable field teams to work reliably without
+internet connectivity`,
         content: [
           "Secure offline data collection",
           "Automatic sync when reconnected",
@@ -39,10 +39,9 @@ dashboards without coding`,
         ],
       },
       {
-        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-        title: "Visual Builder",
-        desciption: `Design and launch forms, workflows, and
-dashboards without coding`,
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753955869/senpiper_assets/VikalpOS/icons/Type_AI_pher4g.svg",
+        title: "AI-Ready Structured Data",
+        description: `Ensure clean, validated data ready for automation and insights`,
         content: [
           "Built-in validations and versioning",
           "End-to-end audit trails",
@@ -50,10 +49,9 @@ dashboards without coding`,
         ],
       },
       {
-        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-        title: "Visual Builder",
-        desciption: `Design and launch forms, workflows, and
-dashboards without coding`,
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753955817/senpiper_assets/VikalpOS/icons/Type_User_Role_y5e9rq.svg",
+        title: "Role-Based Access",
+        description: `Manage user roles, tasks, and approvals with complete control`,
         content: [
           "Define custom roles and permissions",
           "Support multi-level approvals",
@@ -61,10 +59,9 @@ dashboards without coding`,
         ],
       },
       {
-        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-        title: "Visual Builder",
-        desciption: `Design and launch forms, workflows, and
-dashboards without coding`,
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753955843/senpiper_assets/VikalpOS/icons/Type_Language_vlnjnf.svg",
+        title: "Multilingual Interfaces",
+        description: `Serve teams better with local language support across platforms`,
         content: [
           "Localized forms and apps",
           "Easy adoption by ground staff",
@@ -72,10 +69,9 @@ dashboards without coding`,
         ],
       },
       {
-        img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-        title: "Visual Builder",
-        desciption: `Design and launch forms, workflows, and
-dashboards without coding`,
+        img: "https://res.cloudinary.com/senpiper/image/upload/v1753955834/senpiper_assets/VikalpOS/icons/Type_Open_Source_Int._o1irgn.svg",
+        title: "Open Integrations",
+        description: `Seamlessly connect with systems, tools, and national platforms`,
         content: [
           "Secure and scalable APIs",
           "Integration with national databases",
@@ -92,8 +88,8 @@ const applicationSectionData = {
     "From forms and approvals to reports and mobile apps configure everything you need, without code or vendor dependency",
   content: [
     {
-      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955865/senpiper_assets/VikalpOS/icons/Type_Ai_policing_ghqmxv.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954302/senpiper_assets/VikalpOS/home/Group_pj79aw.jpg",
       header: "AI-Driven Information & Verification",
       content: [
         "Effortlessly capture and match faces for instant identity verification",
@@ -102,8 +98,8 @@ const applicationSectionData = {
       ],
     },
     {
-      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955860/senpiper_assets/VikalpOS/icons/Type_Beatbook_xy0reu.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753953864/senpiper_assets/VikalpOS/home/Group_1000005383_ex6z4j.jpg",
       header: "Dynamic Task & Resource Coordination",
       content: [
         "Auto-assign tasks based on priority or user roles",
@@ -112,8 +108,8 @@ const applicationSectionData = {
       ],
     },
     {
-      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955831/senpiper_assets/VikalpOS/icons/Type_Police_Manageent_a4x1m5.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954083/senpiper_assets/VikalpOS/home/Group_xgwtlw.jpg",
       header: `Command-Level 
 Oversight `,
       content: [
@@ -124,7 +120,7 @@ Oversight `,
     },
 
     {
-      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955832/senpiper_assets/VikalpOS/icons/Type_Police_Dashboard_wsqcf3.svg",
       img: "https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg",
       header: `Administration & 
 Collaboration`,
@@ -143,30 +139,30 @@ const AiEnabledSectionData = {
     "Leverage the full potential of AI to drive intelligent automation, policy execution, and data-driven governance. Our integrated AI solutions embed intelligence into departmental workflows enhancing transparency, efficiency, and public service delivery at scale",
   cards: [
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955867/senpiper_assets/VikalpOS/icons/Type_AI-Driven_Data_Infrastructure_uoipkk.svg",
       title: "AI Data Fabric & Management",
-      desciption: `Unify public data ecosystems with intelligent control`,
+      description: `Unify public data ecosystems with intelligent control`,
       content:
         "Break down data silos and enable consistent, secure, and real-time data exchange across departments. Ensure accuracy, traceability, and compliance through AI-powered data governance frameworks",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955845/senpiper_assets/VikalpOS/icons/Type_Integrated_AI_for_Legacy_Systems_wemmqj.svg",
       title: "Integrated AI for Legacy Systems",
-      desciption: `Modernize admin systems with predictive intelligence`,
+      description: `Modernize admin systems with predictive intelligence`,
       content:
         "Infuse AI capabilities into existing platforms such as MIS, ERP, and citizen service portals. Achieve proactive decision-making, automated operations, and measurable performance improvement",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955828/senpiper_assets/VikalpOS/icons/Type_Predictive_Governance_Insights_ykrfjc.svg",
       title: "Predictive Governance & Insights",
-      desciption: `Transform data into foresight for better policy outcomes`,
+      description: `Transform data into foresight for better policy outcomes`,
       content:
         "Harness AI analytics for early-warning systems, demand forecasting, and service optimization. Make informed, timely decisions with deep, actionable insights powered by advanced algorithms",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
       title: "Cognitive Automation of Workflows",
-      desciption: `Streamline processes, reduce bottlenecks, deliver faster`,
+      description: `Streamline processes, reduce bottlenecks, deliver faster`,
       content:
         "Automate high-volume, rule-based administrative tasks using AI and machine learning. Improve staff productivity, reduce processing time, and enhance citizen satisfaction through intelligent workflow orchestration",
     },
@@ -204,81 +200,72 @@ const govermentGradeSectionData = {
           data protection, and regulatory compliance`,
   cards: [
     {
-      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753955844/senpiper_assets/VikalpOS/icons/Type_Intelligent_Control_pldcdc.svg`,
       title: "Intelligent Access Control",
     },
     {
-      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753955827/senpiper_assets/VikalpOS/icons/Type_Real-Time_Threat_Detection_nhgewg.svg`,
       title: "Real-Time Threat Detection",
     },
     {
-      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753955820/senpiper_assets/VikalpOS/icons/Type_Secure_Data_Encryption_itrtci.svg`,
       title: "Secure Data Encryption",
     },
     {
-      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753955862/senpiper_assets/VikalpOS/icons/Type_Automated_Incident_Response_mfuz0n.svg`,
       title: "Automated Incident Response",
     },
     {
-      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753955825/senpiper_assets/VikalpOS/icons/Type_Regulatory_compliance_yoyniq.svg`,
       title: "Regulatory Compliance",
     },
     {
-      img: `https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg`,
+      img: `https://res.cloudinary.com/senpiper/image/upload/v1753955835/senpiper_assets/VikalpOS/icons/Type_Network_endpoint_protection_p5hlzw.svg`,
       title: "Network Endpoint Protection",
     },
   ],
 };
+
+const provenCollaborationSectionContent = {
+  headers: ["Proven Collaboration Across Core", " Governance Sectors"],
+  description:
+    "We’ve partnered with public departments and organizations to digitize essential services, enhance citizen engagement, and modernize administrative workflows, ensuring impact at scale across nation",
+};
+
+const heroSectionData = {
+  headers: ["Build Digital Systems Fast", "Free from Lock-In."],
+  description:
+    "VikalpOS is a modular low-code platform to create apps, forms, workflows, dashboards, and mobile tools without writing code or depending on a vendor",
+};
 ---
 
 <Layout>
-  <section class="bg-background-tertiary pt-20">
-    <Wrapper>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-10 place-start justify-items-start"
-      >
-        <AnimateOnView animationTouse="slideTop" client:load>
-          <div class="flex flex-col space-y-3 h-fit">
-            <h1 class="font-bold text-typography-100 text-2xl md:text-4xl">
-              Build Digital Systems Fast <span class="text-primary-70"
-                >Free from Lock-In.</span
-              >
-            </h1>
-            <p
-              class="text-typography-80 text-left w-full md:text-lg self-center md:self-start"
-            >
-              VikalpOS is a modular low-code platform to create apps, forms,
-              workflows, dashboards, and mobile tools without writing code or
-              depending on a vendor
-            </p>tertiary
+  <HeroSection
+    headers={heroSectionData.headers}
+    description={heroSectionData.description}
+  >
+    <div class="h-fit slideInLeft">
+      <img
+        src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
+        alt="#"
+        class="w-fit"
+      />
+    </div>
+  </HeroSection>
 
-            <div class="pt-4 md:pt-6">
-              <Button link="/platform" />
-            </div>
-          </div>
-        </AnimateOnView>
-
-        <AnimateOnView animationTouse="slideToRight" client:load
-          ><div class="h-fit">
-            <img
-              src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
-              alt="#"
-              class="w-fit"
-            />
-          </div>
-        </AnimateOnView>
-      </div>
-    </Wrapper>
-  </section>
+  <Container
+    headers={provenCollaborationSectionContent.headers}
+    description={provenCollaborationSectionContent.description}
+  >
+    <div class="w-full h-20 bg-background-tertiary"></div>
+  </Container>
 
   {
     DigitizeTheWaySectionData.map(element => (
       <Container headers={element.headers} description={element.description}>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]">
           {element.cards.map(card => (
-            <AnimateOnView client:load animationTouse="slideBottom">
-              <Card card={card} />
-            </AnimateOnView>
+            <Card card={card} />
           ))}
         </div>
       </Container>
@@ -302,7 +289,7 @@ const govermentGradeSectionData = {
               <img
                 src={element.img}
                 alt="enterprise_img"
-                class={`relative w-full h-full object-contain slideInLeft ${index % 2 == 0 ? "order-1" : ""}`}
+                class={`bg-background-tertiary relative w-full h-full object-contain slideInLeft ${index % 2 == 0 ? "order-1" : ""}`}
               />
               <div class="flex flex-col items-start slideInRight gap-3 md:gap-4">
                 <img
