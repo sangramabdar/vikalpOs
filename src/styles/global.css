@@ -67,6 +67,6 @@
 
 .show {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) translateY(0);
   transform: scale(1);
 }

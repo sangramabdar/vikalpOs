@@ -1,19 +1,24 @@
 ---
 // props: Array of case study cards
-const { images = [] } = Astro.props;
+
+export interface Props {
+  items: any[];
+}
+
+const { items = [] } = Astro.props;
 ---
 
-<div class="relative w-full overflow-hidden max-w-xl mx-auto mt-40 p-4">
+<div class="relative w-full overflow-hidden mt-20 p-4 slideInUp">
   <div
     id="carousel-track"
-    class="flex transition-transform duration-500 ease-in-out overflow-hidden"
+    class="flex transition-transform duration-500 ease-in-out"
   >
-    {
-      images.map(item => (
-        <div class="min-w-full md:min-w-[33.3333%] p-4 box-border">
+    <!-- {
+      items.map(item => (
+        <div class="min-w-full md:min-w-fit md:w-fit w-20 p-4 box-border">
           <div class="border rounded-xl shadow-sm bg-white p-6 h-full flex flex-col items-center text-center">
             <img
-              src={item.src}
+              src={item.img}
               alt={item.alt}
               class="h-12 mb-4 object-contain"
             />
@@ -27,7 +32,9 @@ const { images = [] } = Astro.props;
           </div>
         </div>
       ))
-    }
+    } -->
+
+    <slot />
   </div>
 
   <!-- Navigation -->
@@ -46,22 +53,47 @@ const { images = [] } = Astro.props;
 </div>
 
 <script>
-  const track = document.getElementById("carousel-track");
-  const prevBtn = document.getElementById("carousel-prev");
-  const nextBtn = document.getElementById("carousel-next");
+  const track = document.getElementById("carousel-track") as HTMLElement;
+  const prevBtn = document.getElementById("carousel-prev") as HTMLButtonElement;
+  const nextBtn = document.getElementById("carousel-next") as HTMLButtonElement;
 
   let index = 0;
   const slides = track.children;
   const total = slides.length;
 
-  const moveSlide = dir => {
-    index = (index + dir + total) % total;
-    const slideWidth = slides[0].offsetWidth;
-    console.log("Sangram", { index });
-    // slides[index].scrollIntoView({
-    //   behavior: "smooth",
-    // });
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  const updateButtons = () => {
+    const slidesPerView = Math.floor(track.offsetWidth / slides[0].offsetWidth);
+    const maxIndex = total - slidesPerView;
+
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index >= maxIndex;
+  };
+
+  const moveSlide = (direction: number) => {
+    const offsetWidth = slides[0].offsetWidth;
+    const carouselTrackWidth = track.offsetWidth;
+    const scrollWidth = slides.length * offsetWidth;
+
+    if (carouselTrackWidth >= scrollWidth || scrollWidth <= offsetWidth) return;
+
+    const slidesPerView = Math.floor(carouselTrackWidth / offsetWidth);
+    const maxIndex = total - slidesPerView;
+
+    // Boundary checks
+    if (
+      (index === 0 && direction < 0) ||
+      (index >= maxIndex && direction > 0)
+    ) {
+      return; // Reached start or end
+    }
+
+    index += direction;
+
+    // Clamp to max index
+    index = Math.min(index, maxIndex);
+
+    track.style.transform = `translateX(-${index * offsetWidth}px)`;
+    updateButtons();
   };
 
   prevBtn.addEventListener("click", () => moveSlide(-1));
