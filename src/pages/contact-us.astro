@@ -2,7 +2,7 @@
 import HeroSection from "../components/HeroSection.astro";
 import Container from "../layouts/Container.astro";
 import Layout from "../layouts/Layout.astro";
-import ScrollAnimation from "../components/animation/ScrollAnimation";
+// import ScrollAnimation from "../components/animation/ScrollAnimation";
 
 const heroSectionData = {
   headers: ["Get in Touch", "With Our Team Experts"],
@@ -31,7 +31,7 @@ Our team is here to help you accelerate digital governance and deliver better ou
     </div>
   </HeroSection>
 
-  <Container headers={data.headers} description={data.description}>
+  <!-- <Container headers={data.headers} description={data.description}>
     <ScrollAnimation client:load />
-  </Container>
+  </Container> -->
 </Layout>

@@ -33,8 +33,6 @@ import Navbar from "../components/common/Navbar.astro";
 </style>
 
 <script>
-  import { animate, inView } from "framer-motion";
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -68,70 +66,6 @@ import Navbar from "../components/common/Navbar.astro";
     textScales,
     moveLeftElements,
   ];
-
-  // const slideAnimations = {
-  //   slideInRight: {
-  //     opacity: 0,
-  //     x: -50,
-  //   },
-  //   slideInRightSub: {
-  //     opacity: 0,
-  //     x: -50,
-  //   },
-  //   slideInLeft: {
-  //     opacity: 0,
-  //     x: 50,
-  //   },
-  //   slideInLeftSub: {
-  //     opacity: 0,
-  //     x: 50,
-  //   },
-  //   slideInUp: {
-  //     opacity: 0,
-  //     y: 50,
-  //   },
-  //   slideInUpSub: {
-  //     opacity: 0,
-  //     y: 50,
-  //   },
-  //   slideInDown: {
-  //     opacity: 0,
-  //     y: -50,
-  //   },
-  //   slideInDownSub: {
-  //     opacity: 0,
-  //     y: -50,
-  //   },
-  // };
-
-  // elementsToObserve.forEach(elements => {
-  //   for (let i = 0; i < elements.length; i++) {
-  //     inView(elements[i], element => {
-  //       console.log("sangram", "called");
-
-  //       const className = [...element.classList.values()].filter(value =>
-  //         value.includes("slide")
-  //       )[0];
-
-  //       const animation = slideAnimations[className];
-
-  //       console.log(animation);
-  //       animate(
-  //         element,
-  //         {
-  //           x: 0,
-  //           opacity: 1,
-  //         },
-  //         {
-  //           duration: 0.5,
-  //           delay: 0.1,
-  //         }
-  //       );
-
-  //       return () => animate(element, { ...animation });
-  //     });
-  //   }
-  // });
 
   elementsToObserve.forEach(elements => {
     for (let i = 0; i < elements.length; i++) {
