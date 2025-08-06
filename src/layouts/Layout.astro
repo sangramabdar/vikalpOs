@@ -2,6 +2,19 @@
 import "../styles/global.css";
 import Footer from "../components/common/Footer.astro";
 import Navbar from "../components/common/Navbar.astro";
+
+export interface Props {
+  title: string;
+  metaProps?: {
+    ogTitle?: string;
+    ogDescription?: string;
+    ogKeywords?: string;
+    ogUrl?: string;
+  };
+}
+
+const { title, metaProps } = Astro.props;
+const { ogTitle, ogDescription, ogKeywords, ogUrl } = metaProps || {};
 ---
 
 <!doctype html>
@@ -11,7 +24,43 @@ import Navbar from "../components/common/Navbar.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{title}</title>
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/senpiper/image/upload/v1753867004/senpiper_assets/VikalpOS/icons/Logo_Type_w_Text_aah0p0.svg"
+      class="text-background-primary"
+    />
+
+    <!-- og data -->
+    <meta
+      property="og:title"
+      content={ogTitle || "Build Mobile First Enterprise Grade Software Faster"}
+    />
+    <meta
+      property="og:description"
+      content={ogDescription ||
+        "Unlock the power of low-code development and maximize ROI with Senpiper. Build mobile-first enterprise-grade software faster, reduce costs, make changes efficiently, ensure security compliance, and provide a delightful user experience. Trusted by global innovators."}
+    />
+    <meta
+      property="og:keywords"
+      content={ogKeywords ||
+        "manufacturing solutions, mobile-first software, enterprise software, low-code development, ROI, cost reduction, fast changes, security compliance, updated software, user experience"}
+    />
+    <meta property="og:url" content={ogUrl || "https://senpiper.com/"} />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/senpiper/image/upload/v1684936087/senpiper_assets/new_website_assets/1_baehgn.jpg"
+    />
+    <meta
+      property="og:image:url"
+      content="https://res.cloudinary.com/senpiper/image/upload/v1684936087/senpiper_assets/new_website_assets/1_baehgn.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://res.cloudinary.com/senpiper/image/upload/v1684936087/senpiper_assets/new_website_assets/1_baehgn.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body class="bg-background-primary p-0 overflow-x-hidden">
     <Navbar />
