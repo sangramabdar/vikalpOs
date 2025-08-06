@@ -1,0 +1,23 @@
+---
+import { cn } from "../../utils/cn";
+
+export interface Props {
+  title: string;
+  value?: any;
+  id: string;
+  name: string;
+  className?: string;
+}
+
+const { title, value = "", id, name, className = "" } = Astro.props;
+---
+
+<div class="grid gap-6">
+  <label class="text-typography-40">{title}</label>
+  <input
+    class={cn("border border-typography-40 rounded-sm px-4 py-2", className)}
+    value={value}
+    id={id}
+    name={name}
+  />
+</div>

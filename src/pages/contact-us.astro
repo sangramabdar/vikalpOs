@@ -1,7 +1,11 @@
 ---
+import Button from "../components/common/Button.astro";
+import Input from "../components/common/Input.astro";
+import SectionContainer from "../components/common/section/SectionContainer.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Container from "../layouts/Container.astro";
 import Layout from "../layouts/Layout.astro";
+import Wrapper from "../layouts/Wrapper.astro";
 // import ScrollAnimation from "../components/animation/ScrollAnimation";
 
 const heroSectionData = {
@@ -14,6 +18,15 @@ const data = {
   headers: ["Get in Touch", "With Our Team Experts"],
   description: `Have questions, need a demo, or wish to discuss how VikalpOS can transform your department? 
 Our team is here to help you accelerate digital governance and deliver better outcomes`,
+};
+
+const formSectionData = {
+  headers: ["What to Expect", "When You Reach Out"],
+  options: [
+    "Fill out the form and click “Request a Demo",
+    "Our team will quickly review your request and reach out to you",
+    "We’ll organize a demo tailored to your department’s needs",
+  ],
 };
 ---
 
@@ -31,7 +44,73 @@ Our team is here to help you accelerate digital governance and deliver better ou
     </div>
   </HeroSection>
 
-  <!-- <Container headers={data.headers} description={data.description}>
-    <ScrollAnimation client:load />
-  </Container> -->
+  <SectionContainer>
+    <Wrapper>
+      <div class={`grid grid-cols-1 lg:grid-cols-2 gap-10`}>
+        <form id="contact-us-form" class="flex flex-col gap-6">
+          <Input title="Name" id="title" name="name" />
+          <Input title="Email" id="title" name="email" />
+          <Input title="Organization Name" id="title" name="organizationName" />
+          <Input title="Message" name="message" id="message" />
+          <Button type="submit" text="Requst a demo" />
+        </form>
+        <div class="flex flex-col justify-center slideInRight gap-3 md:gap-4">
+          <h3
+            class="text-typography-80 font-bold text-left text-xl md:text-3xl"
+          >
+            {
+              formSectionData.headers.map((header, index) => (
+                <span
+                  class={index == 0 ? "text-typography-80" : "text-primary-70"}
+                >
+                  {header}
+                </span>
+              ))
+            }
+          </h3>
+          <ul class="space-y-2 text-left self-start md:text-xl">
+            {
+              formSectionData.options.map(value => (
+                <li class="flex gap-2">
+                  <img src="https://res.cloudinary.com/senpiper/image/upload/v1753788029/senpiper_assets/VikalpOS/icons/check_circle_en544w.svg" />
+                  <span class="text-typography-80 text-base">{value}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </Wrapper>
+  </SectionContainer>
 </Layout>
+
+<script>
+  import type { string } from "astro:schema";
+
+  const formData: any = {};
+
+  const form = document.getElementById("contact-us-form");
+
+  const inputFields = document
+    .getElementById("contact-us-form")
+    ?.getElementsByTagName("input") as HTMLCollection;
+
+  const handleOnSubmit = event => {
+    event.preventDefault();
+    console.log(formData);
+    console.log("Form submitted without reloading");
+  };
+
+  form?.addEventListener("submit", handleOnSubmit);
+
+  const handleOnChange = (key: string) => (event: any) => {
+    const value = event.target?.value;
+    formData[key] = value;
+  };
+
+  for (let i = 0; i < inputFields?.length; i++) {
+    const key = inputFields[i]?.name;
+
+    inputFields[i].addEventListener("input", handleOnChange(key));
+  }
+</script>
