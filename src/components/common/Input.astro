@@ -25,7 +25,10 @@ const {
 <div class="grid gap-6">
   <label class="text-typography-40">{title}</label>
   <input
-    class={cn("border border-typography-40 rounded-sm px-4 py-2", className)}
+    class={cn(
+      "border border-typography-40 rounded-sm px-4 py-2 w-full",
+      className
+    )}
     value={value}
     id={id}
     name={name}
