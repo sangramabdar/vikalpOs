@@ -11,6 +11,7 @@ import OverFlowSection from "../components/OverFlowSection.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Carousel from "../components/common/Carousel.astro";
 import SelectionSection from "../components/SelectionSection.astro";
+import RealWordlDeploymentSection from "../components/RealWordlDeploymentSection.astro";
 
 const DigitizeTheWaySectionData = [
   {
@@ -177,17 +178,17 @@ const onGroundOutComesSectionData = {
     "See how our platform has driven measurable change across organisations",
   cards: [
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754036542/senpiper_assets/VikalpOS/home/logo-4_vw5xna.jpg",
       description:
         "We deployed a unified smart suite with geo-enabled duty tracking, digital FIRs, & real-time criminal intelligence, boosting coordination and citizen trust",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754036542/senpiper_assets/VikalpOS/home/logo-3_sflalv.jpg",
       description:
         "We deployed a unified smart suite with geo-enabled duty tracking, digital FIRs, & real-time criminal intelligence, boosting coordination and citizen trust",
     },
     {
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753780549/senpiper_assets/VikalpOS/icons/Type_Mobile_First_pct8q2.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754036543/senpiper_assets/VikalpOS/home/logo-1_vkvrdz.jpg",
       description:
         "We deployed a unified smart suite with geo-enabled duty tracking, digital FIRs, & real-time criminal intelligence, boosting coordination and citizen trust",
     },
@@ -457,6 +458,8 @@ From data capture to real-time dashboards, all within a single, no-code platform
     </div>
   </Container>
 
+  <RealWordlDeploymentSection />
+
   <Container
     headers={onGroundOutComesSectionData.headers}
     description={onGroundOutComesSectionData.description}
@@ -466,45 +469,19 @@ From data capture to real-time dashboards, all within a single, no-code platform
         onGroundOutComesSectionData.cards.map(card => (
           <div class="min-w-full md:min-w-[400px] md:w-[33%] p-4 box-border">
             <div class="bg-background-tertiary p-4 space-y-8">
-              <div class="bg-background-primary w-full h-25 flex justify-center items-center">
-                <img src={card.img} class="w-20" />
+              <div class="bg-background-primary w-full h-32 flex justify-center items-center px-2 py-4">
+                <img src={card.img} class="w-fit h-full object-cover" />
               </div>
               <p class="text-center">{card.description}</p>
-              <div class="flex justify-center">
+              {/* <div class="flex justify-center">
                 <Button variant="secondary" text="View Case Study" link="/" />
-              </div>
+              </div> */}
             </div>
           </div>
         ))
       }
     </Carousel>
   </Container>
-
-  <section>
-    <Wrapper>
-      <div class="flex gap-1 md:gap-2 justify-center w-full slideInDown">
-        <img
-          src="https://res.cloudinary.com/senpiper/image/upload/v1754031777/senpiper_assets/VikalpOS/icons/Icons_1_ddijq6.svg"
-        />
-        <span
-          class="text-typography-40 font-bold text-lg text-center md:text-xl"
-          >Real-world deployments across diverse public sectors</span
-        >
-        <img
-          src="https://res.cloudinary.com/senpiper/image/upload/v1754031770/senpiper_assets/VikalpOS/icons/Icons_hqa7o1.svg"
-        />
-      </div>
-      <div class="flex flex-wrap justify-center gap-8 md:gap-16 mt-10 md:mt-14">
-        {
-          features.map(element => (
-            <div class="text-primary-70 font-bold bg-background-tertiary p-4 rounded-lg w-fit slideInUp">
-              {element}
-            </div>
-          ))
-        }
-      </div>
-    </Wrapper>
-  </section>
 
   <StartAConversionSection />
 </Layout>

@@ -1,0 +1,64 @@
+---
+import Wrapper from "../layouts/Wrapper.astro";
+
+export interface Props {
+  features?: any[];
+}
+
+const defaultProps = {
+  features: [
+    {
+      text: "Governance & Citizen Services",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754556337/senpiper_assets/VikalpOS/home/15093_1_bdwz6z.png",
+    },
+    {
+      text: "Policing & Law Enforcement",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754556337/senpiper_assets/VikalpOS/home/15093_1_bdwz6z.png",
+    },
+    {
+      text: "Education & Skill Development",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754556337/senpiper_assets/VikalpOS/home/15093_1_bdwz6z.png",
+    },
+    {
+      text: "Training & Capacity Building",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754556337/senpiper_assets/VikalpOS/home/15093_1_bdwz6z.png",
+    },
+    {
+      text: "Telecom Infrastructure",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754556337/senpiper_assets/VikalpOS/home/15093_1_bdwz6z.png",
+    },
+  ],
+};
+
+const { features = defaultProps.features } = Astro.props;
+---
+
+<section class="bg-background-tertiary">
+  <Wrapper>
+    <div class="flex gap-1 md:gap-2 justify-center w-full slideInDown">
+      <img
+        src="https://res.cloudinary.com/senpiper/image/upload/v1754031777/senpiper_assets/VikalpOS/icons/Icons_1_ddijq6.svg"
+      />
+      <span class="text-typography-40 font-bold text-lg text-center md:text-xl"
+        >Real-world deployments across diverse public sectors</span
+      >
+      <img
+        src="https://res.cloudinary.com/senpiper/image/upload/v1754031770/senpiper_assets/VikalpOS/icons/Icons_hqa7o1.svg"
+      />
+    </div>
+    <div
+      class="flex flex-wrap lg:flex-nowrap w-full justify-center lg:justify-between gap-8 md:gap-16 mt-10 md:mt-14"
+    >
+      {
+        features.map(element => (
+          <div class="w-fit relative slideInUp">
+            <span class="absolute text-background-primary left-1/2 transform -translate-x-1/2 bottom-3 text-center font-semibold text-base w-full">
+              {element.text}
+            </span>
+            <img src={element.img} />
+          </div>
+        ))
+      }
+    </div>
+  </Wrapper>
+</section>

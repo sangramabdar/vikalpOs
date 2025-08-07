@@ -8,6 +8,8 @@ import Container from "../layouts/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import Wrapper from "../layouts/Wrapper.astro";
 import HeroSection from "../components/HeroSection.astro";
+import SelectionSection from "../components/SelectionSection.astro";
+import RealWordlDeploymentSection from "../components/RealWordlDeploymentSection.astro";
 
 const empoverGovernmentSectionData = {
   headers: [
@@ -131,6 +133,73 @@ const heroSectionData = {
   description: `Deploy modular, open-source workflows and citizen-centric  government processes automated for faster and 
 cost-effective service delivery`,
 };
+
+const selectionSectionData = {
+  headers: ["How It Works ?", "Design to Deliver Excellence"],
+  description: `Digitize public service delivery with ease. Use pre-built modules or create your own flows.
+From data capture to real-time dashboards, all within a single, no-code platform`,
+  content: [
+    {
+      option: "Capture Data",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955865/senpiper_assets/VikalpOS/icons/Type_Ai_policing_ghqmxv.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954302/senpiper_assets/VikalpOS/home/Group_pj79aw.jpg",
+      headers: ["Seamless data collection with a smooth flow pan platforms"],
+      content: [
+        "Intuitive Drag & Drop Builder",
+        "Offline Data Collection Support",
+        "Seamless Integrations",
+      ],
+    },
+    {
+      option: "Processes",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955865/senpiper_assets/VikalpOS/icons/Type_Ai_policing_ghqmxv.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954302/senpiper_assets/VikalpOS/home/Group_pj79aw.jpg",
+      headers: ["Architect sophisticated processes effortlessly"],
+      content: [
+        "Infinite Branching Logic",
+        "Highly Configurable",
+        "Customizable Alerts",
+      ],
+    },
+    {
+      option: "Communicate",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955865/senpiper_assets/VikalpOS/icons/Type_Ai_policing_ghqmxv.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954302/senpiper_assets/VikalpOS/home/Group_pj79aw.jpg",
+      headers: [
+        "Harbor harmony amongst all stakeholders, through one platform",
+      ],
+      content: [
+        "Group and Individual Chat Support",
+        "9 Types of Attachments Supported",
+        "Role Based Access",
+      ],
+    },
+    {
+      option: "Analyze",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955865/senpiper_assets/VikalpOS/icons/Type_Ai_policing_ghqmxv.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954302/senpiper_assets/VikalpOS/home/Group_pj79aw.jpg",
+      headers: ["Condensed and concise reports on the go"],
+      content: [
+        "Exhaustive Chart Support",
+        "One Click Share",
+        "Powerful insights",
+      ],
+    },
+    {
+      option: "Manage Users",
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955865/senpiper_assets/VikalpOS/icons/Type_Ai_policing_ghqmxv.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954302/senpiper_assets/VikalpOS/home/Group_pj79aw.jpg",
+      headers: [
+        "Control access to reports, flows, forms and chat at your fingertips",
+      ],
+      content: [
+        "SSO integration",
+        "Customized Role Management",
+        "CRM/ERP Integration",
+      ],
+    },
+  ],
+};
 ---
 
 <Layout title="">
@@ -160,6 +229,8 @@ cost-effective service delivery`,
 
   <OverFlowSection sectionData={comprehensiveGovernanceSectionData} />
 
+  <SelectionSection sectionData={selectionSectionData} className="lg:mt-40" />
+
   <Container
     headers={unMatechedSecuritySectionData.headers}
     description={unMatechedSecuritySectionData.description}
@@ -174,5 +245,7 @@ cost-effective service delivery`,
     </div>
   </Container>
 
-  <StartAConversionSection className="lg:mt-60" />
+  <RealWordlDeploymentSection />
+
+  <StartAConversionSection />
 </Layout>

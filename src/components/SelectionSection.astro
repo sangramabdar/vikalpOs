@@ -9,12 +9,17 @@ export interface Props {
     description: string;
     content: any[];
   };
+  className?: string;
 }
 
-const { sectionData } = Astro.props as Props;
+const { sectionData, className = "" } = Astro.props as Props;
 ---
 
-<Container headers={sectionData.headers} description={sectionData.description}>
+<Container
+  headers={sectionData.headers}
+  description={sectionData.description}
+  className={className}
+>
   <div
     class="flex justify-between md:justify-center gap-4 w-full"
     id="buttons-container"
