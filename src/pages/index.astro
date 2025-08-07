@@ -12,6 +12,7 @@ import HeroSection from "../components/HeroSection.astro";
 import Carousel from "../components/common/Carousel.astro";
 import SelectionSection from "../components/SelectionSection.astro";
 import RealWordlDeploymentSection from "../components/RealWordlDeploymentSection.astro";
+import { cn } from "../utils/cn";
 
 const DigitizeTheWaySectionData = [
   {
@@ -92,46 +93,47 @@ const applicationSectionData = {
   content: [
     {
       icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955865/senpiper_assets/VikalpOS/icons/Type_Ai_policing_ghqmxv.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954302/senpiper_assets/VikalpOS/home/Group_pj79aw.jpg",
-      header: "AI-Driven Information & Verification",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754568263/senpiper_assets/VikalpOS/home/Frame_1000007367_wpvj9t.png",
+      headers: ["AI-Driven", "Information & Verification"],
       content: [
         "Effortlessly capture and match faces for instant identity verification",
         "Utilize AI to detect and confirm objects, locations, or infrastructure in real time",
         "Enable automated, secure authentication and field validation",
       ],
+      className: "bg-background-tertiary",
     },
     {
       icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955860/senpiper_assets/VikalpOS/icons/Type_Beatbook_xy0reu.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1754376451/senpiper_assets/VikalpOS/home/Group_1000005383_wm4wjf.png",
-      header: "Dynamic Task & Resource Coordination",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754568889/senpiper_assets/VikalpOS/home/Group_1000005383_qqvf3z.png",
+      headers: ["Dynamic", "Task & Resource", "Coordination"],
       content: [
         "Auto-assign tasks based on priority or user roles",
         "Manage staff roles, schedules, and communications",
         "Optimize resource utilization and scheduling",
       ],
     },
+
+    {
+      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955832/senpiper_assets/VikalpOS/icons/Type_Police_Dashboard_wsqcf3.svg",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754569031/senpiper_assets/VikalpOS/home/Frame_1000007344_pnbikc.png",
+      headers: ["Effortless", "Process Automation"],
+      content: [
+        "Rapidly configure and launch governance workflows using prebuilt modules",
+        "Automate approvals, documentation, and multi-step processes across departments",
+        "Ensure zero mile connectivity with multi-language support",
+      ],
+    },
+
     {
       icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955831/senpiper_assets/VikalpOS/icons/Type_Police_Manageent_a4x1m5.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1753954083/senpiper_assets/VikalpOS/home/Group_xgwtlw.jpg",
-      header: `Command-Level 
-Oversight `,
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754568571/senpiper_assets/VikalpOS/home/Frame_1000005382_ukhywy.png",
+      headers: ["Command-Level", "Oversight"],
       content: [
         "Real-time dashboards tailored for senior officials",
         "Monitor progress by team, department, or location",
         "Identify trends and gaps for informed decisions",
       ],
-    },
-
-    {
-      icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955832/senpiper_assets/VikalpOS/icons/Type_Police_Dashboard_wsqcf3.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1754376322/senpiper_assets/VikalpOS/home/Group_1000005241_gei1iv.png",
-      header: `Administration & 
-Collaboration`,
-      content: [
-        "Manage staff roles, schedules, and communications",
-        "Centralize documentation and record-keeping",
-        "Streamline approvals and cross-department workflows",
-      ],
+      className: "bg-background-tertiary",
     },
   ],
 };
@@ -401,17 +403,13 @@ From data capture to real-time dashboards, all within a single, no-code platform
     </Wrapper>
     {
       applicationSectionData.content.map((element, index) => (
-        <section
-          class={`${index % 2 === 0 ? "bg-background-tertiary" : "bg-background-primary"}`}
-        >
+        <section class={cn(element.className)}>
           <Wrapper>
             <div
               class={`grid grid-cols-1 lg:grid-cols-2 mt-11 lg:mt-20 gap-10`}
             >
               <img
-                src={
-                  "https://res.cloudinary.com/senpiper/image/upload/v1754393138/senpiper_assets/VikalpOS/home/Group_1000005383_ukjsha.png"
-                }
+                src={element.img}
                 alt="enterprise_img"
                 class={`bg-background-tertiary relative w-full h-full object-contain slideInLeft ${index % 2 == 0 ? "order-1" : ""}`}
               />
@@ -422,7 +420,11 @@ From data capture to real-time dashboards, all within a single, no-code platform
                   class="w-[48px] h-[48px] relative"
                 />
                 <h3 class="text-typography-80 font-bold text-left text-xl md:text-3xl">
-                  {element.header}
+                  {element.headers.map((header, index) => (
+                    <span class={cn(index % 2 === 0 && "text-primary-70")}>
+                      {header}
+                    </span>
+                  ))}
                 </h3>
                 <ul class="space-y-2 text-left self-start md:text-xl">
                   {element.content.map(value => (
