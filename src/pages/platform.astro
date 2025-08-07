@@ -7,48 +7,7 @@ import StartAConversionSection from "../components/StartAConversionSection.astro
 import Container from "../layouts/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import Wrapper from "../layouts/Wrapper.astro";
-
-import Carousel from "../components/common/Carousel.astro";
 import HeroSection from "../components/HeroSection.astro";
-
-const items = [
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
-    alt: "First slide",
-  },
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
-    alt: "Second slide",
-  },
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955821/senpiper_assets/VikalpOS/icons/Type_ROI_q8iljn.svg",
-    alt: "Third slide",
-  },
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
-    alt: "First slide",
-  },
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
-    alt: "Second slide",
-  },
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955821/senpiper_assets/VikalpOS/icons/Type_ROI_q8iljn.svg",
-    alt: "Third slide",
-  },
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
-    alt: "First slide",
-  },
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955852/senpiper_assets/VikalpOS/icons/Type_Cognitive_Automation_of_Public_Workflows_k8pwmk.svg",
-    alt: "Second slide",
-  },
-  {
-    img: "https://res.cloudinary.com/senpiper/image/upload/v1753955821/senpiper_assets/VikalpOS/icons/Type_ROI_q8iljn.svg",
-    alt: "Third slide",
-  },
-];
 
 const empoverGovernmentSectionData = {
   headers: [
@@ -174,7 +133,7 @@ cost-effective service delivery`,
 };
 ---
 
-<Layout>
+<Layout title="">
   <HeroSection
     headers={heroSectionData.headers}
     description={heroSectionData.description}
@@ -187,8 +146,6 @@ cost-effective service delivery`,
       />
     </div>
   </HeroSection>
-
-  <Carousel items={items} />
 
   <Container
     headers={empoverGovernmentSectionData.headers}

@@ -4,7 +4,7 @@ import Footer from "../components/common/Footer.astro";
 import Navbar from "../components/common/Navbar.astro";
 
 export interface Props {
-  title: string;
+  title?: string;
   metaProps?: {
     ogTitle?: string;
     ogDescription?: string;
@@ -13,7 +13,7 @@ export interface Props {
   };
 }
 
-const { title, metaProps } = Astro.props;
+const { title = "", metaProps } = Astro.props;
 const { ogTitle, ogDescription, ogKeywords, ogUrl } = metaProps || {};
 ---
 
@@ -65,7 +65,7 @@ const { ogTitle, ogDescription, ogKeywords, ogUrl } = metaProps || {};
   <body class="bg-background-primary p-0 overflow-x-hidden">
     <Navbar />
 
-    <main class="mt-32">
+    <main class="mt-20 md:mt-28 flex flex-col gap-16 lg:gap-20">
       <slot />
     </main>
     <Footer />
@@ -100,6 +100,9 @@ const { ogTitle, ogDescription, ogKeywords, ogUrl } = metaProps || {};
     document.getElementsByClassName("slideInLeftSub");
   const slideUpElements = document.getElementsByClassName("slideInUp");
   const slideUpSubElements = document.getElementsByClassName("slideInUpSub");
+  const slideInDownElements = document.getElementsByClassName("slideInDown");
+  const slideInDownSubElements =
+    document.getElementsByClassName("slideInDownSub");
   const imagePops = document.getElementsByClassName("imgPop");
   const textScales = document.getElementsByClassName("textScale");
   const moveLeftElements = document.getElementsByClassName("moveInLeft");
@@ -112,6 +115,8 @@ const { ogTitle, ogDescription, ogKeywords, ogUrl } = metaProps || {};
     slideUpSubElements,
     slideRightSubElements,
     slideLeftSubElements,
+    slideInDownElements,
+    slideInDownSubElements,
     textScales,
     moveLeftElements,
   ];

@@ -12,8 +12,10 @@ export interface Props {
 const { headers = [], description = "", className = "" } = Astro.props;
 ---
 
-<SectionContainer className={`mt-20 ${className}`}>
-  <Wrapper className="flex flex-col justify-center items-center">
+<SectionContainer className={`${className}`}>
+  <Wrapper
+    className="flex flex-col justify-center items-center gap-11 lg:gap-20"
+  >
     <SectionHeader headers={headers} description={description} />
     <slot />
   </Wrapper>

@@ -316,26 +316,24 @@ From data capture to real-time dashboards, all within a single, no-code platform
     </div>
   </HeroSection>
 
-  <section class="mt-12">
+  <section>
     <Wrapper>
-      <div class="flex gap-2 justify-center w-full">
+      <div class="flex gap-1 md:gap-2 justify-center w-full slideInDown">
         <img
           src="https://res.cloudinary.com/senpiper/image/upload/v1754031777/senpiper_assets/VikalpOS/icons/Icons_1_ddijq6.svg"
         />
         <span
-          class="text-typography-40 md:font-bold text-base text-center md:text-xl"
+          class="text-typography-40 font-bold text-lg text-center md:text-xl"
           >Powering Governance with Scalable & Trusted Tech</span
         >
         <img
           src="https://res.cloudinary.com/senpiper/image/upload/v1754031770/senpiper_assets/VikalpOS/icons/Icons_hqa7o1.svg"
         />
       </div>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-center place-items-center gap-12 mt-10 flex-wrap"
-      >
+      <div class="flex flex-wrap justify-center gap-8 md:gap-16 mt-10 md:mt-14">
         {
           features.map(element => (
-            <div class="text-primary-70 font-bold bg-background-tertiary p-4 rounded-lg w-fit slideInLeft">
+            <div class="text-primary-70 font-bold bg-background-tertiary p-4 rounded-lg w-fit slideInUp">
               {element}
             </div>
           ))
@@ -349,7 +347,7 @@ From data capture to real-time dashboards, all within a single, no-code platform
     description={provenCollaborationSectionData.description}
   >
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-center place-items-center gap-12 mt-10 flex-wrap"
+      class="bg-background-tertiary px-2 py-4 rounded-xl flex flex-wrap justify-evenly gap-8 md:gap-4"
     >
       {images.map(element => <img class="imgPop" src={element} />)}
     </div>
@@ -358,7 +356,7 @@ From data capture to real-time dashboards, all within a single, no-code platform
   {
     DigitizeTheWaySectionData.map(element => (
       <Container headers={element.headers} description={element.description}>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-5">
           {element.cards.map(card => (
             <Card card={card} />
           ))}
@@ -367,7 +365,7 @@ From data capture to real-time dashboards, all within a single, no-code platform
     ))
   }
 
-  <SectionContainer className="md:gap-20">
+  <SectionContainer className="gap-11 lg:gap-20">
     <Wrapper>
       <SectionHeader
         headers={applicationSectionData.headers}
@@ -380,7 +378,9 @@ From data capture to real-time dashboards, all within a single, no-code platform
           class={`${index % 2 === 0 ? "bg-background-tertiary" : "bg-background-primary"}`}
         >
           <Wrapper>
-            <div class={`grid grid-cols-1 lg:grid-cols-2 mt-20 gap-10`}>
+            <div
+              class={`grid grid-cols-1 lg:grid-cols-2 mt-11 lg:mt-20 gap-10`}
+            >
               <img
                 src={
                   "https://res.cloudinary.com/senpiper/image/upload/v1754393138/senpiper_assets/VikalpOS/home/Group_1000005383_ukjsha.png"
@@ -422,9 +422,7 @@ From data capture to real-time dashboards, all within a single, no-code platform
     description={AiEnabledSectionData.description}
     className="lg:mt-40"
   >
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
       {
         AiEnabledSectionData.cards.map(card => (
           <Card iconAndHeaderSameLine card={card} />
@@ -456,26 +454,24 @@ From data capture to real-time dashboards, all within a single, no-code platform
     </Carousel>
   </Container>
 
-  <section class="mt-12">
+  <section>
     <Wrapper>
-      <div class="flex gap-2 justify-center w-full">
+      <div class="flex gap-1 md:gap-2 justify-center w-full slideInDown">
         <img
           src="https://res.cloudinary.com/senpiper/image/upload/v1754031777/senpiper_assets/VikalpOS/icons/Icons_1_ddijq6.svg"
         />
         <span
-          class="text-typography-40 md:font-bold text-base text-center md:text-xl"
+          class="text-typography-40 font-bold text-lg text-center md:text-xl"
           >Real-world deployments across diverse public sectors</span
         >
         <img
           src="https://res.cloudinary.com/senpiper/image/upload/v1754031770/senpiper_assets/VikalpOS/icons/Icons_hqa7o1.svg"
         />
       </div>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-center place-items-center gap-12 mt-10 flex-wrap"
-      >
+      <div class="flex flex-wrap justify-center gap-8 md:gap-16 mt-10 md:mt-14">
         {
           features.map(element => (
-            <div class="text-primary-70 font-bold bg-background-tertiary p-4 rounded-lg w-fit slideInLeft">
+            <div class="text-primary-70 font-bold bg-background-tertiary p-4 rounded-lg w-fit slideInUp">
               {element}
             </div>
           ))

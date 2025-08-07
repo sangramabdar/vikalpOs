@@ -9,10 +9,7 @@ const { className = "" } = Astro.props;
 ---
 
 <section
-  class={cn(
-    "bg-background-primary flex flex-col justify-center mt-20",
-    className
-  )}
+  class={cn("bg-background-primary flex flex-col justify-center", className)}
 >
   <slot />
 </section>

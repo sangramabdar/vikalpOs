@@ -9,7 +9,7 @@ const { headers, description } = Astro.props;
 
 <div class="flex flex-col justify-center items-center">
   <h1
-    class="text-xl md:text-3xl xl:text-4xl text-center max-w-2xl font-bold text-primary-70 slideInUp"
+    class="text-xl md:text-2xl xl:text-4xl text-center max-w-2xl font-bold text-primary-70 slideInUp"
   >
     {
       headers.map((header, index) => (
@@ -19,7 +19,9 @@ const { headers, description } = Astro.props;
       ))
     }
   </h1>
-  <p class="text-typography-80 text-lg text-center max-w-4xl mt-5 slideInUp">
+  <p
+    class="text-typography-80 text-base md:text-lg text-center max-w-4xl mt-5 slideInUp"
+  >
     {description}
   </p>
 </div>
