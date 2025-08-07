@@ -1,15 +1,25 @@
 ---
 import { cn } from "../../utils/cn";
 
-export interface Props {
+export interface Props extends InputHTMLAttributes {
   title: string;
   value?: any;
   id: string;
   name: string;
   className?: string;
+  type?: string;
+  required?: boolean;
 }
 
-const { title, value = "", id, name, className = "" } = Astro.props;
+const {
+  title,
+  value = "",
+  id,
+  name,
+  className = "",
+  type,
+  required = false,
+} = Astro.props;
 ---
 
 <div class="grid gap-6">
@@ -19,5 +29,7 @@ const { title, value = "", id, name, className = "" } = Astro.props;
     value={value}
     id={id}
     name={name}
+    type={type}
+    required={required}
   />
 </div>

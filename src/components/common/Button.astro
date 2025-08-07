@@ -8,6 +8,7 @@ export interface Props {
   className?: string;
   variant?: string;
   type?: string;
+  id?: string;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   className = "",
   variant = "primary",
   type = "button",
+  id,
 } = Astro.props as Props;
 
 const baseClasses =
@@ -31,11 +33,19 @@ const variants: any = {
 
 {
   link ? (
-    <a href={link} class={cn(baseClasses, variants[variant], className)}>
+    <a
+      id={id}
+      href={link}
+      class={cn(baseClasses, variants[variant], className)}
+    >
       {text}
     </a>
   ) : (
-    <button class={cn(baseClasses, variants[variant], className)} type={type}>
+    <button
+      id={id}
+      class={cn(baseClasses, variants[variant], className)}
+      type={type}
+    >
       {text}
     </button>
   )
