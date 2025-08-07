@@ -151,9 +151,7 @@ cost-effective service delivery`,
     headers={empoverGovernmentSectionData.headers}
     description={empoverGovernmentSectionData.description}
   >
-    <div
-      class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       {empoverGovernmentSectionData.cards.map(card => <Card card={card} />)}
     </div>
   </Container>
@@ -167,9 +165,7 @@ cost-effective service delivery`,
     description={unMatechedSecuritySectionData.description}
     className="lg:mt-40"
   >
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-5 md:pt-10 xl:pt-[72px] 2xl:pt-[102px]"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
       {
         unMatechedSecuritySectionData.cards.map(card => (
           <Card iconAndHeaderSameLine card={card} />
