@@ -57,11 +57,7 @@ const formSectionData = {
               src="https://res.cloudinary.com/senpiper/image/upload/v1754654265/senpiper_assets/VikalpOS/icons/Check_Icon_qojudl_bxjbon.svg"
               alt="successIcon"
             />
-            <p
-              class="text-blue-grey text-mhd4 md:text-thd4 lg:text-hd4 font-semibold"
-            >
-              You're all set!
-            </p>
+            <p class="text-typography-80 font-semibold">You're all set!</p>
           </div>
           <!-- <p class="text-mbd2 md:text-tbd2 lg:text-bd2 text-blue-grey-70">
             We'll get back to you with a demo shortly. For now, visit our <a
@@ -199,7 +195,7 @@ const formSectionData = {
     const response = await postForm(jsonFormData);
 
     setTimeout(() => {
-      if (!response) {
+      if (response) {
         submitButton.innerHTML = "Request Submitted";
         submitButton.classList.remove("bg-light-violet");
         submitButton.classList.add("bg-green");
