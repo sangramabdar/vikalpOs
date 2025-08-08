@@ -1,17 +1,7 @@
----
-// props: Array of case study cards
-
-export interface Props {
-  items: any[];
-}
-
-const { items = [] } = Astro.props;
----
-
-<div class="relative w-full overflow-hidden p-4 slideInUp">
+<div class="relative w-full overflow-hidden p-4 px-8 slideInUp">
   <div
     id="carousel-track"
-    class="flex transition-transform duration-500 ease-in-out"
+    class="transition-transform duration-500 ease-in-out flex"
   >
     <slot />
   </div>
@@ -19,13 +9,13 @@ const { items = [] } = Astro.props;
   <!-- Navigation -->
   <button
     id="carousel-prev"
-    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 shadow rounded-full"
+    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 shadow rounded-full"
   >
     ‹
   </button>
   <button
     id="carousel-next"
-    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 shadow rounded-full"
+    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 shadow rounded-full"
   >
     ›
   </button>
