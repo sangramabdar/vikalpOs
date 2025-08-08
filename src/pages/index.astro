@@ -92,7 +92,8 @@ const applicationSectionData = {
   content: [
     {
       icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955865/senpiper_assets/VikalpOS/icons/Type_Ai_policing_ghqmxv.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1754568263/senpiper_assets/VikalpOS/home/Frame_1000007367_wpvj9t.png",
+      // img: "https://res.cloudinary.com/senpiper/image/upload/v1754568263/senpiper_assets/VikalpOS/home/Frame_1000007367_wpvj9t.png",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754664205/senpiper_assets/VikalpOS/home/Frame_1000007367_fy42sd.png",
       headers: ["AI-Driven", "Information & Verification"],
       content: [
         "Effortlessly capture and match faces for instant identity verification",
@@ -103,7 +104,8 @@ const applicationSectionData = {
     },
     {
       icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955860/senpiper_assets/VikalpOS/icons/Type_Beatbook_xy0reu.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1754568889/senpiper_assets/VikalpOS/home/Group_1000005383_qqvf3z.png",
+      // img: "https://res.cloudinary.com/senpiper/image/upload/v1754568889/senpiper_assets/VikalpOS/home/Group_1000005383_qqvf3z.png",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754664434/senpiper_assets/VikalpOS/home/Group_1000005383_ssoj9z.png",
       headers: ["Dynamic", "Task & Resource", "Coordination"],
       content: [
         "Auto-assign tasks based on priority or user roles",
@@ -125,7 +127,8 @@ const applicationSectionData = {
 
     {
       icon: "https://res.cloudinary.com/senpiper/image/upload/v1753955831/senpiper_assets/VikalpOS/icons/Type_Police_Manageent_a4x1m5.svg",
-      img: "https://res.cloudinary.com/senpiper/image/upload/v1754568571/senpiper_assets/VikalpOS/home/Frame_1000005382_ukhywy.png",
+      // img: "https://res.cloudinary.com/senpiper/image/upload/v1754568571/senpiper_assets/VikalpOS/home/Frame_1000005382_ukhywy.png",
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754664944/senpiper_assets/VikalpOS/home/Group_1000005384_asdqeo.png",
       headers: ["Command-Level", "Oversight"],
       content: [
         "Real-time dashboards tailored for senior officials",
@@ -416,14 +419,19 @@ From data capture to real-time dashboards, all within a single, no-code platform
             <div
               class={`grid grid-cols-1 lg:grid-cols-2 mt-11 lg:mt-20 gap-10`}
             >
-              <div class="flex justify-center">
+              <div
+                class={cn(
+                  "flex justify-center",
+                  index % 2 === 0 ? "order-1" : ""
+                )}
+              >
                 <img
                   src={element.img}
                   alt="enterprise_img"
-                  class={`relative w-[80%] lg:w-full lg:h-full object-contain slideInLeft ${index % 2 == 0 ? "order-1" : ""}`}
+                  class={`relative w-[80%] lg:w-full lg:h-full object-contain slideInLeft`}
                 />
               </div>
-              <div class="flex flex-col items-start slideInRight gap-3 md:gap-4">
+              <div class="flex flex-col items-start justify-center slideInRight gap-3 md:gap-4">
                 <img
                   src={element.icon}
                   alt="enterprise_img"

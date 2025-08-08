@@ -1,5 +1,8 @@
 # Astro Starter Kit: Basics
 
+required :-
+node -> 22.13.1
+
 ```sh
 npm create astro@latest -- --template basics
 ```
