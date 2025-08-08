@@ -36,7 +36,12 @@ const variants: any = {
     <a
       id={id}
       href={link}
-      class={cn(baseClasses, variants[variant], className)}
+      class={cn(
+        baseClasses,
+        variants[variant],
+        className
+        // "hover:-translate-y-1"
+      )}
     >
       {text}
     </a>

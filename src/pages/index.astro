@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Wrapper from "../layouts/Wrapper.astro";
-import Button from "../components/common/Button.astro";
 import SectionHeader from "../components/common/section/SectionHeader.astro";
 import Container from "../layouts/Container.astro";
 import SectionContainer from "../components/common/section/SectionContainer.astro";
@@ -235,6 +234,28 @@ const provenCollaborationSectionData = {
   headers: ["Proven Collaboration Across Core", " Governance Sectors"],
   description:
     "We’ve partnered with public departments and organizations to digitize essential services, enhance citizen engagement, and modernize administrative workflows, ensuring impact at scale across nation",
+  images: [
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639911/senpiper_assets/VikalpOS/home/logo_lqp3ac.svg",
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639912/senpiper_assets/VikalpOS/home/logo-1_taxfql.svg",
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639908/senpiper_assets/VikalpOS/home/logo-2_nam9hw.svg",
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639909/senpiper_assets/VikalpOS/home/logo-3_ke6xmr.svg",
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639903/senpiper_assets/VikalpOS/home/logo-4_aqbmkz.svg",
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639901/senpiper_assets/VikalpOS/home/logo-5_vsgmpp.svg",
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639900/senpiper_assets/VikalpOS/home/logo-6_i9dxd8.svg",
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639899/senpiper_assets/VikalpOS/home/logo-7_qttadl.svg",
+    "https://res.cloudinary.com/senpiper/image/upload/v1754639900/senpiper_assets/VikalpOS/home/logo-8_o9raij.svg",
+  ],
+};
+
+const powerinGovernanceSectionData = {
+  header: "Powering Governance with Scalable & Trusted Tech",
+  features: [
+    "Open Source",
+    "Low-Code",
+    "No Lock-In",
+    "Offline-First",
+    "Vernacular UI",
+  ],
 };
 
 const heroSectionData = {
@@ -242,26 +263,6 @@ const heroSectionData = {
   description:
     "VikalpOS is a modular low-code platform to create apps, forms, workflows, dashboards, and mobile tools without writing code or depending on a vendor",
 };
-
-const features = [
-  "Open Source",
-  "Low-Code",
-  "No Lock-In",
-  "Offline-First",
-  "Vernacular UI",
-];
-
-const images = [
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639911/senpiper_assets/VikalpOS/home/logo_lqp3ac.svg",
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639912/senpiper_assets/VikalpOS/home/logo-1_taxfql.svg",
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639908/senpiper_assets/VikalpOS/home/logo-2_nam9hw.svg",
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639909/senpiper_assets/VikalpOS/home/logo-3_ke6xmr.svg",
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639903/senpiper_assets/VikalpOS/home/logo-4_aqbmkz.svg",
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639901/senpiper_assets/VikalpOS/home/logo-5_vsgmpp.svg",
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639900/senpiper_assets/VikalpOS/home/logo-6_i9dxd8.svg",
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639899/senpiper_assets/VikalpOS/home/logo-7_qttadl.svg",
-  "https://res.cloudinary.com/senpiper/image/upload/v1754639900/senpiper_assets/VikalpOS/home/logo-8_o9raij.svg",
-];
 
 const selectionSectionData = {
   headers: ["How It Works ?", "Design to Deliver Excellence"],
@@ -341,7 +342,7 @@ From data capture to real-time dashboards, all within a single, no-code platform
       <img
         src="https://res.cloudinary.com/senpiper/image/upload/v1754633661/senpiper_assets/VikalpOS/home/Form_Builder_GIF_t8vkkc.gif"
         alt="#"
-        class="w-fit"
+        class="w-fit rounded-md"
       />
     </div>
   </HeroSection>
@@ -354,7 +355,7 @@ From data capture to real-time dashboards, all within a single, no-code platform
         />
         <span
           class="text-typography-40 font-bold text-lg text-center md:text-xl"
-          >Powering Governance with Scalable & Trusted Tech</span
+          >{powerinGovernanceSectionData.header}</span
         >
         <img
           src="https://res.cloudinary.com/senpiper/image/upload/v1754031770/senpiper_assets/VikalpOS/icons/Icons_hqa7o1.svg"
@@ -362,7 +363,7 @@ From data capture to real-time dashboards, all within a single, no-code platform
       </div>
       <div class="flex flex-wrap justify-center gap-8 md:gap-16 mt-10 md:mt-14">
         {
-          features.map(element => (
+          powerinGovernanceSectionData.features.map(element => (
             <div class="text-primary-70 font-bold bg-background-tertiary p-4 rounded-lg w-fit slideInUp">
               {element}
             </div>
@@ -379,7 +380,11 @@ From data capture to real-time dashboards, all within a single, no-code platform
     <div
       class="bg-background-tertiary px-2 py-4 rounded-xl flex flex-wrap justify-evenly gap-8 md:gap-4"
     >
-      {images.map(element => <img class="imgPop" src={element} />)}
+      {
+        provenCollaborationSectionData.images.map(element => (
+          <img class="imgPop" src={element} />
+        ))
+      }
     </div>
   </Container>
 
@@ -409,11 +414,13 @@ From data capture to real-time dashboards, all within a single, no-code platform
             <div
               class={`grid grid-cols-1 lg:grid-cols-2 mt-11 lg:mt-20 gap-10`}
             >
-              <img
-                src={element.img}
-                alt="enterprise_img"
-                class={`relative w-full h-full object-contain slideInLeft ${index % 2 == 0 ? "order-1" : ""}`}
-              />
+              <div class="flex justify-center">
+                <img
+                  src={element.img}
+                  alt="enterprise_img"
+                  class={`relative w-[80%] lg:w-full lg:h-full object-contain slideInLeft ${index % 2 == 0 ? "order-1" : ""}`}
+                />
+              </div>
               <div class="flex flex-col items-start slideInRight gap-3 md:gap-4">
                 <img
                   src={element.icon}
@@ -476,9 +483,6 @@ From data capture to real-time dashboards, all within a single, no-code platform
                 <img src={card.img} class="w-fit h-full object-cover" />
               </div>
               <p class="text-center">{card.description}</p>
-              {/* <div class="flex justify-center">
-                <Button variant="secondary" text="View Case Study" link="/" />
-              </div> */}
             </div>
           </div>
         ))

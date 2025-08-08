@@ -7,6 +7,16 @@ import Layout from "../layouts/Layout.astro";
 import Wrapper from "../layouts/Wrapper.astro";
 import { cn } from "../utils/cn";
 
+const metaData = {
+  ogTitle:
+    "Contact Senpiper | Request a Demo, Sales Inquiries, and Support Requests",
+  ogDescription:
+    "Contact Senpiper for a product demo, sales inquiries, or support requests. Our team will assist you in identifying digitization opportunities to improve your business operations. Fill out the form and click 'Get a Demo' to schedule a date and time with our experts. Experience our platform and discover how we can build the right solution for your needs",
+  ogKeywords:
+    "Contact Senpiper, Request a Demo, Sales Inquiries, Support Requests, Digitization Opportunities, Schedule a Demo, Expert Consultation, Business Solutions",
+  ogUrl: "https://senpiper.com/contact/",
+};
+
 const heroSectionData = {
   headers: ["Get in Touch", "With Our Team Experts"],
   description: `Have questions, need a demo, or wish to discuss how VikalpOS can transform your department? 
@@ -23,7 +33,7 @@ const formSectionData = {
 };
 ---
 
-<Layout>
+<Layout title="Contact Us" metaProps={metaData}>
   <HeroSection
     headers={heroSectionData.headers}
     description={heroSectionData.description}
@@ -41,6 +51,25 @@ const formSectionData = {
   <SectionContainer>
     <Wrapper>
       <div class={`grid grid-cols-1 lg:grid-cols-2 gap-10`}>
+        <div class="w-full space-y-3 lg:space-y-4 hidden" id="successMessage">
+          <div class="flex gap-2 items-center text-center lg:gap-5">
+            <img
+              src="https://res.cloudinary.com/senpiper/image/upload/v1754654265/senpiper_assets/VikalpOS/icons/Check_Icon_qojudl_bxjbon.svg"
+              alt="successIcon"
+            />
+            <p
+              class="text-blue-grey text-mhd4 md:text-thd4 lg:text-hd4 font-semibold"
+            >
+              You're all set!
+            </p>
+          </div>
+          <!-- <p class="text-mbd2 md:text-tbd2 lg:text-bd2 text-blue-grey-70">
+            We'll get back to you with a demo shortly. For now, visit our <a
+              href="https://docs.senpiper.com/"
+              class="text-[#54a9ff] underline">Product Documentation</a
+            > to learn more.
+          </p> -->
+        </div>
         <form id="contact-us-form" class="flex flex-col gap-6 slideInUp">
           <Input
             title="Name"
@@ -93,26 +122,19 @@ const formSectionData = {
 </Layout>
 
 <script>
+  import { getUUID } from "../utils/helperFunctions";
+
   const formData: any = {};
 
-  const form = document.getElementById("contact-us-form");
+  const form = document.getElementById("contact-us-form") as HTMLFormElement;
 
-  const submitBtn = document.getElementById(
+  const submitButton = document.getElementById(
     "submitButton"
   ) as HTMLButtonElement;
 
   const inputFields = document
     .getElementById("contact-us-form")
     ?.getElementsByTagName("input") as any;
-
-  function getUUID() {
-    const s4 = () =>
-      Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-
-    return `${s4() + s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
-  }
 
   function buidData(formData: any) {
     const jsonFormData = { ...formData };
@@ -166,33 +188,34 @@ const formSectionData = {
 
   async function submitFormToBackend(e: Event) {
     e.preventDefault();
-    const fields = document.getElementById("fields");
-    const successMsg = document.getElementById("successMsg");
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = "Sending request";
-    submitBtn.classList.remove("hvr-sweep-to-right");
+    const successMessage = document.getElementById(
+      "successMessage"
+    ) as HTMLElement;
+    submitButton.disabled = true;
+    submitButton.innerHTML = "Sending request";
 
     const jsonFormData = buidData(formData);
 
     const response = await postForm(jsonFormData);
 
     setTimeout(() => {
-      if (response) {
-        submitBtn.innerHTML = "Request Submitted";
-        submitBtn.classList.remove("bg-light-violet");
-        submitBtn.classList.add("bg-green");
-        fields.classList.add("hidden");
-        successMsg.classList.remove("hidden");
+      if (!response) {
+        submitButton.innerHTML = "Request Submitted";
+        submitButton.classList.remove("bg-light-violet");
+        submitButton.classList.add("bg-green");
+        form.classList.add("hidden");
+        successMessage.classList.remove("hidden");
       } else {
-        submitBtn.innerHTML = "Request failed, please try again";
-        submitBtn.classList.remove("bg-light-violet");
-        submitBtn.classList.add("bg-[#FD464E]");
+        submitButton.innerHTML = "Request failed, please try again";
+        submitButton.classList.remove("bg-light-violet");
+        submitButton.classList.add("bg-[#FD464E]");
         setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = "Get a demo";
-          submitBtn.classList.add("bg-light-violet");
-          submitBtn.classList.remove("bg-[#FD464E]");
-          submitBtn.classList.add("hvr-sweep-to-right");
+          2;
+          submitButton.disabled = false;
+          submitButton.innerHTML = "Get a demo";
+          submitButton.classList.add("bg-light-violet");
+          submitButton.classList.remove("bg-[#FD464E]");
+          submitButton.classList.add("hvr-sweep-to-right");
         }, 4000);
       }
     }, 2000);
@@ -200,7 +223,6 @@ const formSectionData = {
 
   const handleOnSubmit = (event: Event) => {
     event.preventDefault();
-
     submitFormToBackend(event);
   };
 

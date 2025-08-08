@@ -4,12 +4,12 @@ import Button from "./Button.astro";
 ---
 
 <nav
-  class="z-50 fixed top-0 left-0 w-[100vw] flex justify-center bg-background-primary"
+  class="z-50 fixed top-0 left-0 w-[100vw] flex justify-center h-fit bg-background-primary"
 >
   <Wrapper className="w-full hidden lg:block">
     <!-- Desktop Nav -->
-    <div class="hidden h-16 lg:flex lg:items-center">
-      <div class="lg:flex justify-between items-center w-full h-full p-4">
+    <div class="hidden lg:flex lg:items-center">
+      <div class="lg:flex justify-between items-center w-full h-full">
         <!-- Left -->
 
         <div
@@ -19,8 +19,8 @@ import Button from "./Button.astro";
           <a class="flex items-center" href="/">
             <img
               src="https://res.cloudinary.com/senpiper/image/upload/v1753867004/senpiper_assets/VikalpOS/icons/Logo_Type_w_Text_aah0p0.svg"
-              alt="Senpiper"
-              class="w-[96px] h-[32px]"
+              alt="ViklapOS"
+              class="object-contain w-[120px]"
             />
           </a>
           <!-- Menu -->
@@ -408,19 +408,19 @@ import Button from "./Button.astro";
     </div>
   </Wrapper>
   <!-- Mobile Nav -->
-  <div class="lg:hidden relative bg-violet w-full navBar">
-    <div class="h-12 flex justify-between pl-6 pr-3">
+  <div class="lg:hidden relative w-full navBar py-2">
+    <div class="flex justify-between px-4 py-2">
       <!-- Logo -->
       <a class="flex items-center" href="/">
         <img
-          class="w-[75px] h-[32px]"
           src="https://res.cloudinary.com/senpiper/image/upload/v1753867004/senpiper_assets/VikalpOS/icons/Logo_Type_w_Text_aah0p0.svg"
-          alt="Senpiper"
+          alt="ViklapOS"
+          class="object-contain w-[120px]"
           id="logo"
         />
       </a>
       <div
-        class="relative flex justify-center items-center w-14 h-full cursor-pointer menu-btn"
+        class="relative flex justify-center items-center w-14 h-full cursor-pointer menu-btn top-4"
       >
         <div
           class="w-8 h-1 bg-primary-70 rounded-sm after:w-8 after:h-1 after:bg-primary-70 after:rounded-sm after:absolute before:w-8 before:h-1 before:bg-primary-70 before:rounded-sm before:absolute menu-btn_burger"
@@ -429,7 +429,7 @@ import Button from "./Button.astro";
       </div>
     </div>
     <div
-      class="bg-white text-blue-grey h-[100vh] w-full absolute top-12 hidden"
+      class="text-blue-grey h-[100vh] w-full absolute top-12 hidden bg-background-primary left-0"
       id="mainMenu"
     >
       <!-- Home -->
