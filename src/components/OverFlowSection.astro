@@ -12,7 +12,7 @@ const { className = "", sectionData = {} } = Astro.props;
 <section class="bg-background-tertiary lg:mt-24 lg:h-[400px]">
   <Wrapper>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 slideInRight">
-      <div class="md:flex flex-col items-start slideInRight gap-3 md:gap-4">
+      <div class="flex flex-col items-start slideInRight gap-3 md:gap-5">
         <h3 class="text-typography-80 font-bold text-left text-xl md:text-2xl">
           {
             sectionData.headers.map((header, index) => (
@@ -26,13 +26,13 @@ const { className = "", sectionData = {} } = Astro.props;
         </h3>
         {
           sectionData.title && (
-            <p class="text-[#707070] font-medium xl:text-xl text-left self-start w-full leading-4 md:leading-7">
+            <p class="text-typography-40 font-medium text-lg md:text-xl text-left self-start w-full">
               {sectionData.title}
             </p>
           )
         }
 
-        <p class="text-blue-grey-50 text-left self-start md:text-xl">
+        <p class="text-typography-80 text-left self-start text-lg">
           {sectionData.description}
         </p>
       </div>
