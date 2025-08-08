@@ -67,6 +67,10 @@
   transform: scale(1);
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
 @config "../../tailwind.config.js";
 
 @import "tailwindcss";

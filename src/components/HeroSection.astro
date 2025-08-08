@@ -5,9 +5,10 @@ import Button from "./common/Button.astro";
 export interface Props {
   headers: string[];
   description: string;
+  hideButton?: boolean;
 }
 
-const { headers, description } = Astro.props as Props;
+const { headers, description, hideButton = false } = Astro.props as Props;
 ---
 
 <section class="bg-background-tertiary">
@@ -37,9 +38,13 @@ const { headers, description } = Astro.props as Props;
           {description}
         </p>
 
-        <div class="pt-4 md:pt-6">
-          <Button link="/platform" />
-        </div>
+        {
+          !hideButton && (
+            <div class="pt-4 md:pt-6">
+              <Button link="/platform" />
+            </div>
+          )
+        }
       </div>
 
       <slot />

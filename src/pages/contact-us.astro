@@ -27,10 +27,11 @@ const formSectionData = {
   <HeroSection
     headers={heroSectionData.headers}
     description={heroSectionData.description}
+    hideButton
   >
     <div class="h-fit slideInLeft">
       <img
-        src="https://res.cloudinary.com/senpiper/image/upload/v1753764912/senpiper_assets/VikalpOS/Group_1000005383_x97fwz.svg"
+        src="https://res.cloudinary.com/senpiper/image/upload/v1754643545/senpiper_assets/VikalpOS/contact-us/Rectangle_10_nu6xdu.png"
         alt="#"
         class="w-fit"
       />
@@ -41,15 +42,22 @@ const formSectionData = {
     <Wrapper>
       <div class={`grid grid-cols-1 lg:grid-cols-2 gap-10`}>
         <form id="contact-us-form" class="flex flex-col gap-6 slideInUp">
-          <Input title="Name" id="title" name="name" type="text" required />
-          <Input title="Email" id="title" name="email" type="email" required />
           <Input
-            title="Organization Name"
-            id="title"
-            name="organizationName"
+            title="Name"
+            name="name"
+            type="text"
+            placeholder="for eg John Doe"
             required
           />
-          <Input title="Message" name="message" id="message" />
+          <Input
+            title="Email"
+            name="email"
+            type="email"
+            placeholder="for eg John Doe@gmail.com"
+            required
+          />
+          <Input title="Organization Name" name="organizationName" required />
+          <Input title="Message" name="message" id="message" textArea />
           <div class="flex justify-center">
             <Button type="submit" text="Requst a demo" id="submitButton" />
           </div>
@@ -109,14 +117,14 @@ const formSectionData = {
   function buidData(formData: any) {
     const jsonFormData = { ...formData };
 
-    let groupId = "fd8ded3c-b2fd-479b-a2a1-8ce9398b45f4";
-    let formId = "189f6180-dc67-4a0c-88b9-9c403293e2f7";
+    let groupId = "23195170-209a-447f-af76-e924df1475cc";
+    let formId = "483100ea-7bb5-43e9-ae9c-7d438a1e18c7";
 
-    const path = window.location?.href || "";
-    if (path.includes("staging") || path.includes("localhost")) {
-      groupId = "f5026482-ac45-492a-9914-7959de2073e9";
-      formId = "f82e5ce7-4a54-4789-967f-d3f7724c6d82";
-    }
+    // const path = window.location?.href || "";
+    // if (path.includes("staging") || path.includes("localhost")) {
+    //   groupId = "f5026482-ac45-492a-9914-7959de2073e9";
+    //   formId = "f82e5ce7-4a54-4789-967f-d3f7724c6d82";
+    // }
 
     const answer = {
       answer: {
@@ -136,14 +144,15 @@ const formSectionData = {
   async function postForm(formData: any) {
     try {
       let url = "https://tech.senpiper.com/api/core/form/answer/public";
-      const path = window.location?.href || "";
-      if (path.includes("staging") || path.includes("localhost")) {
-        url = "https://rb.staging.senpiper.com/api/core/form/answer/public";
-      }
+      // const path = window.location?.href || "";
+      // if (path.includes("staging") || path.includes("localhost")) {
+      //   url = "https://rb.staging.senpiper.com/api/core/form/answer/public";
+      // }
       await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Auth: "bR9i2HU9cfpNYJc7rD9rbA==.Xz+NJJLJfg78T7MoYCEid0b1kJuCzg/rhbf5B5S483b4WXErLlXcYFhWUbUt107ROkAZBaWOCE8RQfPgBJDXcibkGvXqivO1T95oCQHqgfe9HoedYNF6JzLqfkx1dkHraLy3p0aSre/Hx5qYqabMmLUBpBkhtUqb0HlyTgonKLKv+nEmjYGzjJCqRmf0Wvf19CDqPhJ5bSylV4vMUTN//4rr+6kf8Zxsv4z7WuViIxhvveTJIx6xjRFm0BCuwh1nWse4Ftab7dBxinCZJbJcKVxSxvrND/jwu0x3OrVgM+1YE9Y8H9OcIoBuv5q+GR+XVni/HhcvJgMGiAxR7/ZG1FEQq4cV9IB1nbXS7r15+ot5v5r6tbVwRdBQ2AjVLRDRyq9A1MRU06KLAEKuky7kYQ==.WGhyHAVdvlLh4/+Dxmc0b98Sb+ITfhSCNTCWwQzGUas=",
         },
         body: JSON.stringify(formData),
       });
@@ -165,7 +174,7 @@ const formSectionData = {
 
     const jsonFormData = buidData(formData);
 
-    // const response = await postForm(jsonFormData);
+    const response = await postForm(jsonFormData);
 
     setTimeout(() => {
       if (response) {
@@ -189,11 +198,8 @@ const formSectionData = {
     }, 2000);
   }
 
-  const validateFormData = () => {};
-
   const handleOnSubmit = (event: Event) => {
     event.preventDefault();
-    console.log(formData);
 
     submitFormToBackend(event);
   };

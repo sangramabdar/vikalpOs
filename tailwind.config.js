@@ -4,6 +4,9 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Nunito Sans"', "sans-serif"],
+      },
       colors: {
         primary: {
           100: "#102E7A",
@@ -11,6 +14,7 @@ export default {
           80: "#2460B7",
           70: "#3981DB",
           60: "#4A64FF",
+          50: "#494E5B",
           40: "#76C2FF",
           30: "#89D3FF",
           20: "#BAE5FF",

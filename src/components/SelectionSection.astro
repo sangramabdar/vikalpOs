@@ -21,7 +21,7 @@ const { sectionData, className = "" } = Astro.props as Props;
   className={className}
 >
   <div
-    class="flex flex-wrap md:justify-between lg:justify-center gap-4 w-full"
+    class="flex overflow-scroll no-scrollbar md:justify-between lg:justify-center gap-2 md:gap-4 w-full"
     id="buttons-container"
   >
     {
@@ -29,7 +29,7 @@ const { sectionData, className = "" } = Astro.props as Props;
         <div class="flex gap-2 items-stretch">
           <button
             class={cn(
-              "rounded-lg text-primary-80 transition-all duration-400 text-base p-2 md:py-4 w-fit",
+              "rounded-lg text-primary-80 transition-all duration-400 text-base p-2 md:py-4 w-40",
               index === 0 && "bg-primary-20"
             )}
           >

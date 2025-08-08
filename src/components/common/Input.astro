@@ -1,38 +1,58 @@
 ---
 import { cn } from "../../utils/cn";
 
-export interface Props extends InputHTMLAttributes {
+export interface Props {
   title: string;
-  value?: any;
-  id: string;
+
+  id?: string;
   name: string;
   className?: string;
   type?: string;
   required?: boolean;
+  placeholder?: string;
+  textArea?: boolean;
 }
 
 const {
   title,
-  value = "",
+
   id,
   name,
   className = "",
   type,
   required = false,
+  placeholder = "Enter here",
+  textArea = false,
 } = Astro.props;
 ---
 
 <div class="grid gap-1 md:gap-2">
-  <label class="text-typography-40">{title}</label>
-  <input
-    class={cn(
-      "border border-typography-40 rounded-sm px-4 py-2 w-full",
-      className
-    )}
-    value={value}
-    id={id}
-    name={name}
-    type={type}
-    required={required}
-  />
+  <span class="text-typography-40">{title}</span>
+  {
+    textArea ? (
+      <textarea
+        class={cn(
+          "border-[0.5px] h-30 outline-0 border-typography-30 rounded-md px-4 py-2 w-full placeholder:text-[#90A3BF] placeholder:text-left focus:border-typography-40 focus:border-[0.5px] hover:border-typography-40 hover:border-[0.5px] resize-none",
+          className
+        )}
+        id={id}
+        name={name}
+        type={type}
+        required={required}
+        placeholder={placeholder}
+      />
+    ) : (
+      <input
+        class={cn(
+          "border-[0.5px] h-11 outline-0 border-typography-30 rounded-md px-4 py-2 w-full placeholder:text-[#90A3BF] placeholder:text-left focus:border-typography-40 focus:border-[0.5px] hover:border-typography-40 hover:border-[0.5px]",
+          className
+        )}
+        id={id}
+        name={name}
+        type={type}
+        required={required}
+        placeholder={placeholder}
+      />
+    )
+  }
 </div>

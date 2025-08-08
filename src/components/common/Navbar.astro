@@ -13,10 +13,10 @@ import Button from "./Button.astro";
         <!-- Left -->
 
         <div
-          class="flex shrink-0 gap-8 xl:gap-16 lg:w-4/5 xl:w-3/4 lg:h-full lg:items-center"
+          class="flex shrink-0 gap-8 xl:gap-16 lg:w-4/5 xl:w-3/4 lg:h-full lg:items-center justify-between text-typography-80"
         >
           <!-- Logo -->
-          <a class="flex items-center w-[96px] h-[32px]" href="/">
+          <a class="flex items-center" href="/">
             <img
               src="https://res.cloudinary.com/senpiper/image/upload/v1753867004/senpiper_assets/VikalpOS/icons/Logo_Type_w_Text_aah0p0.svg"
               alt="Senpiper"
@@ -24,19 +24,29 @@ import Button from "./Button.astro";
             />
           </a>
           <!-- Menu -->
-          <div
-            class="flex gap-8 lg:w-3/4 xl:w-3/4 2xl:w-2/3 lg:h-full lg:items-center"
-          >
-            <!-- Platform -->
+          <div class="flex gap-8 lg:h-full lg:items-center flex-1">
+            <!-- Home -->
+            <a
+              class="relative flex min-w-fit justify-center h-full items-center group"
+              href="/"
+            >
+              <p
+                class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-70 group-hover:text-primary-70"
+              >
+                Home
+              </p>
+            </a>
+
+            <!-- Vikalp Hub -->
 
             <a
               class="relative flex min-w-fit justify-center h-full items-center group"
-              href="/platform/"
+              href="/vikalp-hub"
             >
               <p
-                class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-2 group-hover:border-b-2"
+                class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-70 group-hover:text-primary-70"
               >
-                Platform
+                Vikalp Hub
               </p>
             </a>
 
@@ -419,15 +429,15 @@ import Button from "./Button.astro";
       </div>
     </div>
     <div
-      class="bg-white text-blue-grey text-mbd1 font-semibold h-[100vh] w-full absolute top-12 hidden"
+      class="bg-white text-blue-grey h-[100vh] w-full absolute top-12 hidden"
       id="mainMenu"
     >
       <!-- Home -->
-      <div class="menu px-6 space-y-24" id="homeMenu">
+      <div class="menu px-4 space-y-24" id="homeMenu">
         <!-- Main menu -->
         <ul class="mt-8 space-y-6">
           <li>
-            <a href="/platform/">Platfrom</a>
+            <a href="/vikalp-hub" class="hover:text-primary-70">Vikalp Hub</a>
           </li>
 
           <!-- <li>
@@ -455,11 +465,7 @@ import Button from "./Button.astro";
           </li> -->
         </ul>
         <div>
-          <a
-            href="/contact/"
-            class="bg-violet text-white font-semibold rounded w-fit text-sub px-6 py-2"
-            >Contact us</a
-          >
+          <Button text="Contact Us" link="/contact-us" />
         </div>
       </div>
 
