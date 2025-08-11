@@ -98,7 +98,7 @@ const faqSections = [
 ---
 
 <Layout>
-  <Wrapper>
+  <Wrapper className="min-h-[43vh] md:h-[64vh]">
     <button
       id="faq-back-button"
       class="p-2 mb-4 hidden bg-primary-20 rounded-md cursor-pointer slideInDown"
@@ -107,7 +107,7 @@ const faqSections = [
         src="https://res.cloudinary.com/senpiper/image/upload/v1754907337/senpiper_assets/VikalpOS/icons/Type_Back_Button_ezonly.svg"
       />
     </button>
-    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] md:gap-10 lg:gap-20">
       <div
         class="w-full h-fit relative p-2 border rounded-md border-typography-30 slideInRight"
         id="faq-sidebar"
@@ -138,7 +138,7 @@ const faqSections = [
             >
               {faqSections[index].qas.map(element => (
                 <div class="space-y-2">
-                  <h2 class="text-lg text-typography-80 font-semibold">
+                  <h2 class="md:text-lg text-typography-80 font-semibold">
                     Q{index + 1}. {element.question}
                   </h2>
                   <p class="text-base text-typography-40">{element.answer}</p>

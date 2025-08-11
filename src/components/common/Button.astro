@@ -21,7 +21,7 @@ const {
 } = Astro.props as Props;
 
 const baseClasses =
-  "text-center flex justify-center items-center h-full w-fit h-12 cursor-pointer transition-all hover:bg-primary-100 text-white px-4 py-2 rounded-sm font-semibold md:text-lg";
+  "text-center flex justify-center items-center h-full w-fit h-12 cursor-pointer transition-all hover:bg-primary-100 hover:-translate-y-[2px]  text-white px-4 py-2 rounded-sm font-semibold md:text-lg";
 
 const variants: any = {
   primary: "bg-primary-70 hover:bg-primary-80",
@@ -36,12 +36,7 @@ const variants: any = {
     <a
       id={id}
       href={link}
-      class={cn(
-        baseClasses,
-        variants[variant],
-        className
-        // "hover:-translate-y-1"
-      )}
+      class={cn(baseClasses, variants[variant], "c", className)}
     >
       {text}
     </a>
