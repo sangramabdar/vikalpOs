@@ -1,0 +1,201 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Wrapper from "../layouts/Wrapper.astro";
+import { cn } from "../utils/cn";
+
+const faqSections = [
+  {
+    title: "About VikalpOS",
+    qas: [
+      {
+        question: "What is VikalpOS?",
+        answer:
+          "An open-source, low-code governance system for digitizing government operations and workflows. Modules: analytics, real-time public feedback, citizen services, inspections, and disaster management.",
+      },
+      {
+        question: "How is VikalpOS different from traditional systems?",
+        answer:
+          "It’s open-source, low-code, cost-effective, and configurable to different government department requirements.",
+      },
+      {
+        question: "What types of modules are available?",
+        answer:
+          "Modules cover a wide range of government needs such as: performance monitoring, HR management, asset management, surveys, inspections, citizen services, and resource allocation.",
+      },
+    ],
+  },
+  {
+    title: "VikalpHub",
+    qas: [
+      {
+        question: "Can it integrate with existing government systems?",
+        answer:
+          "Yes. Supports secure API-based integrations with ministry systems, legacy applications, and national databases.",
+      },
+      {
+        question: "Does it work without internet connectivity?",
+        answer:
+          "Yes. Offline-first mobile application with local data capture in remote locations; syncs automatically when online.",
+      },
+      {
+        question: "Can it be customized for different departments?",
+        answer:
+          "Yes. Departments can configure workflows, forms, and reports for their specific needs.",
+      },
+      {
+        question: "How does it help decision making?",
+        answer:
+          "AI-powered insights: predictive analytics, facial verification, anomaly detection, geo-fencing, and automated alerts.",
+      },
+    ],
+  },
+  {
+    title: "Security & Compliance",
+    qas: [
+      {
+        question: "How is data security and compliance ensured?",
+        answer:
+          "End-to-end encryption, role-based access control, and audit trails. Hosting in compliant data centers (NIC, MeitY, or approved cloud environments).",
+      },
+      {
+        question: "Is it compliant with national data protection laws?",
+        answer:
+          "Yes. Adheres to state policies, government guidelines, and applicable laws to ensure privacy and controlled access.",
+      },
+      {
+        question: "Can data be hosted within government infrastructure?",
+        answer:
+          "Yes. Can be hosted on-premises, in NIC data centers, or in approved hosting environments.",
+      },
+    ],
+  },
+  {
+    title: "Getting Started",
+    qas: [
+      {
+        question: "How can any department start using it?",
+        answer:
+          "Implementation support includes requirement gathering, configuration, training, pilot testing, and onboarding.",
+      },
+      {
+        question: "What is the onboarding process?",
+        answer:
+          "Includes requirement workshops, training, pilot testing, and a full rollout with ongoing support.",
+      },
+      {
+        question: "Can it be hosted within government infrastructure?",
+        answer:
+          "Yes. Can be hosted on-premises, in NIC data centers, MeitY cloud, or other approved hosting environments.",
+      },
+      {
+        question: "What does “admin independence” mean for ownership?",
+        answer:
+          "Government teams can control, upgrade, and maintain the system independently or with authorized partners.",
+      },
+    ],
+  },
+];
+---
+
+<Layout>
+  <Wrapper>
+    <button
+      id="faq-back-button"
+      class="p-2 mb-4 md:hidden bg-primary-20 rounded-md cursor-pointer slideInDown"
+    >
+      <img
+        src="https://res.cloudinary.com/senpiper/image/upload/v1754907337/senpiper_assets/VikalpOS/icons/Type_Back_Button_ezonly.svg"
+      />
+    </button>
+    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6">
+      <div
+        class="w-full h-fit relative p-2 border rounded-md border-typography-30 slideInRight"
+        id="faq-sidebar"
+      >
+        <ul class="p-2 space-y-4 w-full">
+          {
+            faqSections.map((element, index) => (
+              <li
+                class={cn(
+                  "transition-all duration-400 rounded-md p-2 text-typography-80 relative z-20 cursor-pointer",
+                  index == 0 && "bg-primary-70 text-background-primary"
+                )}
+              >
+                {element.title}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div id="faq-content" class="hidden md:flex">
+        {
+          faqSections.map((_, index) => (
+            <div
+              class={cn(
+                "transition-all duration-1000 hidden space-y-6 slideInLeft",
+                index === 0 && "block"
+              )}
+            >
+              {faqSections[index].qas.map(element => (
+                <div class="space-y-2">
+                  <h2 class="text-lg text-typography-80 font-semibold">
+                    Q{index + 1}. {element.question}
+                  </h2>
+                  <p class="text-base text-typography-40">{element.answer}</p>
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</Layout>
+
+<script>
+  const faqSideBar = document.getElementById("faq-sidebar");
+  const options = faqSideBar?.getElementsByTagName("ul").item(0)
+    ?.children as HTMLCollection;
+  const faqContent = document.getElementById("faq-content");
+  const contentOptions = faqContent?.children as HTMLCollection;
+  const backButton = document.getElementById("faq-back-button");
+
+  const handleBackButtonClick = () => {
+    faqContent?.classList.add("hidden");
+    faqSideBar?.classList.remove("hidden");
+  };
+
+  backButton?.addEventListener("click", handleBackButtonClick);
+
+  const handleSideBarOptionClick = (index: number) => () => {
+    if (window.innerWidth < 768) {
+      faqContent?.classList.remove("hidden");
+      faqSideBar?.classList.add("hidden");
+    }
+
+    for (let i = 0; i < contentOptions?.length; i++) {
+      if (i === index) {
+        contentOptions[i].classList.remove("hidden");
+        contentOptions[i].classList.add("block");
+        contentOptions[i].classList.add("text-background-primary");
+        continue;
+      }
+
+      contentOptions[i].classList.add("hidden");
+    }
+
+    for (let i = 0; i < options?.length; i++) {
+      if (i === index) {
+        options[i].classList.remove("text-typography-80");
+        options[i].classList.add("bg-primary-70", "text-background-primary");
+        continue;
+      }
+
+      options[i].classList.remove("bg-primary-70", "text-background-primary");
+    }
+  };
+
+  for (let i = 0; i < options?.length; i++) {
+    options[i]?.addEventListener("click", handleSideBarOptionClick(i));
+  }
+</script>

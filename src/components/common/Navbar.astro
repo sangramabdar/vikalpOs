@@ -1,6 +1,9 @@
 ---
 import Wrapper from "../../layouts/Wrapper.astro";
+import { cn } from "../../utils/cn";
 import Button from "./Button.astro";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav
@@ -31,7 +34,10 @@ import Button from "./Button.astro";
               href="/"
             >
               <p
-                class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-70 group-hover:text-primary-70"
+                class={cn(
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90",
+                  currentPath === "/" && "text-primary-90"
+                )}
               >
                 Home
               </p>
@@ -44,9 +50,26 @@ import Button from "./Button.astro";
               href="/vikalp-hub"
             >
               <p
-                class="lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-70 group-hover:text-primary-70"
+                class={cn(
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90",
+                  currentPath === "/vikalp-hub" && "text-primary-90"
+                )}
               >
                 VikalpHub
+              </p>
+            </a>
+
+            <a
+              class="relative flex min-w-fit justify-center h-full items-center group"
+              href="/faqs"
+            >
+              <p
+                class={cn(
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90",
+                  currentPath === "/faqs" && "text-primary-90"
+                )}
+              >
+                FAQs
               </p>
             </a>
 
@@ -429,15 +452,41 @@ import Button from "./Button.astro";
       </div>
     </div>
     <div
-      class="text-blue-grey h-[100vh] w-full absolute top-12 hidden bg-background-primary left-0"
+      class="transition-all duration-300 text-blue-grey h-[100vh] w-full absolute top-12 hidden bg-background-primary left-0"
       id="mainMenu"
     >
       <!-- Home -->
       <div class="menu px-4 space-y-24" id="homeMenu">
         <!-- Main menu -->
-        <ul class="mt-8 space-y-6">
+        <ul class="mt-8 space-y-4">
           <li>
-            <a href="/vikalp-hub" class="hover:text-primary-70">VikalpHub</a>
+            <a
+              href="/"
+              class={cn(
+                "hover:text-primary-90",
+                currentPath === "/" && "text-primary-90"
+              )}>Home</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="/vikalp-hub"
+              class={cn(
+                "hover:text-primary-90",
+                currentPath === "/vikalp-hub" && "text-primary-90"
+              )}>VikalpHub</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="/faqs"
+              class={cn(
+                "hover:text-primary-90",
+                currentPath === "/faqs" && "text-primary-90"
+              )}>FAQs</a
+            >
           </li>
 
           <!-- <li>
