@@ -170,12 +170,12 @@ const faqSections = [
   backButton?.addEventListener("click", handleBackButtonClick);
 
   const handleSideBarOptionClick = (index: number) => () => {
-    backButton?.classList.add("block");
-    backButton?.classList.remove("hidden");
-
     if (window.innerWidth < 768) {
       faqContent?.classList.remove("hidden");
       faqSideBar?.classList.add("hidden");
+
+      backButton?.classList.add("block");
+      backButton?.classList.remove("hidden");
     }
 
     for (let i = 0; i < contentOptions?.length; i++) {
