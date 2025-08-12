@@ -2,8 +2,6 @@
 import Wrapper from "../../layouts/Wrapper.astro";
 import { cn } from "../../utils/cn";
 import Button from "./Button.astro";
-
-const currentPath = Astro.url.pathname;
 ---
 
 <nav
@@ -30,13 +28,12 @@ const currentPath = Astro.url.pathname;
           <div class="flex gap-8 lg:h-full lg:items-center flex-1">
             <!-- Home -->
             <a
-              class="relative flex min-w-fit justify-center h-full items-center group"
+              class="relative flex min-w-fit justify-center h-full items-center group navlink"
               href="/"
             >
               <p
                 class={cn(
-                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90",
-                  currentPath === "/" && "text-primary-90"
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90"
                 )}
               >
                 Home
@@ -46,13 +43,12 @@ const currentPath = Astro.url.pathname;
             <!-- Vikalp Hub -->
 
             <a
-              class="relative flex min-w-fit justify-center h-full items-center group"
+              class="relative flex min-w-fit justify-center h-full items-center group navlink"
               href="/vikalp-hub"
             >
               <p
                 class={cn(
-                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90",
-                  currentPath === "/vikalp-hub" && "text-primary-90"
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90"
                 )}
               >
                 VikalpHub
@@ -60,13 +56,12 @@ const currentPath = Astro.url.pathname;
             </a>
 
             <a
-              class="relative flex min-w-fit justify-center h-full items-center group"
+              class="relative flex min-w-fit justify-center h-full items-center group navlink"
               href="/faqs"
             >
               <p
                 class={cn(
-                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90",
-                  currentPath === "/faqs" && "text-primary-90"
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90"
                 )}
               >
                 FAQs
@@ -460,32 +455,18 @@ const currentPath = Astro.url.pathname;
         <!-- Main menu -->
         <ul class="mt-8 space-y-4">
           <li>
-            <a
-              href="/"
-              class={cn(
-                "hover:text-primary-90",
-                currentPath === "/" && "text-primary-90"
-              )}>Home</a
+            <a href="/" class={cn("hover:text-primary-90", "navlink")}>Home</a>
+          </li>
+
+          <li>
+            <a href="/vikalp-hub" class={cn("hover:text-primary-90", "navlink")}
+              >VikalpHub</a
             >
           </li>
 
           <li>
-            <a
-              href="/vikalp-hub"
-              class={cn(
-                "hover:text-primary-90",
-                currentPath === "/vikalp-hub" && "text-primary-90"
-              )}>VikalpHub</a
-            >
-          </li>
-
-          <li>
-            <a
-              href="/faqs"
-              class={cn(
-                "hover:text-primary-90",
-                currentPath === "/faqs" && "text-primary-90"
-              )}>FAQs</a
+            <a href="/faqs" class={cn("hover:text-primary-90", "navlink")}
+              >FAQs</a
             >
           </li>
 
@@ -872,6 +853,8 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <script>
+  const navlinks = document.querySelectorAll(".navlink");
+
   const allMenus = document.getElementsByClassName("menu");
   const allMenuItems = document.getElementsByClassName("menuItem");
   const allMenuIds = ["productMenu", "featuresMenu"];
@@ -911,4 +894,12 @@ const currentPath = Astro.url.pathname;
   for (let i = 0; i < backHomes.length; i++) {
     backHomes[i].addEventListener("click", () => handleOnClick("homeMenu"));
   }
+
+  const currentPath = window.location.pathname;
+
+  navlinks.forEach(link => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("text-primary-90");
+    }
+  });
 </script>
