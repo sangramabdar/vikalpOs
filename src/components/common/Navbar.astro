@@ -898,12 +898,18 @@ import Button from "./Button.astro";
 <script>
   const navlinks = document.querySelectorAll(".navlink");
 
+  const hideBorder = window.innerWidth < 1024;
+
   function highLightActiveLink() {
     const currentPath = window.location.pathname;
 
     navlinks.forEach(link => {
       if (link.getAttribute("href") === currentPath) {
-        link.classList.add("text-primary-90");
+        link.classList.add(
+          "text-primary-90",
+          "border-b-primary-90",
+          !hideBorder ? "border-b-[0.5px]" : "empty"
+        );
       }
     });
   }

@@ -65,6 +65,23 @@
     updateButtons();
   };
 
+  let direction = "forward";
+
+  setInterval(() => {
+    if (index + 1 === total) {
+      direction = "backward";
+    }
+
+    if (index === 0) {
+      direction = "forward";
+    }
+    if (direction === "forward") {
+      moveSlide(1);
+    } else {
+      moveSlide(-1);
+    }
+  }, 2000);
+
   prevBtn.addEventListener("click", () => moveSlide(-1));
   nextBtn.addEventListener("click", () => moveSlide(1));
 </script>
