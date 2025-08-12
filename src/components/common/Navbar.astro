@@ -853,8 +853,6 @@ import Button from "./Button.astro";
 </style>
 
 <script>
-  const navlinks = document.querySelectorAll(".navlink");
-
   const allMenus = document.getElementsByClassName("menu");
   const allMenuItems = document.getElementsByClassName("menuItem");
   const allMenuIds = ["productMenu", "featuresMenu"];
@@ -894,12 +892,21 @@ import Button from "./Button.astro";
   for (let i = 0; i < backHomes.length; i++) {
     backHomes[i].addEventListener("click", () => handleOnClick("homeMenu"));
   }
+</script>
 
-  const currentPath = window.location.pathname;
+//highlight active link here
+<script>
+  const navlinks = document.querySelectorAll(".navlink");
 
-  navlinks.forEach(link => {
-    if (link.getAttribute("href") === currentPath) {
-      link.classList.add("text-primary-90");
-    }
-  });
+  function highLightActiveLink() {
+    const currentPath = window.location.pathname;
+
+    navlinks.forEach(link => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("text-primary-90");
+      }
+    });
+  }
+
+  highLightActiveLink();
 </script>
