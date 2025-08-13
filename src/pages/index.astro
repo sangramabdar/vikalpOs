@@ -12,6 +12,7 @@ import Carousel from "../components/common/Carousel.astro";
 import SelectionSection from "../components/SelectionSection.astro";
 import RealWordlDeploymentSection from "../components/RealWordlDeploymentSection.astro";
 import { cn } from "../utils/cn";
+import Button from "../components/common/Button.astro";
 
 const DigitizeTheWaySectionData = [
   {
@@ -508,13 +509,20 @@ From data capture to real-time dashboards, all within a single, no-code platform
   >
     <Carousel items={onGroundOutComesSectionData.cards}>
       {
-        onGroundOutComesSectionData.cards.map(card => (
+        onGroundOutComesSectionData.cards.map((card, index) => (
           <div class="min-w-full lg:min-w-[380px] md:w-[33%] p-4 px-8 lg:px-4 box-border">
             <div class="bg-background-tertiary h-full rounded-md p-4 space-y-8">
               <div class="bg-background-primary w-full h-32 flex justify-center items-center px-2 py-4">
                 <img src={card.img} class="w-fit h-full object-cover" />
               </div>
               <p class="text-center">{card.description}</p>
+              {/* <div class="flex justify-center">
+                <Button
+                  text="View case study"
+                  variant="secondary"
+                  link={`/case-studies#${index}`}
+                />
+              </div> */}
             </div>
           </div>
         ))

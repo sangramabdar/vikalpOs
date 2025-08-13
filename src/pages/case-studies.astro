@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Wrapper from "../layouts/Wrapper.astro";
+
+const onGroundOutComesSectionData = {
+  cards: [
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754639901/senpiper_assets/VikalpOS/home/logo-5_vsgmpp.svg",
+      description:
+        "We deployed a unified smart suite with geo-enabled duty tracking, digital FIRs, & real-time criminal intelligence, boosting coordination and citizen trust",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754639903/senpiper_assets/VikalpOS/home/logo-4_aqbmkz.svg",
+      description:
+        "We digitized PR approvals, integrated stock tracking, and enabled real-time insights, reducing cycle time and boosting visibility",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754639908/senpiper_assets/VikalpOS/home/logo-2_nam9hw.svg",
+      description:
+        "We implemented an AI-powered platform for accreditation, and facial-verification attendance ensuring faster audits and fraud prevention",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754639911/senpiper_assets/VikalpOS/home/logo_lqp3ac.svg",
+      description:
+        "Enabled remote validation for 27,000+ BSNL 4G mobile towers at a nationwide scale using AI-powered image analysis, centralized dashboards, and automated milestone tracking",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754639912/senpiper_assets/VikalpOS/home/logo-1_taxfql.svg",
+      description:
+        "Strengthened integrated rural development by consolidating field operations and wellness programs delivering real-time visibility &  improved coordination across Uttar Pradesh",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754639900/senpiper_assets/VikalpOS/home/logo-8_o9raij.svg",
+      description:
+        "Digitally unified substation and transmission line monitoring enabling real-time project oversight, smart data structuring, and operational intelligence",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754639909/senpiper_assets/VikalpOS/home/logo-3_ke6xmr.svg",
+      description:
+        "Enabled real-time oversight and coordination for all Bhilwara election booths via mobile monitoring delivering instant attendance, live polling metrics, and rapid response",
+    },
+    {
+      img: "https://res.cloudinary.com/senpiper/image/upload/v1754639899/senpiper_assets/VikalpOS/home/logo-7_qttadl.svg",
+      description:
+        "Transformed statewide skill center audits in Haryana with a mobile-first platform enabling real-time reporting, standardized tracking, and evidence-backed compliance for improved decision-making",
+    },
+  ],
+};
+---
+
+<Layout>
+  <Wrapper>
+    {
+      onGroundOutComesSectionData.cards.map((card, index) => (
+        <div class="min-w-full  p-4 px-8 lg:px-4 box-border" id={index}>
+          <div class="bg-background-tertiary h-full rounded-md p-4 space-y-8">
+            <div class="bg-background-primary w-full h-32 flex justify-center items-center px-2 py-4">
+              <img src={card.img} class="w-fit h-full object-cover" />
+            </div>
+            <h2 />
+            <p class="text-center">{card.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </Wrapper>
+</Layout>
+
+<script>
+  window.addEventListener("load", () => {
+    // document.getElementById("4").scrollIntoView({
+    //   behavior: "smooth", // change to "auto" for instant scroll
+    //   block: "start",
+    // });
+    // setTimeout(() => {
+    //   const target = document.getElementById("1");
+    //   const offset = 400; // pixels from top after scroll
+    //   const elementPosition =
+    //     target.getBoundingClientRect().top + window.scrollY;
+    //   const offsetPosition = elementPosition - offset;
+    //   console.log("sangram", { elementPosition, target });
+    //   window.scrollTo({
+    //     top: elementPosition,
+    //     behavior: "smooth",
+    //   });
+    // }, 2000);
+    const elementToScroll = window.location.hash.slice(1);
+
+    console.log("sangram", { elementToScroll });
+    const target = document.getElementById(elementToScroll);
+    const offset = 20000; // pixels from top after scroll
+    if (target) {
+      // First scroll element into view
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      // Then adjust by offset after animation frame
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: -offset, behavior: "smooth" });
+      });
+    }
+  });
+</script>
