@@ -28,14 +28,25 @@
 
   let index = 0;
   const slides = track.children;
-  const total = slides.length;
+  let total = slides.length;
+
+  const isMobile = window.innerWidth < 1024;
+
+  // if (!isMobile) {
+  //   const intPart = Math.trunc(total / 3);
+  //   const fractionPart = total / 3 - intPart;
+
+  //   total = intPart;
+  //   if (fractionPart > 0) {
+  //     total += 1;
+  //   }
+
+  //   console.log("sangram", { total });
+  // }
 
   const updateButtons = () => {
-    const slidesPerView = Math.floor(track.offsetWidth / slides[0].offsetWidth);
-    const maxIndex = total - slidesPerView;
-
     prevBtn.disabled = index === 0;
-    nextBtn.disabled = index >= maxIndex;
+    nextBtn.disabled = index >= total - 1;
   };
 
   const moveSlide = (direction: number) => {
@@ -45,21 +56,9 @@
 
     if (carouselTrackWidth >= scrollWidth || scrollWidth <= offsetWidth) return;
 
-    const slidesPerView = Math.floor(carouselTrackWidth / offsetWidth);
-    const maxIndex = total - slidesPerView;
-
-    // Boundary checks
-    if (
-      (index === 0 && direction < 0) ||
-      (index >= maxIndex && direction > 0)
-    ) {
-      return; // Reached start or end
-    }
-
     index += direction;
 
-    // Clamp to max index
-    index = Math.min(index, maxIndex);
+    console.log("sangram", { direction, index, total });
 
     track.style.transform = `translateX(-${index * offsetWidth}px)`;
     updateButtons();
@@ -68,17 +67,22 @@
   let direction = "forward";
 
   setInterval(() => {
-    if (index + 1 === total) {
+    if (index >= total) {
       direction = "backward";
     }
 
-    if (index === 0) {
+    if (index <= 0) {
       direction = "forward";
     }
+
     if (direction === "forward") {
-      moveSlide(1);
+      // moveSlide(1);
+      if (isMobile) moveSlide(1);
+      else moveSlide(3);
     } else {
-      moveSlide(-1);
+      // moveSlide(-1);
+      if (isMobile) moveSlide(-1);
+      else moveSlide(-3);
     }
   }, 2000);
 
