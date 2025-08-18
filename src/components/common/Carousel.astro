@@ -26,41 +26,29 @@
   const prevBtn = document.getElementById("carousel-prev") as HTMLButtonElement;
   const nextBtn = document.getElementById("carousel-next") as HTMLButtonElement;
 
-  let index = 0;
-  const slides = track.children;
-  let total = slides.length;
-
   const isMobile = window.innerWidth < 1024;
 
-  // if (!isMobile) {
-  //   const intPart = Math.trunc(total / 3);
-  //   const fractionPart = total / 3 - intPart;
-
-  //   total = intPart;
-  //   if (fractionPart > 0) {
-  //     total += 1;
-  //   }
-
-  //   console.log("sangram", { total });
-  // }
+  let index = 0;
+  const slides = track.children;
+  const total = slides.length;
 
   const updateButtons = () => {
     prevBtn.disabled = index === 0;
     nextBtn.disabled = index >= total - 1;
   };
 
-  const moveSlide = (direction: number) => {
+  const moveSlide = (direction: number, widthIndex: number = 1) => {
     const offsetWidth = slides[0].offsetWidth;
     const carouselTrackWidth = track.offsetWidth;
     const scrollWidth = slides.length * offsetWidth;
 
     if (carouselTrackWidth >= scrollWidth || scrollWidth <= offsetWidth) return;
 
+    if (index < total)
+      track.style.transform = `translateX(-${index * offsetWidth}px)`;
+
     index += direction;
 
-    console.log("sangram", { direction, index, total });
-
-    track.style.transform = `translateX(-${index * offsetWidth}px)`;
     updateButtons();
   };
 
@@ -76,11 +64,9 @@
     }
 
     if (direction === "forward") {
-      // moveSlide(1);
       if (isMobile) moveSlide(1);
       else moveSlide(3);
     } else {
-      // moveSlide(-1);
       if (isMobile) moveSlide(-1);
       else moveSlide(-3);
     }
