@@ -183,41 +183,49 @@ const onGroundOutComesSectionData = {
       img: "https://res.cloudinary.com/senpiper/image/upload/v1754639901/senpiper_assets/VikalpOS/home/logo-5_vsgmpp.svg",
       description:
         "We deployed a unified smart suite with geo-enabled duty tracking, digital FIRs, & real-time criminal intelligence, boosting coordination and citizen trust",
+      caseStudy: "1",
     },
     {
       img: "https://res.cloudinary.com/senpiper/image/upload/v1754639903/senpiper_assets/VikalpOS/home/logo-4_aqbmkz.svg",
       description:
         "We digitized PR approvals, integrated stock tracking, and enabled real-time insights, reducing cycle time and boosting visibility",
+      caseStudy: "2",
     },
     {
       img: "https://res.cloudinary.com/senpiper/image/upload/v1754639908/senpiper_assets/VikalpOS/home/logo-2_nam9hw.svg",
       description:
         "We implemented an AI-powered platform for accreditation, and facial-verification attendance ensuring faster audits and fraud prevention",
+      caseStudy: "3",
     },
     {
       img: "https://res.cloudinary.com/senpiper/image/upload/v1754639911/senpiper_assets/VikalpOS/home/logo_lqp3ac.svg",
       description:
         "Enabled remote validation for 27,000+ BSNL 4G mobile towers at a nationwide scale using AI-powered image analysis, centralized dashboards, and automated milestone tracking",
+      caseStudy: "4s",
     },
     {
       img: "https://res.cloudinary.com/senpiper/image/upload/v1754639912/senpiper_assets/VikalpOS/home/logo-1_taxfql.svg",
       description:
         "Strengthened integrated rural development by consolidating field operations and wellness programs delivering real-time visibility &  improved coordination across Uttar Pradesh",
+      caseStudy: "5",
     },
     {
       img: "https://res.cloudinary.com/senpiper/image/upload/v1754639900/senpiper_assets/VikalpOS/home/logo-8_o9raij.svg",
       description:
         "Digitally unified substation and transmission line monitoring enabling real-time project oversight, smart data structuring, and operational intelligence",
+      caseStudy: "6",
     },
     {
       img: "https://res.cloudinary.com/senpiper/image/upload/v1754639909/senpiper_assets/VikalpOS/home/logo-3_ke6xmr.svg",
       description:
         "Enabled real-time oversight and coordination for all Bhilwara election booths via mobile monitoring delivering instant attendance, live polling metrics, and rapid response",
+      caseStudy: "7",
     },
     {
       img: "https://res.cloudinary.com/senpiper/image/upload/v1754639899/senpiper_assets/VikalpOS/home/logo-7_qttadl.svg",
       description:
         "Transformed statewide skill center audits in Haryana with a mobile-first platform enabling real-time reporting, standardized tracking, and evidence-backed compliance for improved decision-making",
+      caseStudy: "8",
     },
   ],
 };
@@ -511,18 +519,18 @@ From data capture to real-time dashboards, all within a single, no-code platform
       {
         onGroundOutComesSectionData.cards.map((card, index) => (
           <div class="min-w-full lg:min-w-[400px] md:w-[33%] p-4 px-4 lg:px-4 box-border">
-            <div class="bg-background-tertiary h-full rounded-md p-4 space-y-8">
+            <div class="bg-background-tertiary flex flex-col h-full rounded-md p-4 space-y-8">
               <div class="bg-background-primary w-full h-32 flex justify-center items-center px-2 py-4">
                 <img src={card.img} class="w-fit h-full object-cover" />
               </div>
               <p class="text-center">{card.description}</p>
-              {/* <div class="flex justify-center">
+              <div class="flex justify-center flex-1 items-end">
                 <Button
                   text="View case study"
                   variant="secondary"
-                  link={`/case-studies#${index}`}
+                  link={`/case-studies#${card.caseStudy}`}
                 />
-              </div> */}
+              </div>
             </div>
           </div>
         ))
