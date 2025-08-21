@@ -136,10 +136,10 @@ const faqSections = [
                 index === 0 && "block"
               )}
             >
-              {faqSections[index].qas.map(element => (
+              {faqSections[index].qas.map((element, answerIndex) => (
                 <div class="space-y-2">
                   <h2 class="md:text-lg text-typography-80 font-semibold">
-                    Q{index + 1}. {element.question}
+                    Q{answerIndex + 1}. {element.question}
                   </h2>
                   <p class="text-base text-typography-40">{element.answer}</p>
                 </div>
