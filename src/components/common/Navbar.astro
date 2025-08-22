@@ -19,8 +19,7 @@ import Button from "./Button.astro";
           <!-- Logo -->
           <a class="flex items-center" href="/">
             <img
-              src="https://res.cloudinary.com/senpiper/image/upload/v1753867004/senpiper_assets/VikalpOS/icons/Logo_Type_w_Text_aah0p0.svg"
-              alt="ViklapOS"
+              src="https://res.cloudinary.com/senpiper/image/upload/v1755841432/senpiper_assets/VikalpOS/icons/VikalpOS_Logo_ox9dyo.svg"
               class="object-contain w-[120px]"
             />
           </a>
@@ -33,7 +32,7 @@ import Button from "./Button.astro";
             >
               <p
                 class={cn(
-                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90"
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-primary-90 group-hover:text-primary-90"
                 )}
               >
                 Home
@@ -61,7 +60,7 @@ import Button from "./Button.astro";
             >
               <p
                 class={cn(
-                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-b-2 group-hover:border-primary-90 group-hover:text-primary-90"
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1  group-hover:border-primary-90 group-hover:text-primary-90"
                 )}
               >
                 FAQs
@@ -431,7 +430,7 @@ import Button from "./Button.astro";
       <!-- Logo -->
       <a class="flex items-center" href="/">
         <img
-          src="https://res.cloudinary.com/senpiper/image/upload/v1753867004/senpiper_assets/VikalpOS/icons/Logo_Type_w_Text_aah0p0.svg"
+          src="https://res.cloudinary.com/senpiper/image/upload/v1755841432/senpiper_assets/VikalpOS/icons/VikalpOS_Logo_ox9dyo.svg"
           alt="ViklapOS"
           class="object-contain w-[120px]"
           id="logo"
@@ -908,7 +907,7 @@ import Button from "./Button.astro";
         link.classList.add(
           "text-primary-90",
           "border-b-primary-90",
-          !hideBorder ? "border-b-[0.5px]" : "empty"
+          hideBorder ? "empty" : "border-b-[0.5px]"
         );
       }
     });
