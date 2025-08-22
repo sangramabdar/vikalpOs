@@ -24,7 +24,7 @@ import Button from "./Button.astro";
             />
           </a>
           <!-- Menu -->
-          <div class="flex gap-8 lg:h-full lg:items-center flex-1">
+          <div class="flex gap-16 lg:h-full lg:items-center flex-1">
             <!-- Home -->
             <a
               class="relative flex min-w-fit justify-center h-full items-center group navlink"
@@ -32,7 +32,7 @@ import Button from "./Button.astro";
             >
               <p
                 class={cn(
-                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-primary-90 group-hover:text-primary-90"
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1 group-hover:border-primary-90 group-hover:text-primary-90 group-hover:border-b-1"
                 )}
               >
                 Home
@@ -60,7 +60,7 @@ import Button from "./Button.astro";
             >
               <p
                 class={cn(
-                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1  group-hover:border-primary-90 group-hover:text-primary-90"
+                  "lg:text-tbtn xl:text-btn 2xl:text-tbd1 cursor-pointer py-1  group-hover:border-primary-90 group-hover:text-primary-90 group-hover:border-b-1"
                 )}
               >
                 FAQs
@@ -907,7 +907,7 @@ import Button from "./Button.astro";
         link.classList.add(
           "text-primary-90",
           "border-b-primary-90",
-          hideBorder ? "empty" : "border-b-[0.5px]"
+          hideBorder ? "empty" : "border-b-[2px]"
         );
       }
     });
