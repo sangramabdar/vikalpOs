@@ -7,15 +7,7 @@ import Layout from "../layouts/Layout.astro";
 import Wrapper from "../layouts/Wrapper.astro";
 import { cn } from "../utils/cn";
 
-const metaData = {
-  ogTitle:
-    "Contact Senpiper | Request a Demo, Sales Inquiries, and Support Requests",
-  ogDescription:
-    "Contact Senpiper for a product demo, sales inquiries, or support requests. Our team will assist you in identifying digitization opportunities to improve your business operations. Fill out the form and click 'Get a Demo' to schedule a date and time with our experts. Experience our platform and discover how we can build the right solution for your needs",
-  ogKeywords:
-    "Contact Senpiper, Request a Demo, Sales Inquiries, Support Requests, Digitization Opportunities, Schedule a Demo, Expert Consultation, Business Solutions",
-  ogUrl: "https://senpiper.com/contact/",
-};
+
 
 const heroSectionData = {
   headers: ["Get in Touch", "With Our Team Experts"],
@@ -33,7 +25,7 @@ const formSectionData = {
 };
 ---
 
-<Layout title="Contact Us" metaProps={metaData}>
+<Layout title="Contact Us" >
   <HeroSection
     headers={heroSectionData.headers}
     description={heroSectionData.description}
